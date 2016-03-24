@@ -23,10 +23,23 @@ class GlobalSetting(object):
             )},
         )
 
-
+# 定制客户管理端信息
 class CustomAdmin(object):
+	# fields = ('name','mobile','valid')
 	list_display = ('name','mobile','valid')
 
-xadmin.site.register(Customer,CustomAdmin)
+# 定制配菜管理端信息
+class SubdishAdmin(object):
+	list_display = ('name','price')
+
+# 定制配菜管理端信息
+class DishAdmin(object):
+	list_display = ('id','name','price')
+
 xadmin.site.register(views.CommAdminView, GlobalSetting)
+xadmin.site.register(Customer,CustomAdmin)
+xadmin.site.register(Subdish,SubdishAdmin)
+xadmin.site.register(Dish,DishAdmin)
+xadmin.site.register(Order)
+# xadmin.site.register(Customer,CustomAdmin)
 # xadmin.site.register(views.CommAdminView, AdminMuneSetting)
