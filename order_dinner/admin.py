@@ -8,11 +8,6 @@ from xadmin.plugins.inline import Inline
 from xadmin.plugins.batch import BatchChangeAction
 # Register your models here.
 
-xadmin.site.register(Customer)
-xadmin.site.register(Subdish)
-xadmin.site.register(Dish)
-xadmin.site.register(Order)
-
 class GlobalSetting(object):
     #设置base_site.html的Title
     site_title = '\"筋斗云\"后台管理'
