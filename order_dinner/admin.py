@@ -15,9 +15,9 @@ xadmin.site.register(Order)
 
 class GlobalSetting(object):
     #设置base_site.html的Title
-    site_title = '米饭后台管理'
+    site_title = '\"筋斗云\"后台管理'
     #设置base_site.html的Footer
-    site_footer  = '米饭后台管理'
+    site_footer  = '\"筋斗云\"后台管理'
     def get_site_menu(self):
         return (
             {'title': '管理员内容管理', 'perm': self.get_model_perm(Customer, 'change'), 'menus':(
