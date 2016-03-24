@@ -25,7 +25,7 @@ class GlobalSetting(object):
 
 
 class CustomAdmin(object):
-	list_display = ('name','mobile','valid',)
+	list_display = ('name','mobile','valid')
 
 xadmin.site.register(Customer,CustomAdmin)
 xadmin.site.register(views.CommAdminView, GlobalSetting)
