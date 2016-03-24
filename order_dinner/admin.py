@@ -24,7 +24,7 @@ class GlobalSetting(object):
         )
 
 
-class CustomAdmin(xadmin.ModelAdmin):
+class CustomAdmin(object):
 	list_display = ('name','mobile','valid',)
 
 xadmin.site.register(Customer,CustomAdmin)
