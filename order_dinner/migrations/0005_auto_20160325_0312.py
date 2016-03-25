@@ -28,7 +28,7 @@ class Migration(migrations.Migration):
             model_name='dish',
             name='dish_img',
             field=models.ImageField(upload_to=b'imgs/', verbose_name='\u83dc\u54c1\u56fe\u7247'),
-            preserve_default=True,
+            # preserve_default=True,
         ),
         migrations.AlterField(
             model_name='dish',

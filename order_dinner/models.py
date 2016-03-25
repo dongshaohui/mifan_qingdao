@@ -12,6 +12,7 @@ class Shop(models.Model):
 	addr = models.CharField(verbose_name=u'商铺地址',max_length=255) # 商铺地址
 	mobile = models.CharField(verbose_name=u'联系人电话',max_length=255) # 联系人手机
 	remark = models.TextField(verbose_name=u'备注信息',max_length=255) # 备注信息
+	commission = models.FloatField(verbose_name=u'佣金百分比',default=0.0) # 佣金百分比
 	def __unicode__(self):
 		return self.name
 
@@ -43,6 +44,7 @@ class CreditCard(models.Model):
 
 # 子菜品
 class Subdish(models.Model):
+	shop = models.OneToOneField(Shop) # 配菜对应商铺
 	name = models.CharField(verbose_name=u'配菜名',max_length=255) # 子菜品的名称
 	price = models.FloatField(verbose_name=u'配菜单价',default=0.0) # 子菜品的价格
 
@@ -50,6 +52,7 @@ class Subdish(models.Model):
 		return self.name
 # 菜品
 class Dish(models.Model):
+	shop = models.OneToOneField(Shop) # 菜品对应商铺管理员
 	subdishes = models.ManyToManyField(Subdish,blank=True,null=True) # 菜品中包含的子菜品
  	name = models.CharField(verbose_name=u'菜名',max_length=255) # 菜品的名称
  	dish_img = models.ImageField(verbose_name=u'菜品图片',upload_to='imgs/') # 菜品的图片
