@@ -1,6 +1,6 @@
 #coding=utf-8
 from django.contrib import admin
-from .models import Customer,Subdish,Dish,Order
+from .models import Customer,Subdish,Dish,Order,Shop,ShopManager
 import xadmin
 from xadmin import views
 from xadmin.layout import Main, TabHolder, Tab, Fieldset, Row, Col, AppendedText, Side
@@ -15,11 +15,15 @@ class GlobalSetting(object):
     site_footer  = '\"筋斗云\"后台管理'
     def get_site_menu(self):
         return (
-            {'title': '管理员内容管理', 'perm': self.get_model_perm(Customer, 'change'), 'menus':(
-                {'title': '客户信息',  'url': self.get_model_url(Customer, 'changelist')},
-                {'title':'配菜信息','url': self.get_model_url(Subdish, 'changelist')},
-                {'title':'菜品信息','url': self.get_model_url(Dish, 'changelist')},
-                {'title':'订单信息','url': self.get_model_url(Order, 'changelist')}
+            {'title': '商铺管理', 'perm': self.get_model_perm(Customer, 'change'), 'menus':(
+            	{'title': '商铺信息管理',  'url': self.get_model_url(Shop, 'changelist')},
+            	{'title': '商铺管理员管理',  'url': self.get_model_url(ShopManager, 'changelist')},)},
+            {
+            	'title': '内容管理', 'perm': self.get_model_perm(Customer, 'change'), 'menus':(
+                {'title': '客户管理',  'url': self.get_model_url(Customer, 'changelist')},
+                {'title':'配菜管理','url': self.get_model_url(Subdish, 'changelist')},
+                {'title':'菜品管理','url': self.get_model_url(Dish, 'changelist')},
+                {'title':'订单管理','url': self.get_model_url(Order, 'changelist')}
             )},
         )
 
@@ -34,12 +38,18 @@ class SubdishAdmin(object):
 
 # 定制配菜管理端信息
 class DishAdmin(object):
-	list_display = ('id','name','price')
+	list_display = ('name','price')
+
+# 定制商铺管理端信息
+
 
 xadmin.site.register(views.CommAdminView, GlobalSetting)
 xadmin.site.register(Customer,CustomAdmin)
 xadmin.site.register(Subdish,SubdishAdmin)
 xadmin.site.register(Dish,DishAdmin)
+xadmin.site.register(Shop)
 xadmin.site.register(Order)
+xadmin.site.register(ShopManager)
+
 # xadmin.site.register(Customer,CustomAdmin)
 # xadmin.site.register(views.CommAdminView, AdminMuneSetting)
