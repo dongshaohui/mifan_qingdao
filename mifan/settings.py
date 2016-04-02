@@ -41,6 +41,8 @@ INSTALLED_APPS = (
     'crispy_forms',
     'reversion',
     'order_dinner',
+    'shop_serv',
+    'user_serv',
 )
 
 MIDDLEWARE_CLASSES = (
