@@ -21,4 +21,6 @@ urlpatterns = patterns('',
     url(r'^shop_serv/login','shop_serv.views.login'),
     # 客户端接口（IOS）
     url(r'^user_serv/register','user_serv.views.register'), 
+    url(r'^user_serv/login','user_serv.views.login'), 
+    url(r'^user_serv/personal_info','user_serv.views.personal_info'), 
 )+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)   

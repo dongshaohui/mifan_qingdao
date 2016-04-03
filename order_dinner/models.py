@@ -78,6 +78,7 @@ class Subdish(models.Model):
 # 菜品
 class Dish(models.Model):
 	shop = models.ForeignKey(Shop,related_name='shop_dish') # 菜品隶属的商铺
+	dish_type = models.IntegerField(verbose_name=u'菜品类型',default=0) # （0-单品菜，1-含配菜）
 	subdishes = models.ManyToManyField(Subdish,blank=True,null=True) # 菜品中包含的子菜品
  	name = models.CharField(verbose_name=u'菜名',max_length=255) # 菜品的名称
  	dish_img = models.ImageField(verbose_name=u'菜品图片',upload_to='imgs/') # 菜品的图片

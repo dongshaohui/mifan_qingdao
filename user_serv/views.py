@@ -55,6 +55,7 @@ def register(request):
 		response = {'code':-1,'msg':'phoneno已经注册过'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
+	print password,re_password
 	# 判断密码是否一致
 	if password != re_password:
 		response = {'code':-2,'msg':'两次输入密码不一致'}
@@ -65,8 +66,11 @@ def register(request):
 		response = {'code':-3,'msg':'验证码错误'} 
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
-	new_customer = Customer.objects.Create(mobile=phoneno,password=password)
+	print '0'
+	new_customer = Customer.objects.create(mobile=phoneno,password=password)
+	print '1'
 	new_customer.save() # 存入数据库
+	print "auto saved"
 	customer_id = new_customer.id # 用户id
 	token = token_str() # 生成token
 	request.session[token] = customer_id # 将生成的token记入session中
@@ -130,8 +134,11 @@ def personal_info(request):
 
 	if code == -100:
 		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！'}
-		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))		
-
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))	
+	# print request.session['test']	
+	print 'test' in request.session
+	request.session['test'] = 1
+	print request.session['test']
 	# 查看token是否存在session中
 	if token not in request.session:
 		response = {'code':-1,'msg':'token失效，需重新登录'}
@@ -209,7 +216,7 @@ def add_credit_card(request):
 	customer = customers[0]
 
 	# 创建支付方式对象
-	user_pay_type = UserPayType.objects.Create(pay_type=0,credit_card=credit_card_no,
+	user_pay_type = UserPayType.objects.create(pay_type=0,credit_card=credit_card_no,
 		security_code=pin_code,expire_year=expire_year,expire_month=expire_month)
 	user_pay_type.save()
 	customer.customer_user_pay_types.add(user_pay_type) # 为用户添加支付方式
@@ -436,7 +443,7 @@ def add_delivery_address(request):
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 	customer = customers[0]
 	# 新建DeliveryAddress对象
-	delivery_address = DeliveryAddress.objects.Create(receiver_name=receiver_name,receiver_phone=receiver_phone,
+	delivery_address = DeliveryAddress.objects.create(receiver_name=receiver_name,receiver_phone=receiver_phone,
 		searched_address=searched_address,longitude=(float)(searched_address_longitude),latitude=(float)(searched_address_latitude),
 		detail_address=detail_address,postcode=postcode)
 	delivery_address.save()
@@ -668,11 +675,76 @@ def get_all_side_dishes(request):
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))	
 
 # 菜品搜索接口
-
 def search_dishes(request):
+	response = {}
 
+	shop_id = None
+	dish_search_term = None
+	if 'shop_id' in request.GET:
+		shop_id = request.GET['shop_id']
+	else:
+		code = -100	
 
+	if 'dish_search_term' in request.GET:
+		dish_search_term = request.GET['dish_search_term']
+	else:
+		code = -100	
 
+	if code == -100:
+		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！'}
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
+	# 获取dish_id对应的对象
+	shop_objs = Shop.objects.filter(id=shop_id)
+	if len(shop_objs) == 0:
+		response = {'code':-1,'msg':'shop_id无效'}
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))	
+
+	response = {'code':0,'msg':'success'}
+	response['dish_info_list'] = []
+	dish_objs = Dish.objects.filter(name__icontains=dish_search_term)
+	for dish_obj in dish_objs:
+		if shop_id == dish_obj.shop.id:
+			temp_dish_obj = {}
+			temp_dish_obj['dish_id'] = dish_obj.id
+			temp_dish_obj['dish_type'] = dish_obj.dish_type
+			temp_dish_obj['dish_img'] = dish_obj.dish_img
+			temp_dish_obj['dish_name'] = dish_obj.name
+			# TODO 订单数
+			temp_dish_obj['dish_price'] = dish_obj.price
+			response['dish_info_list'].append(temp_dish_obj)
+	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
+
+########################### 
+#
+#	Order Module Interface
+#
+########################### 
+
+# 用户提交订单
+def upload_order(request):
+	response = {}
+	# 获取参数
+	token = None
+	shop_id = None
+	delivery_address_id = None
+	code = 0 # 返回代码，默认为0
+
+	# 获取手机号
+	if 'token' in request.GET:
+		token = request.GET['token']
+	else:
+		code = -100	
+
+	if code == -100:
+		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！'}
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))		
+
+	# 查看token是否存在session中
+	if token not in request.session:
+		response = {'code':-1,'msg':'token失效，需重新登录'}
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))		
+
+	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 # 生成随机字符串
 def token_str(randomlength=12):
     str = ''
