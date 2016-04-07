@@ -1,9 +1,14 @@
 #coding=utf-8
 from django.shortcuts import render
 from django.shortcuts import HttpResponse, render_to_response, redirect
-import urllib,urllib2,json,time
-from order_dinner.models import Customer,UserPayType,DeliveryAddress,Shop,Dish,Subdish
+from django.views.decorators.csrf import csrf_exempt
+import urllib,urllib2,json,time,datetime
+from order_dinner.models import Customer,UserPayType,DeliveryAddress,Shop,Dish,Subdish,VerificationCode,Order,OrderDish,OrderSubDish
 from random import Random
+from django.contrib import auth
+import sms_sender
+from bs4 import BeautifulSoup
+
 ########################### 
 #
 #	User Module Interface
@@ -11,6 +16,7 @@ from random import Random
 ########################### 
 
 # 用户注册
+# @csrf_exempt
 def register(request):
 	response = {}
 	## 获取参数
@@ -22,26 +28,26 @@ def register(request):
 	code = 0 # 返回代码，默认为0
 
 	# 获取手机号
-	if 'phoneno' in request.POST:
-		phoneno = request.POST['phoneno']
+	if 'phoneno' in request.GET:
+		phoneno = request.GET['phoneno']
 	else:
 		code = -100
 
 	# 获取验证码
-	if 'verification_code' in request.POST:
-		verification_code = request.POST['verification_code']
+	if 'verification_code' in request.GET:
+		verification_code = request.GET['verification_code']
 	else:
 		code = -100
 
 	# 获取密码
-	if 'password' in request.POST:
-		password = request.POST['password']
+	if 'password' in request.GET:
+		password = request.GET['password']
 	else:
 		code = -100
 
 	# 获取再次输入的密码
-	if 're_password' in request.POST:
-		re_password = request.POST['re_password']
+	if 're_password' in request.GET:
+		re_password = request.GET['re_password']
 	else:
 		code = -100
 
@@ -62,15 +68,18 @@ def register(request):
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
 	# 判断验证码是否正确
-	if verification_code != '1234': # 暂时写死
+	verification_code_objs = VerificationCode.objects.filter(mobile=phoneno)
+	if len(verification_code_objs) == 0:
 		response = {'code':-3,'msg':'验证码错误'} 
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
+	else:
+		verification_code_record = verification_code_objs[0].verification_code
+		if str(verification_code_record) != verification_code:
+			response = {'code':-3,'msg':'验证码错误'} 
+			return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))			
 
-	print '0'
 	new_customer = Customer.objects.create(mobile=phoneno,password=password)
-	print '1'
 	new_customer.save() # 存入数据库
-	print "auto saved"
 	customer_id = new_customer.id # 用户id
 	token = token_str() # 生成token
 	request.session[token] = customer_id # 将生成的token记入session中
@@ -79,6 +88,7 @@ def register(request):
 
 
 # 用户登录接口
+@csrf_exempt
 def login(request):
 	response = {}
 	code = 0 # 返回代码，默认为0
@@ -86,14 +96,14 @@ def login(request):
 	password = None
 
 	# 获取手机号
-	if 'phoneno' in request.POST:
-		phoneno = request.POST['phoneno']
+	if 'phoneno' in request.GET:
+		phoneno = request.GET['phoneno']
 	else:
 		code = -100
 
 	# 获取密码
-	if 'password' in request.POST:
-		password = request.POST['password']
+	if 'password' in request.GET:
+		password = request.GET['password']
 	else:
 		code = -100
 
@@ -126,7 +136,7 @@ def personal_info(request):
 
 	code = 0 # 返回代码，默认为0
 
-	# 获取手机号
+	# 获取token
 	if 'token' in request.GET:
 		token = request.GET['token']
 	else:
@@ -135,10 +145,7 @@ def personal_info(request):
 	if code == -100:
 		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))	
-	# print request.session['test']	
-	print 'test' in request.session
-	request.session['test'] = 1
-	print request.session['test']
+
 	# 查看token是否存在session中
 	if token not in request.session:
 		response = {'code':-1,'msg':'token失效，需重新登录'}
@@ -156,6 +163,38 @@ def personal_info(request):
 # 发送手机验证码
 def send_verification_code(request):
 	response = {}
+	# 获取参数
+	phoneno = None
+	code = None
+
+	# 获取手机号
+	if 'phoneno' in request.GET:
+		phoneno = request.GET['phoneno']
+	else:
+		code = -100
+
+	if code == -100:
+		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！'}
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))		
+
+	verification_code = sms_sender.token_str()
+	response_str = sms_sender.jindouyun_sms_sender(phoneno,verification_code)
+	# 将短信验证码记录
+	verification_code_records = VerificationCode.objects.filter(mobile=phoneno)
+	verification_code_obj = None
+	if len(verification_code_records) == 0:
+		verification_code_obj = VerificationCode.objects.create(mobile=phoneno,verification_code=verification_code)
+		verification_code_obj.save()
+	else:
+		verification_code_obj = verification_code_records[0]
+		verification_code_obj.verification_code = verification_code
+		verification_code_obj.save()
+	print response_str
+	print type(response_str)
+	response_dict = json.loads(response_str)
+	response['code'] = (int)(response_dict['code'])
+	response['msg'] = response_dict['msg']
+
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
 
@@ -178,31 +217,31 @@ def add_credit_card(request):
 	code = 0 # 返回代码，默认为0
 
 	
-	if 'token' in request.POST:
-		token = request.POST['token']
+	if 'token' in request.GET:
+		token = request.GET['token']
 	else:
 		code = -100	
 
-	if 'credit_card_no' in request.POST:
-		credit_card_no = request.POST['credit_card_no']
+	if 'credit_card_no' in request.GET:
+		credit_card_no = request.GET['credit_card_no']
 	else:
 		code = -100	
 
-	if 'pin_code' in request.POST:
-		pin_code = request.POST['pin_code']
+	if 'pin_code' in request.GET:
+		pin_code = request.GET['pin_code']
 	else:
 		code = -100	
 
-	if 'expire_year' in request.POST:
-		expire_year = request.POST['expire_year']
+	if 'expire_year' in request.GET:
+		expire_year = request.GET['expire_year']
 	else:
 		code = -100	
 
-	if 'expire_month' in request.POST:
-		expire_month = request.POST['expire_month']
+	if 'expire_month' in request.GET:
+		expire_month = request.GET['expire_month']
 	else:
 		code = -100							
-
+	print credit_card_no,pin_code,expire_year,expire_month
 	if code == -100:
 		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))	
@@ -216,11 +255,11 @@ def add_credit_card(request):
 	customer = customers[0]
 
 	# 创建支付方式对象
-	user_pay_type = UserPayType.objects.create(pay_type=0,credit_card=credit_card_no,
+	user_pay_type = UserPayType.objects.create(customer=customer,pay_type=0,credit_card=credit_card_no,
 		security_code=pin_code,expire_year=expire_year,expire_month=expire_month)
 	user_pay_type.save()
 	customer.customer_user_pay_types.add(user_pay_type) # 为用户添加支付方式
-	response = {'code':0,'msg':'success'}
+	response = {'code':0,'msg':'success',"pay_type_id":user_pay_type.id}
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
 # 用户选取支付方式
@@ -299,7 +338,7 @@ def paytype_infos(request):
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 	customer = customers[0]	
 
-	user_pay_type_objs = customer.userpaytype_set.all()
+	user_pay_type_objs = UserPayType.objects.filter(customer_id=customer.id)
 
 	response['code'] = 0
 	response['msg'] = 'success'
@@ -366,10 +405,39 @@ def get_paytype(request):
 #
 ########################### 
 
-# TODO: 等待google服务
 # 地点搜索接口
 def site_search(request):
 	response = {}
+	address = None
+	code = 0 # 返回代码，默认为0
+
+	if 'address' in request.GET:
+		address = request.GET['address']
+	else:
+		code = -100
+
+	if code == -100:
+		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！'}
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
+
+	params = urllib.urlencode({'query': address, 'key': 'AIzaSyAcqwDjEnYPte9qNnCEH3L12doj8fZRnEY'})
+	url = "https://maps.googleapis.com/maps/api/place/textsearch/json?%s" % params
+	print url
+	f = urllib.urlopen(url)
+	response_str = f.read().decode('utf-8')
+	response_dict = json.loads(response_str)
+	response = {'code':0,'msg':'success'}
+	print response_dict
+	print type(response_dict)
+	results = response_dict['results']
+	response['address_list'] = []
+	for result in results:
+		temp_resut = {}
+		temp_resut['place_id'] = result['id']
+		temp_resut['detail_address'] = result['formatted_address'] + ' ' + result['name']
+		temp_resut['longitude'] = result['geometry']['location']['lng']
+		temp_resut['latitude'] = result['geometry']['location']['lat']
+		response['address_list'].append(temp_resut)
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
 # 新增收货地址
@@ -386,43 +454,43 @@ def add_delivery_address(request):
 	code = 0 # 返回代码，默认为0
 
 	
-	if 'token' in request.POST:
-		token = request.POST['token']
+	if 'token' in request.GET:
+		token = request.GET['token']
 	else:
 		code = -100	
 
-	if 'receiver_name' in request.POST:
-		receiver_name = request.POST['receiver_name']
+	if 'receiver_name' in request.GET:
+		receiver_name = request.GET['receiver_name']
 	else:
 		code = -100	
 
-	if 'receiver_phone' in request.POST:
-		receiver_phone = request.POST['receiver_phone']
+	if 'receiver_phone' in request.GET:
+		receiver_phone = request.GET['receiver_phone']
 	else:
 		code = -100	
 
-	if 'searched_address' in request.POST:
-		searched_address = request.POST['searched_address']
+	if 'searched_address' in request.GET:
+		searched_address = request.GET['searched_address']
 	else:
 		code = -100	
 
-	if 'searched_address_longitude' in request.POST:
-		searched_address_longitude = request.POST['searched_address_longitude']
+	if 'searched_address_longitude' in request.GET:
+		searched_address_longitude = request.GET['searched_address_longitude']
 	else:
 		code = -100	
 
-	if 'searched_address_latitude' in request.POST:
-		searched_address_latitude = request.POST['searched_address_latitude']
+	if 'searched_address_latitude' in request.GET:
+		searched_address_latitude = request.GET['searched_address_latitude']
 	else:
 		code = -100	
 
-	if 'detail_address' in request.POST:
-		detail_address = request.POST['detail_address']
+	if 'detail_address' in request.GET:
+		detail_address = request.GET['detail_address']
 	else:
 		code = -100	
 
-	if 'postcode' in request.POST:
-		postcode = request.POST['postcode']
+	if 'postcode' in request.GET:
+		postcode = request.GET['postcode']
 	else:
 		code = -100	
 
@@ -443,12 +511,12 @@ def add_delivery_address(request):
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 	customer = customers[0]
 	# 新建DeliveryAddress对象
-	delivery_address = DeliveryAddress.objects.create(receiver_name=receiver_name,receiver_phone=receiver_phone,
+	delivery_address = DeliveryAddress.objects.create(customer=customer,receiver_name=receiver_name,receiver_phone=receiver_phone,
 		searched_address=searched_address,longitude=(float)(searched_address_longitude),latitude=(float)(searched_address_latitude),
 		detail_address=detail_address,postcode=postcode)
 	delivery_address.save()
-	customer.deliveryaddress_set.add(delivery_address)
-	response = {'code':0,'msg':'success'}
+	# customer.deliveryaddress_set.add(delivery_address) 
+	response = {'code':0,'msg':'success',"delivery_address_id":delivery_address.id}
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
 # 用户选取收货地址
@@ -459,13 +527,13 @@ def select_delivery_address(request):
 	code = 0 # 返回代码，默认为0
 
 	
-	if 'token' in request.POST:
-		token = request.POST['token']
+	if 'token' in request.GET:
+		token = request.GET['token']
 	else:
 		code = -100	
 
-	if 'delivery_address_id' in request.POST:
-		delivery_address_id = request.POST['delivery_address_id']
+	if 'delivery_address_id' in request.GET:
+		delivery_address_id = request.GET['delivery_address_id']
 	else:
 		code = -100	
 
@@ -497,6 +565,7 @@ def select_delivery_address(request):
 def delivery_address_infos(request):
 	response = {}
 	token = None
+	code = None
 	if 'token' in request.GET:
 		token = request.GET['token']
 	else:
@@ -521,7 +590,7 @@ def delivery_address_infos(request):
 
 	response = {'code':0,'msg':'success'}
 	response['delivery_address_infos'] = []
-	delivery_address_objs = customer.deliveryaddress_set.all()
+	delivery_address_objs = DeliveryAddress.objects.filter(customer_id=customer.id)
 
 	for delivery_address_obj in delivery_address_objs:
 		temp_delivery_address_obj = {}
@@ -537,6 +606,7 @@ def delivery_address_infos(request):
 def get_user_delivery_address(request):
 	response = {}
 	token = None
+	code = None
 	if 'token' in request.GET:
 		token = request.GET['token']
 	else:
@@ -580,6 +650,7 @@ def get_user_delivery_address(request):
 def search_shop_infos(request):
 	response = {}
 	shop_search_term = None
+	code = None
 	if 'shop_search_term' in request.GET:
 		shop_search_term = request.GET['shop_search_term']
 	else:
@@ -598,9 +669,12 @@ def search_shop_infos(request):
 		searched_by_id = Shop.objects.filter(id=(int)(shop_search_term))
 	searched_by_name = Shop.objects.filter(name__icontains=shop_search_term)
 	searched_by_phone = Shop.objects.filter(mobile__icontains=shop_search_term)
-	searched_results = searched_by_id + searched_by_name + searched_by_phone
+	searched_results = list(searched_by_id) + list(searched_by_name) + list(searched_by_phone)
 	response = {'code':0,'msg':'success'}
 	response['shop_info_list'] = []
+	now = datetime.datetime.now()
+	month = now.month
+	year = now.year
 	for searched_result in searched_results:
 		temp_searched_result = {}
 		temp_searched_result['shop_id'] = searched_result.id
@@ -608,15 +682,23 @@ def search_shop_infos(request):
 		temp_searched_result['img'] = searched_result.shop_img
 		temp_searched_result['name'] = searched_result.name
 		temp_searched_result['address'] = searched_result.search_addr + ' ' + searched_result.detail_addr
-		# TODO :商铺的订单数
+		start_date = datetime.date(year,month,1)
+		end_date = None
+		if month == 12:
+			end_date = datetime.date(year+1,1,1)
+		else:
+			end_date = datetime.date(year,month+1,1)
+		current_month_orders = Order.objects.filter(shop_id=searched_result.id).filter(create_time__range=(start_date,end_date))
+		temp_searched_result['current_month_order'] = len(current_month_orders)
 		response['shop_info_list'].append(temp_searched_result)
-	response = {'code':0,'msg':'success'}		
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
 # 获取店铺信息详情
 def get_shop_detail_info(request):
 	response = {}
 	shop_id = None
+
+	code = None
 	if 'shop_id' in request.GET:
 		shop_id = request.GET['shop_id']
 	else:
@@ -626,15 +708,70 @@ def get_shop_detail_info(request):
 		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
-	# TODO : 订单模块做完
+	shop_objs = Shop.objects.filter(id=shop_id)
+	if len(shop_objs) == 0:
+		response = {'code':-1,'msg':'shop_id无效'}
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))	
+	shop = shop_objs[0]
 	response = {'code':0,'msg':'success'}
+	response['status'] = shop.status
+	response['shop_img'] = shop.shop_img
+	response['shop_feature'] = shop.shop_feature
+	response['dish_info_list'] = []
+	response['shop_detail_info'] = {}
+	response['shop_detail_info']['address'] = shop.search_addr + ' ' + shop.detail_addr
+	response['shop_detail_info']['phone'] = shop.mobile
+	response['shop_detail_info']['delivery_time'] = shop.business_hour
+	dishes = Dish.objects.filter(shop=shop)
+	now = datetime.datetime.now()
+	month = now.month
+	year = now.year	
+	for dish in dishes:
+		temp_dish_info = {}
+		temp_dish_info['dish_id'] = dish.id
+		temp_dish_info['dish_type'] = dish.dish_type
+		temp_dish_info['dish_img'] = dish.dish_img.name
+		temp_dish_info['dish_price'] = dish.price
+		temp_dish_info['current_month_order'] = 0
+		start_date = datetime.date(year,month,1)
+		end_date = None
+		if month == 12:
+			end_date = datetime.date(year+1,1,1)
+		else:
+			end_date = datetime.date(year,month+1,1)
+		current_month_shop_orders = Order.objects.filter(shop_id=shop.id).filter(create_time__range=(start_date,end_date))
+		for current_month_shop_order in current_month_shop_orders:
+			for order_dish in current_month_shop_order.order_dishes.all():
+				if order_dish.dish.id == dish.id:
+					temp_dish_info['current_month_order'] += 1
+		response['dish_info_list'].append(temp_dish_info)
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
 # 获取所有正在营业中店铺的信息
 def get_all_shop_infos(request):
 	response = {}
-	# TODO : 订单模块做完
 	response = {'code':0,'msg':'success'}
+	response['shop_info_list'] = []
+	shops = Shop.objects.all()
+	now = datetime.datetime.now()
+	month = now.month
+	year = now.year		
+	for shop in shops:
+		temp_shop_obj = {}
+		temp_shop_obj['status'] = shop.status
+		temp_shop_obj['shop_id'] = shop.id
+		temp_shop_obj['img'] = shop.shop_img
+		temp_shop_obj['name'] = shop.name
+		temp_shop_obj['address'] = shop.search_addr + ' ' + shop.detail_addr
+		start_date = datetime.date(year,month,1)
+		end_date = None
+		if month == 12:
+			end_date = datetime.date(year+1,1,1)
+		else:
+			end_date = datetime.date(year,month+1,1)
+		current_month_shop_orders = Order.objects.filter(shop_id=shop.id).filter(create_time__range=(start_date,end_date))	
+		temp_shop_obj['current_month_order'] = len(current_month_shop_orders)
+		response['shop_info_list'].append(temp_shop_obj)
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
 
@@ -648,6 +785,7 @@ def get_all_shop_infos(request):
 def get_all_side_dishes(request):
 	response = {}
 	dish_id = None
+	code = None
 	if 'dish_id' in request.GET:
 		dish_id = request.GET['dish_id']
 	else:
@@ -663,7 +801,7 @@ def get_all_side_dishes(request):
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))		
 
 	dish_obj = dish_objs[0]
-	subdish_objs = dish_obj.subdishes
+	subdish_objs = dish_obj.subdishes.all()
 	response = {'code':0,'msg':'success'}
 	response['side_dish_info_list'] = []
 	for subdish_obj in subdish_objs:
@@ -677,9 +815,9 @@ def get_all_side_dishes(request):
 # 菜品搜索接口
 def search_dishes(request):
 	response = {}
-
 	shop_id = None
 	dish_search_term = None
+	code = None
 	if 'shop_id' in request.GET:
 		shop_id = request.GET['shop_id']
 	else:
@@ -690,6 +828,7 @@ def search_dishes(request):
 	else:
 		code = -100	
 
+	
 	if code == -100:
 		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
@@ -702,15 +841,32 @@ def search_dishes(request):
 	response = {'code':0,'msg':'success'}
 	response['dish_info_list'] = []
 	dish_objs = Dish.objects.filter(name__icontains=dish_search_term)
+	now = datetime.datetime.now()
+	month = now.month
+	year = now.year
 	for dish_obj in dish_objs:
-		if shop_id == dish_obj.shop.id:
+		print shop_id,dish_obj.shop.id,shop_id==dish_obj.shop.id
+		if int(shop_id) == int(dish_obj.shop.id):
 			temp_dish_obj = {}
 			temp_dish_obj['dish_id'] = dish_obj.id
 			temp_dish_obj['dish_type'] = dish_obj.dish_type
-			temp_dish_obj['dish_img'] = dish_obj.dish_img
+			temp_dish_obj['dish_img'] = dish_obj.dish_img.name
 			temp_dish_obj['dish_name'] = dish_obj.name
-			# TODO 订单数
+			start_date = datetime.date(year,month,1)
+			end_date = None
+			if month == 12:
+				end_date = datetime.date(year+1,1,1)
+			else:
+				end_date = datetime.date(year,month+1,1)
+			current_month_orders = Order.objects.filter(shop_id=shop_id).filter(create_time__range=(start_date,end_date))
+			current_month_order_number = 0
+			for current_month_order in current_month_orders:
+				for order_dish in current_month_order.order_dishes.all():
+					if int(dish_obj.id) == int(order_dish.dish.id):
+						current_month_order_number += 1
+			temp_dish_obj['current_month_order'] = current_month_order_number
 			temp_dish_obj['dish_price'] = dish_obj.price
+			print temp_dish_obj
 			response['dish_info_list'].append(temp_dish_obj)
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
@@ -727,13 +883,90 @@ def upload_order(request):
 	token = None
 	shop_id = None
 	delivery_address_id = None
+	paytype_id = None
+	consume_type = None
+	tip_type = None
+	tip_ratio = None
+	remark = None
+	freight = None
+	distance = None
+	tax = None
+	dish_order_list = None # list参数
 	code = 0 # 返回代码，默认为0
 
-	# 获取手机号
+	# 获取token
 	if 'token' in request.GET:
 		token = request.GET['token']
 	else:
 		code = -100	
+	
+	# 获取shop_id
+	if 'shop_id' in request.GET:
+		shop_id = request.GET['shop_id']
+	else:
+		code = -100	
+
+	# 获取delivery_address_id
+	if 'delivery_address_id' in request.GET:
+		delivery_address_id = request.GET['delivery_address_id']
+	else:
+		code = -100	
+
+	# 获取paytype_id
+	if 'paytype_id' in request.GET:
+		paytype_id = request.GET['paytype_id']
+	else:
+		code = -100	
+
+	# 获取consume_type
+	if 'consume_type' in request.GET:
+		consume_type = request.GET['consume_type']
+	else:
+		code = -100		
+
+	# 获取tip_type
+	if 'tip_type' in request.GET:
+		tip_type = request.GET['tip_type']
+	else:
+		code = -100		
+
+	# 获取tip_ratio
+	if 'tip_ratio' in request.GET:
+		tip_ratio = request.GET['tip_ratio']
+	else:
+		code = -100	
+
+	# 获取remark
+	if 'remark' in request.GET:
+		remark = request.GET['remark']
+	else:
+		code = -100		
+
+	# 获取freight
+	if 'freight' in request.GET:
+		freight = request.GET['freight']
+	else:
+		code = -100	
+
+	# 获取distance
+	if 'distance' in request.GET:
+		distance = request.GET['distance']
+	else:
+		code = -100	
+
+	# 获取tax
+	if 'tax' in request.GET:
+		tax = request.GET['tax']
+	else:
+		code = -100	
+
+	# 获取dish_order_list
+	if 'dish_order_list' in request.GET:
+		dish_order_list = request.GET['dish_order_list']
+	else:
+		code = -100	
+
+	# print token,shop_id,delivery_address_id,paytype_id,consume_type,tip_type,tip_ratio,remark,freight,distance,tax,dish_order_list
 
 	if code == -100:
 		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！'}
@@ -744,9 +977,176 @@ def upload_order(request):
 		response = {'code':-1,'msg':'token失效，需重新登录'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))		
 
+	# 获取shop_id对应的对象
+	shop_objs = Shop.objects.filter(id=shop_id)
+	if len(shop_objs) == 0:
+		response = {'code':-2,'msg':'shop_id无效'}
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))	
+	shop_obj = shop_objs[0]
+
+	# 查看地址是否有效
+	if len(DeliveryAddress.objects.filter(id=delivery_address_id)) == 0:
+		response = {'code':-3,'msg':'delivery_address_id无效'}
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
+
+	delivery_address_obj = DeliveryAddress.objects.get(id=delivery_address_id)
+
+	# 查看paytype_id是否存在
+	paytypes = UserPayType.objects.filter(id=paytype_id) 
+	if len(paytypes) == 0:
+		response = {'code':-4,'msg':'paytype_id无效'}
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))	
+	paytype_obj = paytypes[0]
+	# 获取token对应的用户
+	customer_id = request.session[token]
+	customers = Customer.objects.filter(id=customer_id)
+	if len(customers) == 0:
+		response = {'code':-200,'msg':'其他错误'}
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
+	customer = customers[0]
+
+	# 新建订单对象
+	new_order = Order.objects.create(customer=customer,shop=shop_obj,freight=freight,tip_type=tip_type,
+		tax=tax,distance=distance,remark=remark,tip=0.0,status="PROGRESS",delivery_address=delivery_address_obj,
+		pay_type=paytype_obj,consume_type=consume_type)
+	new_order.save()
+
+	# 为此订单添加菜品记录
+	dish_order_list = dish_order_list.replace("'","\"")
+	dish_order_list = json.loads(dish_order_list)
+	print dish_order_list
+	for dish_order in dish_order_list:
+		print dish_order
+		print dish_order['dish_id']
+		print type(dish_order['dish_id'])
+		dish_id = int(dish_order['dish_id'])
+		order_number = int(dish_order['order_number'])
+		dish_obj = Dish.objects.get(id=dish_id)
+		dish_type = int(dish_obj.dish_type) # 菜品类型
+		order_dish_obj = OrderDish.objects.create(dish=dish_obj,dish_order_number=order_number) # 新建订单中的菜品对象
+		order_dish_obj.save()
+		if dish_type == 1: # 含有配菜的菜品
+			for side_dish in dish_order['side_dish_list']:
+				side_dish_id = side_dish['side_dish_id']
+				side_dish_order_number = side_dish['order_number']
+				subdish_obj = Subdish.objects.get(id=side_dish_id)
+				order_subdish_obj = OrderSubDish.objects.create(subdish=subdish_obj,subdish_order_number=side_dish_order_number)
+				order_subdish_obj.save()
+				order_dish_obj.ordered_subdishes.add(order_subdish_obj) # 添加子菜品
+				order_dish_obj.save()
+		new_order.order_dishes.add(order_dish_obj) # 订单添加菜品
+		new_order.save()
+	response = {'code':0,'msg':'success'}
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
+
+# 获取用户所有的订单信息
+def get_all_orders(request):
+	response = {}
+	token = None
+	code = 0 # 返回代码，默认为0
+
+	# 获取token
+	if 'token' in request.GET:
+		token = request.GET['token']
+	else:
+		code = -100
+
+	# 查看token是否存在session中
+	if token not in request.session:
+		response = {'code':-1,'msg':'token失效，需重新登录'}
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))		
+
+	# 获取token对应的用户
+	customer_id = request.session[token]
+	customers = Customer.objects.filter(id=customer_id)
+	if len(customers) == 0:
+		response = {'code':-200,'msg':'其他错误'}
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
+	customer = customers[0]
+
+	orders = Order.objects.filter(customer=customer)
+	response = {'code':0,'msg':'success'}
+	response['order_list'] = []
+	for order in orders:
+		temp_order_obj = {}
+		temp_order_obj['order_id'] = order.id
+		temp_order_obj['order_status'] = order.status
+		temp_order_obj['shop_name'] = order.shop.name
+		temp_order_obj['shop_img'] = order.shop.shop_img
+		temp_order_obj['total_price'] = order.total_price
+		temp_order_obj['order_create_time'] = datetime.datetime.strftime(order.create_time,'%Y-%m-%d %H:%M:%S')
+		response['order_list'].append(temp_order_obj)
+
+	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
+
+# 获取订单详情信息
+def get_order_detail_info(request):
+	response = {}
+	token = None
+	order_id = None
+	code = 0 # 返回代码，默认为0
+
+	# 获取token
+	if 'token' in request.GET:
+		token = request.GET['token']
+	else:
+		code = -100
+
+	# 获取orderid
+	if 'order_id' in request.GET:
+		order_id = int(request.GET['order_id'])
+	else:
+		code = -100
+
+	# 查看token是否存在session中
+	if token not in request.session:
+		response = {'code':-1,'msg':'token失效，需重新登录'}
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))		
+
+	# 获取token对应的用户
+	customer_id = request.session[token]
+	customers = Customer.objects.filter(id=customer_id)
+	if len(customers) == 0:
+		response = {'code':-200,'msg':'其他错误'}
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
+	customer = customers[0]	
+
+	# 获取订单对象
+	orders = Order.objects.filter(id=order_id)
+	if len(orders) == 0:
+		response = {'code':-200,'msg':'其他错误'}
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
+	order = orders[0]
+	response = {'code':0,'msg':'success'}
+	response['delivery_address_id'] = order.delivery_address.id
+	response['paytype_id'] = order.pay_type.id
+	response['consume_type'] = order.consume_type
+	response['tip_type'] = order.tip_type
+	response['tip'] = order.tip
+	response['remark'] = order.remark
+	response['freight'] = order.freight
+	response['distance'] = order.distance
+	response['tax'] = order.tax
+	response['order_create_time'] = datetime.datetime.strftime(order.create_time,'%Y-%m-%d %H:%M:%S')
+	response['dish_order_list'] = []
+	for order_dish in order.order_dishes.all():
+		temp_dish_obj = {}
+		temp_dish_obj['dish_id'] = order_dish.dish.id
+		temp_dish_obj['dish_type'] = order_dish.dish.dish_type
+		temp_dish_obj['order_number'] = order_dish.dish_order_number
+		if int(temp_dish_obj['dish_type']) == 1:
+			temp_dish_obj['side_dish_list'] = []
+			for ordered_subdish in order_dish.ordered_subdishes.all():
+				temp_subdish_obj = {}
+				temp_subdish_obj['side_dish_id'] = ordered_subdish.subdish.id
+				temp_subdish_obj['order_number'] = ordered_subdish.subdish_order_number
+				temp_dish_obj['side_dish_list'].append(temp_subdish_obj)
+		response['dish_order_list'].append(temp_dish_obj)
+	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
+
+
 # 生成随机字符串
-def token_str(randomlength=12):
+def token_str(randomlength=40):
     str = ''
     chars = 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789'
     length = len(chars) - 1

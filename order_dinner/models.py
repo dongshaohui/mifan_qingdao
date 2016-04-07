@@ -11,11 +11,15 @@ class Shop(models.Model):
 	name = models.CharField(verbose_name=u'商铺名',max_length=255) # 商铺名
 	search_addr = models.CharField(default='',verbose_name=u'商铺搜索地址',max_length=255) # 商铺搜索地址
 	detail_addr = models.CharField(default='',verbose_name=u'商铺详细地址',max_length=255) # 商铺详细地址
+	longitude = models.FloatField(verbose_name=u'经度',default=0.0) # 经度
+	latitude = models.FloatField(verbose_name=u'纬度',default=0.0) # 纬度	
 	postcode = models.CharField(default='',verbose_name=u'邮编',max_length=255) # 邮编
 	mobile = models.CharField(verbose_name=u'联系人电话',max_length=255) # 联系人手机
+	business_hour = models.CharField(verbose_name=u'营业时间',max_length=255) # 营业时间
 	remark = models.TextField(default='',verbose_name=u'备注信息',max_length=255) # 备注信息
-	status = models.BooleanField(verbose_name=u'是否营业',default=True) # 是否营业
-	shop_img = models.CharField(default='',verbose_name=u'商铺图片',max_length=255) # 商铺图片
+	status = models.IntegerField(verbose_name=u'是否营业',default=1) # 是否营业（0-未营业 1-营业）
+	shop_img = models.ImageField(verbose_name=u'商铺图片',upload_to='imgs/') # 商铺图片
+	shop_feature = models.CharField(default='',verbose_name=u'商店特色',max_length=255) # 商店特色
 	commission = models.FloatField(verbose_name=u'佣金百分比',default=0.0) # 佣金百分比
 	def __unicode__(self):
 		return self.name
@@ -38,9 +42,15 @@ class Customer(models.Model):
 	def __unicode__(self):
 		return self.name
 
+# 手机验证码记录
+class VerificationCode(models.Model):
+	mobile = models.CharField(verbose_name=u'手机',max_length=255) # 手机
+	verification_code = models.CharField(verbose_name=u'手机验证码',max_length=255,default='') # 手机验证码
+
+
 # 支付方式
 class UserPayType(models.Model):
-	customer = models.ForeignKey(Customer,related_name='customer_user_pay_types') # 支付方式从属的用户
+	customer = models.ForeignKey(Customer,related_name='customer_userpaytype') # 支付方式从属的用户
 	pay_type = models.IntegerField(default = 0,verbose_name=u'支付方式') # 支付方式（0-信用卡，1-货到付款）
 	credit_card = models.CharField(verbose_name=u'信用卡号',max_length=255) # 信用卡号
 	security_code = models.CharField(verbose_name=u'信用安全码',max_length=255) # 信用安全码
@@ -69,7 +79,7 @@ class CreditCard(models.Model):
 
 # 子菜品
 class Subdish(models.Model):
-	shop = models.OneToOneField(Shop) # 配菜对应商铺
+	shop = models.ForeignKey(Shop) # 配菜对应商铺
 	name = models.CharField(verbose_name=u'配菜名',max_length=255) # 子菜品的名称
 	price = models.FloatField(verbose_name=u'配菜单价',default=0.0) # 子菜品的价格
 
@@ -87,10 +97,34 @@ class Dish(models.Model):
 	def __unicode__(self):
 		return self.name
 
+# 订单中的子菜品
+class OrderSubDish(models.Model):
+	subdish = models.ForeignKey(Subdish) # 对应的子菜品
+	subdish_order_number = models.IntegerField(verbose_name=u'子菜品点单次数',default=0) 
+
+# 订单中的菜品
+class OrderDish(models.Model):
+	dish = models.ForeignKey(Dish,related_name='order_dish')  # 订单中菜品对应的菜品
+	dish_order_number = models.IntegerField(verbose_name=u'菜品点单次数',default=0) 
+	ordered_subdishes = models.ManyToManyField(OrderSubDish,blank=True,null=True) # 订单中菜品包含的子菜品
+
 # 订单
 class Order(models.Model):
-	customer = models.OneToOneField(Customer) # 订单对应客户
-	dish = models.OneToOneField(Dish) # 订单对应的菜品
-	status = models.CharField(verbose_name=u'订单状态',max_length=255) # 订单状态 -- 'PROGRESS'、'WAITPAY'、'SUCCESS'、'CLOSE'
+	customer = models.ForeignKey(Customer,related_name="customer_order") # 订单对应客户
+	shop = models.ForeignKey(Shop,related_name="shop_order") # 订单对应商铺
+	order_dishes = models.ManyToManyField(OrderDish,blank=True,null=True) # 订单包含的菜品
+	delivery_address = models.ForeignKey(DeliveryAddress,related_name="delivery_address_order",blank=True,null=True) # 订单对应的地址
+	pay_type = models.ForeignKey(UserPayType,related_name="user_pay_type_order",blank=True,null=True) # 订单对应的支付方式
+	consume_type =  models.IntegerField(verbose_name=u'消费方式',default=0) # （0-配送，1-到店消费）
+	freight = models.FloatField(verbose_name=u'订单运费',default=0.0) # 订单运费
+	tip_type = models.IntegerField(verbose_name=u'小费方式',default=0) # （0-小费比率，1-现金小费）
+	tax = models.FloatField(verbose_name=u'订单税费',default=0.0) # 订单税费
+	distance = models.FloatField(verbose_name=u'订单距离',default=0.0) # 订单距离
+	remark = models.CharField(verbose_name=u'订单备注',max_length=255) # 订单备注
+	tip = models.FloatField(verbose_name=u'订单小费',default=0.0) # 订单小费
+	status = models.CharField(verbose_name=u'订单状态',max_length=255) # 订单状态 -- 'PROGRESS'、'ACCEPTED'、'SUCCESS'、'CLOSE'
+	reject_reason = models.CharField(verbose_name=u'订单取消原因',max_length=255,default='') # 订单取消原因
+	total_price = models.FloatField(verbose_name=u'订单总价格',default=0.0) # 订单总价格
 	create_time = models.DateTimeField(verbose_name=u'创建时间',auto_now=True)
-	update_time = models.DateTimeField(verbose_name=u'修改时间',default=timezone.now)	
+	update_time = models.DateTimeField(verbose_name=u'修改时间',default=timezone.now)
+
