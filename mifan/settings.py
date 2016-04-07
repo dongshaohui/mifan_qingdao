@@ -43,6 +43,7 @@ INSTALLED_APPS = (
     'order_dinner',
     'shop_serv',
     'user_serv',
+    'gunicorn',
 )
 
 MIDDLEWARE_CLASSES = (
