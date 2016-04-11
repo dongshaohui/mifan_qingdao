@@ -1139,7 +1139,8 @@ def get_all_orders(request):
 		temp_order_obj = {}
 		temp_order_obj['order_id'] = order.id
 		temp_order_obj['order_status'] = order.status
-		temp_order_obj['shop_name'] = order.shop.name
+		temp_order_obj['shop_cn_name'] = order.shop.name
+		temp_order_obj['shop_en_name'] = order.shop.name_en
 		temp_order_obj['shop_img'] = order.shop.shop_img.name
 		temp_order_obj['total_price'] = order.total_price
 		temp_order_obj['order_create_time'] = datetime.datetime.strftime(order.create_time,'%Y-%m-%d %H:%M:%S')
