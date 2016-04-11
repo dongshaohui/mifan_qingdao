@@ -873,7 +873,8 @@ def search_dishes(request):
 			temp_dish_obj['dish_id'] = dish_obj.id
 			temp_dish_obj['dish_type'] = dish_obj.dish_type
 			temp_dish_obj['dish_img'] = dish_obj.dish_img.name
-			temp_dish_obj['dish_name'] = dish_obj.name
+			temp_dish_obj['dish_cn_name'] = dish_obj.name
+			temp_dish_obj['dish_en_name'] = dish_obj.name_en
 			start_date = datetime.date(year,month,1)
 			end_date = None
 			if month == 12:
