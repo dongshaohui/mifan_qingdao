@@ -73,6 +73,7 @@ urlpatterns = patterns('',
     ###########################     
     url(r'^user_serv/get_all_side_dishes','user_serv.views.get_all_side_dishes'), 
     url(r'^user_serv/search_dishes','user_serv.views.search_dishes'),
+    url(r'^user_serv/get_dish_detail','user_serv.views.get_dish_detail'),
     ########################### 
     #
     #   Order Module Interface

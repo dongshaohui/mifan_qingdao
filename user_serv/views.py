@@ -828,7 +828,8 @@ def get_all_side_dishes(request):
 	for subdish_obj in subdish_objs:
 		tmp_subdish_obj = {}
 		tmp_subdish_obj['side_dish_id'] = subdish_obj.id
-		tmp_subdish_obj['side_dish_name'] = subdish_obj.name
+		tmp_subdish_obj['side_dish_cn_name'] = subdish_obj.name
+		tmp_subdish_obj['side_dish_en_name'] = subdish_obj.name_en
 		tmp_subdish_obj['side_dish_price'] = subdish_obj.price
 		response['side_dish_info_list'].append(tmp_subdish_obj)
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))	
@@ -891,6 +892,51 @@ def search_dishes(request):
 			response['dish_info_list'].append(temp_dish_obj)
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
+# 获取详情
+def get_dish_detail(request):
+	response = {}
+	dish_id = None
+	code = None
+	if 'dish_id' in request.GET:
+		dish_id = request.GET['dish_id']
+	else:
+		code = -100	
+	
+	if code == -100:
+		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！'}
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
+	dishes = Dish.objects.filter(id=dish_id)
+	if len(dishes) == 0:
+		response = {'code':-1,'msg':'dish_id无效'}
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))		
+	dish = dishes[0]
+	temp_dish_info = {}
+	temp_dish_info = {'code':0,'msg':'success'}
+	temp_dish_info['dish_id'] = dish.id
+	temp_dish_info['dish_type'] = dish.dish_type
+	temp_dish_info['dish_name_cn'] = dish.name
+	temp_dish_info['dish_name_en'] = dish.name_en
+	temp_dish_info['dish_img'] = dish.dish_img.name
+	temp_dish_info['dish_price'] = dish.price
+	temp_dish_info['current_month_order'] = 0
+	now = datetime.datetime.now()
+	month = now.month
+	year = now.year
+	start_date = datetime.date(year,month,1)
+	end_date = None
+
+	if month == 12:
+		end_date = datetime.date(year+1,1,1)
+	else:
+		end_date = datetime.date(year,month+1,1)
+	shop = dish.shop
+	current_month_shop_orders = Order.objects.filter(shop_id=shop.id).filter(create_time__range=(start_date,end_date))
+	for current_month_shop_order in current_month_shop_orders:
+		for order_dish in current_month_shop_order.order_dishes.all():
+			if order_dish.dish.id == dish.id:
+				temp_dish_info['current_month_order'] += 1	
+	response = temp_dish_info
+	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 ########################### 
 #
 #	Order Module Interface
