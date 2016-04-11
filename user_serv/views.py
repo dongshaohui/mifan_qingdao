@@ -765,6 +765,9 @@ def get_all_shop_infos(request):
 	month = now.month
 	year = now.year
 	shops = Shop.objects.all()
+
+	total_shop_number = len(shops)
+	response['total_shop_number'] = total_shop_number
 	pageno = 1
 	pagelength = len(shops)
 	if "pageno" in request.GET:
