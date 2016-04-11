@@ -752,10 +752,20 @@ def get_all_shop_infos(request):
 	response = {}
 	response = {'code':0,'msg':'success'}
 	response['shop_info_list'] = []
-	shops = Shop.objects.all()
+	
 	now = datetime.datetime.now()
 	month = now.month
-	year = now.year		
+	year = now.year
+	shops = Shop.objects.all()
+	pageno = 1
+	pagelength = len(shops)
+	if "pageno" in request.GET:
+		if int(request.GET['pageno']) > 0:
+			pageno = int(request.GET['pageno'])
+	if "pagelength" in request.GET:
+		pagelength = int(request.GET['pagelength'])
+	
+	shops = shops[(pageno-1)*pagelength:pageno*pagelength]
 	for shop in shops:
 		temp_shop_obj = {}
 		temp_shop_obj['status'] = shop.status
