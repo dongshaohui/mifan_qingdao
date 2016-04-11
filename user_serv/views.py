@@ -680,7 +680,10 @@ def search_shop_infos(request):
 		temp_searched_result['shop_id'] = searched_result.id
 		temp_searched_result['status'] = searched_result.status
 		temp_searched_result['img'] = searched_result.shop_img.name
-		temp_searched_result['name'] = searched_result.name
+		temp_searched_result['name_en'] = searched_result.name_en
+		temp_searched_result['name_cn'] = searched_result.name
+		temp_searched_result['shop_feature'] = searched_result.shop_feature
+		temp_searched_result['shop_feature_en'] = searched_result.shop_feature_en
 		temp_searched_result['address'] = searched_result.search_addr + ' ' + searched_result.detail_addr
 		start_date = datetime.date(year,month,1)
 		end_date = None
