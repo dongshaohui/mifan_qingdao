@@ -761,7 +761,10 @@ def get_all_shop_infos(request):
 		temp_shop_obj['status'] = shop.status
 		temp_shop_obj['shop_id'] = shop.id
 		temp_shop_obj['img'] = shop.shop_img.name
-		temp_shop_obj['name'] = shop.name
+		temp_shop_obj['name_cn'] = shop.name
+		temp_shop_obj['name_en'] = shop.name_en
+		temp_shop_obj['shop_feature'] = shop.shop_feature
+		temp_shop_obj['shop_feature_en'] = shop.shop_feature_en
 		temp_shop_obj['address'] = shop.search_addr + ' ' + shop.detail_addr
 		start_date = datetime.date(year,month,1)
 		end_date = None

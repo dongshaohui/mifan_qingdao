@@ -8,7 +8,8 @@ import django.utils.timezone as timezone
 
 # 商铺
 class Shop(models.Model):
-	name = models.CharField(verbose_name=u'商铺名',max_length=255) # 商铺名
+	name = models.CharField(verbose_name=u'商铺中文名',max_length=255) # 商铺名
+	name_en = models.CharField(default='',verbose_name=u'商铺英文名',max_length=255) # 商铺名
 	search_addr = models.CharField(default='',verbose_name=u'商铺搜索地址',max_length=255) # 商铺搜索地址
 	detail_addr = models.CharField(default='',verbose_name=u'商铺详细地址',max_length=255) # 商铺详细地址
 	longitude = models.FloatField(verbose_name=u'经度',default=0.0) # 经度
@@ -16,10 +17,12 @@ class Shop(models.Model):
 	postcode = models.CharField(default='',verbose_name=u'邮编',max_length=255) # 邮编
 	mobile = models.CharField(verbose_name=u'联系人电话',max_length=255) # 联系人手机
 	business_hour = models.CharField(verbose_name=u'营业时间',max_length=255) # 营业时间
-	remark = models.TextField(default='',verbose_name=u'备注信息',max_length=255) # 备注信息
+	remark = models.TextField(default='',verbose_name=u'备注中文信息',max_length=255) # 备注信息
+	remark_en = models.TextField(default='',verbose_name=u'备注英文信息',max_length=255) # 备注信息英文
 	status = models.IntegerField(verbose_name=u'是否营业',default=1) # 是否营业（0-未营业 1-营业）
 	shop_img = models.ImageField(verbose_name=u'商铺图片',upload_to='imgs/') # 商铺图片
-	shop_feature = models.CharField(default='',verbose_name=u'商店特色',max_length=255) # 商店特色
+	shop_feature = models.CharField(default='',verbose_name=u'商店特色中文',max_length=255) # 商店特色
+	shop_feature_en = models.CharField(default='',verbose_name=u'商店特色英文',max_length=255) # 商店英文特色
 	commission = models.FloatField(verbose_name=u'佣金百分比',default=0.0) # 佣金百分比
 	def __unicode__(self):
 		return self.name
@@ -80,17 +83,19 @@ class CreditCard(models.Model):
 # 子菜品
 class Subdish(models.Model):
 	shop = models.ForeignKey(Shop) # 配菜对应商铺
-	name = models.CharField(verbose_name=u'配菜名',max_length=255) # 子菜品的名称
+	name = models.CharField(default='',verbose_name=u'配菜中文名',max_length=255) # 子菜品的中文名称
+	name_en = models.CharField(default='',verbose_name=u'配菜英文名',max_length=255) # 子菜品的英文名称
 	price = models.FloatField(verbose_name=u'配菜单价',default=0.0) # 子菜品的价格
 
 	def __unicode__(self):
 		return self.name
 # 菜品
 class Dish(models.Model):
-	shop = models.ForeignKey(Shop,related_name='shop_dish') # 菜品隶属的商铺
+	shop = models.ForeignKey(Shop,related_name='shop_dish',verbose_name="选取店铺") # 菜品隶属的商铺
 	dish_type = models.IntegerField(verbose_name=u'菜品类型',default=0) # （0-单品菜，1-含配菜）
-	subdishes = models.ManyToManyField(Subdish,blank=True,null=True) # 菜品中包含的子菜品
- 	name = models.CharField(verbose_name=u'菜名',max_length=255) # 菜品的名称
+	subdishes = models.ManyToManyField(Subdish,blank=True,null=True,verbose_name="选取子菜品") # 菜品中包含的子菜品
+ 	name = models.CharField(default='',verbose_name=u'中文菜名',max_length=255) # 中文菜品的名称
+ 	name_en = models.CharField(default='',verbose_name=u'英文菜名',max_length=255) # 英文菜品的名称
  	dish_img = models.ImageField(verbose_name=u'菜品图片',upload_to='imgs/') # 菜品的图片
 	price = models.FloatField(verbose_name=u'菜品价格',default=0.0) # 菜品的价格
 
