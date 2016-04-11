@@ -719,7 +719,10 @@ def get_shop_detail_info(request):
 	response = {'code':0,'msg':'success'}
 	response['status'] = shop.status
 	response['shop_img'] = shop.shop_img.name
+	response['name_cn'] = shop.name
+	response['name_en'] = shop.name_en
 	response['shop_feature'] = shop.shop_feature
+	response['shop_feature_en'] = shop.shop_feature_en
 	response['dish_info_list'] = []
 	response['shop_detail_info'] = {}
 	response['shop_detail_info']['address'] = shop.search_addr + ' ' + shop.detail_addr
@@ -733,6 +736,8 @@ def get_shop_detail_info(request):
 		temp_dish_info = {}
 		temp_dish_info['dish_id'] = dish.id
 		temp_dish_info['dish_type'] = dish.dish_type
+		temp_dish_info['dish_name_cn'] = dish.name
+		temp_dish_info['dish_name_en'] = dish.name_en
 		temp_dish_info['dish_img'] = dish.dish_img.name
 		temp_dish_info['dish_price'] = dish.price
 		temp_dish_info['current_month_order'] = 0
