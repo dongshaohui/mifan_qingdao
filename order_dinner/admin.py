@@ -18,7 +18,8 @@ class GlobalSetting(object):
         return (
             {'title': '商铺管理', 'perm': self.get_model_perm(Shop, 'change'), 'menus':(
             	{'title': '商铺信息管理',  'url': self.get_model_url(Shop, 'changelist')},
-            	{'title': '商铺管理员管理',  'url': self.get_model_url(ShopManager, 'changelist')},)},
+            	{'title': '商铺管理员管理',  'url': self.get_model_url(ShopManager, 'changelist')},)
+            },
             {
             	'title': '内容管理', 'perm': self.get_model_perm(Dish, 'change'), 'menus':(
                 

@@ -679,7 +679,7 @@ def search_shop_infos(request):
 		temp_searched_result = {}
 		temp_searched_result['shop_id'] = searched_result.id
 		temp_searched_result['status'] = searched_result.status
-		temp_searched_result['img'] = searched_result.shop_img
+		temp_searched_result['img'] = searched_result.shop_img.name
 		temp_searched_result['name'] = searched_result.name
 		temp_searched_result['address'] = searched_result.search_addr + ' ' + searched_result.detail_addr
 		start_date = datetime.date(year,month,1)
@@ -715,7 +715,7 @@ def get_shop_detail_info(request):
 	shop = shop_objs[0]
 	response = {'code':0,'msg':'success'}
 	response['status'] = shop.status
-	response['shop_img'] = shop.shop_img
+	response['shop_img'] = shop.shop_img.name
 	response['shop_feature'] = shop.shop_feature
 	response['dish_info_list'] = []
 	response['shop_detail_info'] = {}
@@ -760,7 +760,7 @@ def get_all_shop_infos(request):
 		temp_shop_obj = {}
 		temp_shop_obj['status'] = shop.status
 		temp_shop_obj['shop_id'] = shop.id
-		temp_shop_obj['img'] = shop.shop_img
+		temp_shop_obj['img'] = shop.shop_img.name
 		temp_shop_obj['name'] = shop.name
 		temp_shop_obj['address'] = shop.search_addr + ' ' + shop.detail_addr
 		start_date = datetime.date(year,month,1)
@@ -1072,7 +1072,7 @@ def get_all_orders(request):
 		temp_order_obj['order_id'] = order.id
 		temp_order_obj['order_status'] = order.status
 		temp_order_obj['shop_name'] = order.shop.name
-		temp_order_obj['shop_img'] = order.shop.shop_img
+		temp_order_obj['shop_img'] = order.shop.shop_img.name
 		temp_order_obj['total_price'] = order.total_price
 		temp_order_obj['order_create_time'] = datetime.datetime.strftime(order.create_time,'%Y-%m-%d %H:%M:%S')
 		response['order_list'].append(temp_order_obj)
