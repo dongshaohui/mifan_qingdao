@@ -1,6 +1,6 @@
 #coding=utf-8
 from django.contrib import admin
-from .models import Customer,Subdish,Dish,Order,Shop,ShopManager
+from .models import Customer,Subdish,Dish,Order,Shop,ShopManager,BannerImg
 import xadmin
 from xadmin import views
 from xadmin.layout import Main, TabHolder, Tab, Fieldset, Row, Col, AppendedText, Side
@@ -25,10 +25,12 @@ class GlobalSetting(object):
                 
                 {'title':'配菜管理','url': self.get_model_url(Subdish, 'changelist')},
                 {'title':'菜品管理','url': self.get_model_url(Dish, 'changelist')},
-                {'title':'订单管理','url': self.get_model_url(Order, 'changelist')}
+                {'title':'订单管理','url': self.get_model_url(Order, 'changelist')},
+                
             )},
             {'title': '客户管理', 'perm': self.get_model_perm(Customer, 'change'), 'menus':(
             	{'title': '客户管理',  'url': self.get_model_url(Customer, 'changelist')},
+            	{'title':'Banner图管理','url': self.get_model_url(BannerImg, 'changelist')},
             	)},            	
         )
 
@@ -95,6 +97,14 @@ class ShopManagerAdmin(object):
 		# print self.new_obj.user_ptr_id
 		# print current_shop_id
 
+# 定制Banner图管理
+class BannerImgAdmin(object):
+	def preview(self,obj):
+		return '<img src="/media/%s" height="670" width="1242" />' %(obj.img)	
+	preview.allow_tags = True
+	preview.short_description = "banner展示图"		
+	# fields = ('name','mobile','valid')
+	list_display = ('name','preview','priority')
 xadmin.site.register(views.CommAdminView, GlobalSetting)
 xadmin.site.register(Customer,CustomAdmin)
 xadmin.site.register(Subdish,SubdishAdmin)
@@ -102,6 +112,7 @@ xadmin.site.register(Dish,DishAdmin)
 xadmin.site.register(Shop)
 xadmin.site.register(Order)
 xadmin.site.register(ShopManager,ShopManagerAdmin)
+xadmin.site.register(BannerImg,BannerImgAdmin)
 
 # xadmin.site.register(Customer,CustomAdmin)
 # xadmin.site.register(views.CommAdminView, AdminMuneSetting)

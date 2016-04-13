@@ -3,11 +3,11 @@ from django.shortcuts import render
 from django.shortcuts import HttpResponse, render_to_response, redirect
 from django.views.decorators.csrf import csrf_exempt
 import urllib,urllib2,json,time,datetime
-from order_dinner.models import Customer,UserPayType,DeliveryAddress,Shop,Dish,Subdish,VerificationCode,Order,OrderDish,OrderSubDish
+from order_dinner.models import Customer,UserPayType,DeliveryAddress,Shop,Dish,Subdish,VerificationCode,Order,OrderDish,OrderSubDish,BannerImg
 from random import Random
 from django.contrib import auth
 import sms_sender
-from bs4 import BeautifulSoup
+# from bs4 import BeautifulSoup
 
 ########################### 
 #
@@ -1216,6 +1216,25 @@ def get_order_detail_info(request):
 		response['dish_order_list'].append(temp_dish_obj)
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
+########################### 
+#
+#	Other Module Interface
+#
+########################### 
+
+# 获取banner list
+def get_banner_list(request):
+	response = {}
+	response = {'code':0,'msg':'success'}
+	banner_list = []
+	all_banner_objs = BannerImg.objects.order_by('priority')
+	for banner_obj in all_banner_objs:
+		temp_banner = {}
+		temp_banner['img'] = banner_obj.img.name
+		temp_banner['priority'] = banner_obj.priority
+		banner_list.append(temp_banner)
+	response['banner_list'] = banner_list
+	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
 # 生成随机字符串
 def token_str(randomlength=40):

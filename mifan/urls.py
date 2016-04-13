@@ -82,5 +82,10 @@ urlpatterns = patterns('',
     url(r'^user_serv/upload_order','user_serv.views.upload_order'),
     url(r'^user_serv/get_all_orders','user_serv.views.get_all_orders'),
     url(r'^user_serv/get_order_detail_info','user_serv.views.get_order_detail_info'),
-
+    ########################### 
+    #
+    #   OTHER MODULE
+    #
+    ########################### 
+    url(r'^user_serv/get_banner_list','user_serv.views.get_banner_list'),
 )+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)   
