@@ -6,6 +6,21 @@ from django.contrib.auth.models import User, UserManager
 import django.utils.timezone as timezone
 # Create your models here.
 
+
+
+# 商铺营业状态
+class ShopBusinessStatus(models.Model):
+	desc = models.CharField(verbose_name=u'状态描述',max_length=255) 
+	status_tag =  models.IntegerField(verbose_name=u'是否营业',default=1) # 是否营业（0-未营业 1-营业）
+
+	class Meta:
+		verbose_name = '商铺营业状态'
+		verbose_name_plural  = '商铺营业状态'
+		# ordering = ['-priority']	
+
+	def __unicode__(self):
+		return self.desc
+
 # 商铺
 class Shop(models.Model):
 	name = models.CharField(verbose_name=u'商铺中文名',max_length=255) # 商铺名
@@ -59,6 +74,7 @@ class Customer(models.Model):
 class VerificationCode(models.Model):
 	mobile = models.CharField(verbose_name=u'手机',max_length=255) # 手机
 	verification_code = models.CharField(verbose_name=u'手机验证码',max_length=255,default='') # 手机验证码
+
 
 
 # 支付方式

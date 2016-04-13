@@ -440,6 +440,30 @@ def site_search(request):
 		response['address_list'].append(temp_resut)
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
+# 临时删除用户
+def drop_user(request):
+	response = {}
+	mobile = None
+	code = 0 # 返回代码，默认为0
+
+	if 'mobile' in request.GET:
+		mobile = request.GET['mobile']
+	else:
+		code = -100
+
+	if code == -100:
+		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！'}
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
+
+	customers = Customer.objects.filter(mobile=mobile)
+	if len(customers) == 0:
+		response = {'code':-200,'msg':'其他错误'}
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
+	customer = customers[0]
+	customer.delete()
+	response = {'code':0,'msg':'success'}
+	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
+
 # 新增收货地址
 def add_delivery_address(request):
 	response = {}
@@ -1227,7 +1251,7 @@ def get_banner_list(request):
 	response = {}
 	response = {'code':0,'msg':'success'}
 	banner_list = []
-	all_banner_objs = BannerImg.objects.order_by('priority')
+	all_banner_objs = BannerImg.objects.order_by('-priority')
 	for banner_obj in all_banner_objs:
 		temp_banner = {}
 		temp_banner['img'] = banner_obj.img.name
