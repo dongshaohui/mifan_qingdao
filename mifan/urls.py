@@ -39,6 +39,7 @@ urlpatterns = patterns('',
     url(r'^user_serv/login','user_serv.views.login'), 
     url(r'^user_serv/send_verification_code','user_serv.views.send_verification_code'), 
     url(r'^user_serv/drop_user','user_serv.views.drop_user'), 
+    # url(r'^user_serv/get_verification_code','user_serv.views.get_verification_code'), 
     ########################### 
 	#
 	#	User_Pay_Type_Module

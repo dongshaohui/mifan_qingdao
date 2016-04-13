@@ -194,7 +194,7 @@ def send_verification_code(request):
 	response_dict = json.loads(response_str)
 	response['code'] = (int)(response_dict['code'])
 	response['msg'] = response_dict['msg']
-
+	response['verification_code'] = verification_code
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
 
@@ -463,6 +463,7 @@ def drop_user(request):
 	customer.delete()
 	response = {'code':0,'msg':'success'}
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
+
 
 # 新增收货地址
 def add_delivery_address(request):
