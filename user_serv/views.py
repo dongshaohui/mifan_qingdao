@@ -178,6 +178,7 @@ def send_verification_code(request):
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))		
 
 	verification_code = sms_sender.token_str()
+	phoneno = "+1"+phoneno
 	response_str = sms_sender.jindouyun_sms_sender(phoneno,verification_code)
 	# 将短信验证码记录
 	verification_code_records = VerificationCode.objects.filter(mobile=phoneno)
@@ -194,7 +195,8 @@ def send_verification_code(request):
 	response_dict = json.loads(response_str)
 	response['code'] = (int)(response_dict['code'])
 	response['msg'] = response_dict['msg']
-	response['verification_code'] = verification_code
+	if int(response['code']) == 0:
+		response['verification_code'] = verification_code
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
 
