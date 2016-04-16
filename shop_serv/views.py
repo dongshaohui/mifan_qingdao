@@ -564,6 +564,89 @@ def search_orders(request):
 
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
+
+# 上传商户地址
+def upload_addr(request):
+	token = None
+	search_addr = None
+	detail_addr = None
+	longitude = None
+	latitude = None
+	postcode = None
+	if 'token' in request.GET:
+		token = request.GET['token']
+	else:
+		code = -100		
+
+	if 'search_addr' in request.GET:
+		search_addr = request.GET['search_addr']
+	else:
+		code = -100		
+
+	if 'detail_addr' in request.GET:
+		detail_addr = request.GET['detail_addr']
+	else:
+		code = -100		
+
+	if 'longitude' in request.GET:
+		longitude = request.GET['longitude']
+	else:
+		code = -100		
+
+	if 'latitude' in request.GET:
+		latitude = request.GET['latitude']
+	else:
+		code = -100			
+		
+	if 'postcode' in request.GET:
+		postcode = request.GET['postcode']
+	else:
+		code = -100	
+
+	if code == -100:
+		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！'}
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
+											
+	# 查看token是否存在session中
+	if token not in request.session:
+		response = {'code':-1,'msg':'token失效，需重新登录'}
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
+
+	shop_id = (int)(request.session[token])	
+	shop_obj = Shop.objects.get(id=shop_id)
+	shop_obj.search_addr = search_addr
+	shop_obj.detail_addr = detail_addr
+	shop_obj.longitude = float(longitude)
+	shop_obj.latitude = float(latitude)
+	shop_obj.postcode = postcode
+	shop_obj.save()
+	response = {'code':0,'msg':'success'}
+	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
+
+def get_addr(request):
+	token = None
+	if 'token' in request.GET:
+		token = request.GET['token']
+	else:
+		code = -100		
+
+	if code == -100:
+		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！'}
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
+											
+	# 查看token是否存在session中
+	if token not in request.session:
+		response = {'code':-1,'msg':'token失效，需重新登录'}
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
+	shop_id = (int)(request.session[token])	
+	shop_obj = Shop.objects.get(id=shop_id)		
+	response = {'code':0,'msg':'success'}
+	response['search_addr'] = shop_obj.search_addr
+	response['detail_addr'] = shop_obj.detail_addr
+	response['longitude'] = shop_obj.longitude
+	response['latitude'] = shop_obj.latitude
+	response['postcode'] = shop_obj.postcode
+	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 # 生成随机字符串
 def token_str(randomlength=40):
     str = ''

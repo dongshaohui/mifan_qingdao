@@ -1,6 +1,6 @@
 #coding=utf-8
 from django.contrib import admin
-from .models import Customer,Subdish,Dish,Order,Shop,ShopManager,BannerImg
+from .models import Customer,Subdish,Dish,Order,Shop,ShopManager,BannerImg,GlobalSetting
 import xadmin
 from xadmin import views
 from xadmin.layout import Main, TabHolder, Tab, Fieldset, Row, Col, AppendedText, Side
@@ -9,7 +9,7 @@ from django.contrib.auth.models import User, UserManager
 from xadmin.plugins.batch import BatchChangeAction
 # Register your models here.
 
-class GlobalSetting(object):
+class GlobalViewSetting(object):
     #设置base_site.html的Title
     site_title = '\"筋斗云\"后台管理'
     #设置base_site.html的Footer
@@ -17,8 +17,11 @@ class GlobalSetting(object):
     def get_site_menu(self):
         return (
             {'title': '商铺管理', 'perm': self.get_model_perm(Shop, 'change'), 'menus':(
+            	{'title': '全局参数管理',  'url': self.get_model_url(GlobalSetting, 'changelist')},
             	{'title': '商铺信息管理',  'url': self.get_model_url(Shop, 'changelist')},
-            	{'title': '商铺管理员管理',  'url': self.get_model_url(ShopManager, 'changelist')},)
+            	{'title': '商铺管理员管理',  'url': self.get_model_url(ShopManager, 'changelist')},
+            	# {'title': '超级管理员菜品管理',  'url': self.get_model_url(Dish, 'changelist')},
+              )
             },
             {
             	'title': '内容管理', 'perm': self.get_model_perm(Dish, 'change'), 'menus':(
@@ -61,7 +64,11 @@ class SubdishAdmin(object):
 
 # 定制菜品管理端信息
 class DishAdmin(object):
+	fields = ('name','price','dish_type','subdishes','name','name_en','dish_img')
 	list_display = ('name','price','shop','preview')
+
+	# def changelist_view(self):
+	# 	print "changelist"
 
 	def preview(self,obj):
 		return '<img src="/media/%s" height="80" width="100" />' %(obj.dish_img)
@@ -78,6 +85,16 @@ class DishAdmin(object):
 		else:
 			return super(DishAdmin,self).get_list_queryset()
 
+	# 保存model
+	def save_models(self):
+		obj = self.new_obj
+		request = self.request
+		dish_id = obj.id
+		author_id = request.user.id
+		shop_id = ShopManager.objects.get(user_ptr_id=author_id).shop_id
+		obj.shop_id = shop_id
+		obj.save()
+		# print "author_id",author_id
 
 # 定制商铺管理员信息
 class ShopManagerAdmin(object):
@@ -100,12 +117,18 @@ class ShopManagerAdmin(object):
 # 定制Banner图管理
 class BannerImgAdmin(object):
 	def preview(self,obj):
-		return '<img src="/media/%s" height="670" width="1242" />' %(obj.img)	
+		return '<img src="/media/%s" height="80" width="100" />' %(obj.img)	
 	preview.allow_tags = True
-	preview.short_description = "banner展示图"		
+	preview.short_description = "banner展示图（缩略图）"		
 	# fields = ('name','mobile','valid')
 	list_display = ('name','preview','priority')
-xadmin.site.register(views.CommAdminView, GlobalSetting)
+
+# 定制全局参数管理
+class GlobalSettingAdmin(object):
+	fields = ("setting_key","setting_desc","setting_value")
+	list_display = ("setting_key","setting_desc","setting_value")
+
+xadmin.site.register(views.CommAdminView, GlobalViewSetting)
 xadmin.site.register(Customer,CustomAdmin)
 xadmin.site.register(Subdish,SubdishAdmin)
 xadmin.site.register(Dish,DishAdmin)
@@ -113,6 +136,6 @@ xadmin.site.register(Shop)
 xadmin.site.register(Order)
 xadmin.site.register(ShopManager,ShopManagerAdmin)
 xadmin.site.register(BannerImg,BannerImgAdmin)
-
+xadmin.site.register(GlobalSetting,GlobalSettingAdmin)
 # xadmin.site.register(Customer,CustomAdmin)
 # xadmin.site.register(views.CommAdminView, AdminMuneSetting)

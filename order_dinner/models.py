@@ -8,6 +8,21 @@ import django.utils.timezone as timezone
 
 
 
+# 超级管理员全局设置
+class GlobalSetting(models.Model):
+	setting_key = models.CharField(verbose_name=u'设置变量名',max_length=255,default="设置变量名") 
+	setting_desc = models.CharField(verbose_name=u'变量描述',max_length=255,default="变量描述") 
+	setting_value = models.FloatField(verbose_name=u'值',default=0.0)
+
+	class Meta:
+		verbose_name = '全局设置'
+		verbose_name_plural  = '全局设置'
+		# ordering = ['-priority']	
+
+	def __unicode__(self):
+		return self.setting_key
+
+
 # 商铺营业状态
 class ShopBusinessStatus(models.Model):
 	desc = models.CharField(verbose_name=u'状态描述',max_length=255) 
@@ -46,6 +61,18 @@ class Shop(models.Model):
 
 	def __unicode__(self):
 		return self.name
+
+# 佣金设置
+# class CommissionSetting(models.Model):
+	
+# 	class Meta:
+# 		verbose_name = '商店'
+# 		verbose_name_plural  = '商店'
+# 		# ordering = ['-priority']	
+
+# 	def __unicode__(self):
+# 		return self.name
+
 
 # 商铺管理员
 class ShopManager(User):
