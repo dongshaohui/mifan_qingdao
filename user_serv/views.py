@@ -52,30 +52,30 @@ def register(request):
 		code = -100
 
 	if code == -100:
-		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！'}
+		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！','msg_en':'Request parameter incomplete or incorrectly formatted!'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
 	# 判断手机是否注册过
 	search_users_by_phones = Customer.objects.filter(mobile=phoneno)
 	if len(search_users_by_phones) > 0:
-		response = {'code':-1,'msg':'phoneno已经注册过'}
+		response = {'code':-1,'msg':'手机号已经注册过','msg_en':'The phone number is already registered'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
 	print password,re_password
 	# 判断密码是否一致
 	if password != re_password:
-		response = {'code':-2,'msg':'两次输入密码不一致'}
+		response = {'code':-2,'msg':'两次输入密码不一致','msg_en':'The passwords twice entered are inconsistent'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
 	# 判断验证码是否正确
 	verification_code_objs = VerificationCode.objects.filter(mobile=phoneno)
 	if len(verification_code_objs) == 0:
-		response = {'code':-3,'msg':'验证码错误'} 
+		response = {'code':-3,'msg':'验证码错误','msg_en':'Verification code error'} 
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 	else:
 		verification_code_record = verification_code_objs[0].verification_code
 		if str(verification_code_record) != verification_code:
-			response = {'code':-3,'msg':'验证码错误'} 
+			response = {'code':-3,'msg':'验证码错误','msg_en':'Verification code error'} 
 			return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))			
 
 	new_customer = Customer.objects.create(mobile=phoneno,password=password)
@@ -108,19 +108,19 @@ def login(request):
 		code = -100
 
 	if code == -100:
-		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！'}
+		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！','msg_en':'Request parameter incomplete or incorrectly formatted!'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
 	search_customers_by_phones = Customer.objects.filter(mobile=phoneno) # 通过手机号搜索用户
 
 	# 如果用户不存在
 	if len(search_customers_by_phones) == 0:
-		response = {'code':-1,'msg':'用户名不存在'} 
+		response = {'code':-1,'msg':'用户名不存在','msg_en':'User does not exist'} 
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 	searched_customer = search_customers_by_phones[0]
 	# 如果密码输入错误
 	if searched_customer.password != password:
-		response = {'code':-2,'msg':'用户名或密码错误'} 
+		response = {'code':-2,'msg':'用户名或密码错误','msg_en':'Wrong username or password'} 
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
 	token = token_str() # 生成token
@@ -143,18 +143,18 @@ def personal_info(request):
 		code = -100	
 
 	if code == -100:
-		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！'}
+		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！','msg_en':'Request parameter incomplete or incorrectly formatted!'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))	
 
 	# 查看token是否存在session中
 	if token not in request.session:
-		response = {'code':-1,'msg':'token失效，需重新登录'}
+		response = {'code':-1,'msg':'token失效，需重新登录','msg_en':'Need to re-login'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))		
 
 	customer_id = request.session[token]
 	customers = Customer.objects.filter(id=customer_id)
 	if len(customers) == 0:
-		response = {'code':-200,'msg':'其他错误'}
+		response = {'code':-200,'msg':'其他错误','msg_en':'Other Failure'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 	customer = customers[0]
 	response = {'code':0,'msg':'success','phoneno':customer.mobile}
@@ -174,7 +174,7 @@ def send_verification_code(request):
 		code = -100
 
 	if code == -100:
-		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！'}
+		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！','msg_en':'Request parameter incomplete or incorrectly formatted!'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))		
 
 	verification_code = sms_sender.token_str()
@@ -245,14 +245,14 @@ def add_credit_card(request):
 		code = -100							
 	print credit_card_no,pin_code,expire_year,expire_month
 	if code == -100:
-		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！'}
+		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！','msg_en':'Request parameter incomplete or incorrectly formatted!'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))	
 
 	# 获取token对应的用户
 	customer_id = request.session[token]
 	customers = Customer.objects.filter(id=customer_id)
 	if len(customers) == 0:
-		response = {'code':-200,'msg':'其他错误'}
+		response = {'code':-200,'msg':'其他错误','msg_en':'Other Failure'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 	customer = customers[0]
 
@@ -284,25 +284,25 @@ def select_paytype(request):
 		code = -100		
  
  	if code == -100:
-		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！'}
+		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！' ,'msg_en':'Request parameter incomplete or incorrectly formatted!'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))	
 
 	# 查看token是否存在session中
 	if token not in request.session:
-		response = {'code':-1,'msg':'token失效，需重新登录'}
+		response = {'code':-1,'msg':'token失效，需重新登录','msg_en':'Need to re-login'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
 	# 查看paytype_id是否存在
 	paytypes = UserPayType.objects.filter(id=paytype_id) 
 	if len(paytypes) == 0:
-		response = {'code':-2,'msg':'paytype_id无效'}
+		response = {'code':-2,'msg':'paytype_id无效','msg_en':'paytype_id invalid'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))		
 
 	# 获取token对应的用户
 	customer_id = request.session[token]
 	customers = Customer.objects.filter(id=customer_id)
 	if len(customers) == 0:
-		response = {'code':-200,'msg':'其他错误'}
+		response = {'code':-200,'msg':'其他错误','msg_en':'Other Failure'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
 	customer = customers[0]
@@ -324,19 +324,19 @@ def paytype_infos(request):
 		code = -100	
 
 	if code == -100:
-		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！'}
+		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！' ,'msg_en':'Request parameter incomplete or incorrectly formatted!'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
 	# 查看token是否存在session中
 	if token not in request.session:
-		response = {'code':-1,'msg':'token失效，需重新登录'}
+		response = {'code':-1,'msg':'token失效，需重新登录','msg_en':'Need to re-login'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
 	# 获取token对应的用户
 	customer_id = request.session[token]
 	customers = Customer.objects.filter(id=customer_id)
 	if len(customers) == 0:
-		response = {'code':-200,'msg':'其他错误'}
+		response = {'code':-200,'msg':'其他错误','msg_en':'Other Failure'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 	customer = customers[0]	
 
@@ -369,25 +369,25 @@ def get_paytype(request):
 		code = -100	
 
 	if code == -100:
-		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！'}
+		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！' ,'msg_en':'Request parameter incomplete or incorrectly formatted!'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
 	# 查看token是否存在session中
 	if token not in request.session:
-		response = {'code':-1,'msg':'token失效，需重新登录'}
+		response = {'code':-1,'msg':'token失效，需重新登录','msg_en':'Need to re-login'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
 	# 获取token对应的用户
 	customer_id = request.session[token]
 	customers = Customer.objects.filter(id=customer_id)
 	if len(customers) == 0:
-		response = {'code':-200,'msg':'其他错误'}
+		response = {'code':-200,'msg':'其他错误','msg_en':'Other Failure'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 	customer = customers[0]
 
 	user_pay_type_id = customer.user_pay_type_id
 	if user_pay_type_id == 0:
-		response = {'code':-2,'msg':'用户还未指定支付方式'}
+		response = {'code':-2,'msg':'用户还未指定支付方式' ,'msg_en':'Choose pay type first!'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))		
 
 	user_pay_type_obj = UserPayType.objects.filter(id=user_pay_type_id)[0]
@@ -419,7 +419,7 @@ def site_search(request):
 		code = -100
 
 	if code == -100:
-		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！'}
+		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！','msg_en':'Request parameter incomplete or incorrectly formatted!'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
 	params = urllib.urlencode({'query': address, 'key': 'AIzaSyAcqwDjEnYPte9qNnCEH3L12doj8fZRnEY'})
@@ -454,12 +454,12 @@ def drop_user(request):
 		code = -100
 
 	if code == -100:
-		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！'}
+		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！','msg_en':'Request parameter incomplete or incorrectly formatted!'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
 	customers = Customer.objects.filter(mobile=mobile)
 	if len(customers) == 0:
-		response = {'code':-200,'msg':'其他错误'}
+		response = {'code':-200,'msg':'其他错误','msg_en':'Other Failure'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 	customer = customers[0]
 	customer.delete()
@@ -522,19 +522,19 @@ def add_delivery_address(request):
 		code = -100	
 
 	if code == -100:
-		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！'}
+		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！' ,'msg_en':'Request parameter incomplete or incorrectly formatted!'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
 	# 查看token是否存在session中
 	if token not in request.session:
-		response = {'code':-1,'msg':'token失效，需重新登录'}
+		response = {'code':-1,'msg':'token失效，需重新登录','msg_en':'Need to re-login'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
 	# 获取token对应的用户
 	customer_id = request.session[token]
 	customers = Customer.objects.filter(id=customer_id)
 	if len(customers) == 0:
-		response = {'code':-200,'msg':'其他错误'}
+		response = {'code':-200,'msg':'其他错误','msg_en':'Other Failure'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 	customer = customers[0]
 	# 新建DeliveryAddress对象
@@ -565,22 +565,22 @@ def select_delivery_address(request):
 		code = -100	
 
 	if code == -100:
-		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！'}
+		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！' ,'msg_en':'Request parameter incomplete or incorrectly formatted!'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
 	# 查看token是否存在session中
 	if token not in request.session:
-		response = {'code':-1,'msg':'token失效，需重新登录'}
+		response = {'code':-1,'msg':'token失效，需重新登录','msg_en':'Need to re-login'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 	# 查看地址是否有效
 	if len(DeliveryAddress.objects.filter(id=delivery_address_id)) == 0:
-		response = {'code':-2,'msg':'delivery_address_id无效'}
+		response = {'code':-2,'msg':'delivery_address_id无效','msg_en':'Delivery Address Invalid'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))		
 	# 获取token对应的用户
 	customer_id = request.session[token]
 	customers = Customer.objects.filter(id=customer_id)
 	if len(customers) == 0:
-		response = {'code':-200,'msg':'其他错误'}
+		response = {'code':-200,'msg':'其他错误','msg_en':'Other Failure'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 	customer = customers[0]
 	customer.delivery_address_id = delivery_address_id
@@ -599,19 +599,19 @@ def delivery_address_infos(request):
 		code = -100	
 
 	if code == -100:
-		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！'}
+		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！','msg_en':'Request parameter incomplete or incorrectly formatted!'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
 	# 查看token是否存在session中
 	if token not in request.session:
-		response = {'code':-1,'msg':'token失效，需重新登录'}
+		response = {'code':-1,'msg':'token失效，需重新登录','msg_en':'Need to re-login'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
 	# 获取token对应的用户
 	customer_id = request.session[token]
 	customers = Customer.objects.filter(id=customer_id)
 	if len(customers) == 0:
-		response = {'code':-200,'msg':'其他错误'}
+		response = {'code':-200,'msg':'其他错误','msg_en':'Other Failure'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 	customer = customers[0]
 
@@ -640,19 +640,19 @@ def get_user_delivery_address(request):
 		code = -100	
 
 	if code == -100:
-		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！'}
+		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！','msg_en':'Request parameter incomplete or incorrectly formatted!'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
 	# 查看token是否存在session中
 	if token not in request.session:
-		response = {'code':-1,'msg':'token失效，需重新登录'}
+		response = {'code':-1,'msg':'token失效，需重新登录','msg_en':'Need to re-login'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
 	# 获取token对应的用户
 	customer_id = request.session[token]
 	customers = Customer.objects.filter(id=customer_id)
 	if len(customers) == 0:
-		response = {'code':-200,'msg':'其他错误'}
+		response = {'code':-200,'msg':'其他错误','msg_en':'Other Failure'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 	customer = customers[0]
 	delivery_address_id = customer.delivery_address_id
@@ -684,7 +684,7 @@ def search_shop_infos(request):
 		code = -100	
 
 	if code == -100:
-		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！'}
+		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！','msg_en':'Request parameter incomplete or incorrectly formatted!'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
 	# 查询shop id
@@ -735,12 +735,12 @@ def get_shop_detail_info(request):
 		code = -100	
 
 	if code == -100:
-		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！'}
+		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！','msg_en':'Request parameter incomplete or incorrectly formatted!'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
 	shop_objs = Shop.objects.filter(id=shop_id)
 	if len(shop_objs) == 0:
-		response = {'code':-1,'msg':'shop_id无效'}
+		response = {'code':-1,'msg':'shop_id无效','msg_en':'shop id invalid'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))	
 	shop = shop_objs[0]
 	response = {'code':0,'msg':'success'}
@@ -843,12 +843,12 @@ def get_all_side_dishes(request):
 		code = -100	
 
 	if code == -100:
-		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！'}
+		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！','msg_en':'Request parameter incomplete or incorrectly formatted!'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 	# 获取dish_id对应的对象
 	dish_objs = Dish.objects.filter(id=dish_id)
 	if len(dish_objs) == 0:
-		response = {'code':-1,'msg':'dish_id无效'}
+		response = {'code':-1,'msg':'dish_id无效','msg_en':'dish id invalid'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))		
 
 	dish_obj = dish_objs[0]
@@ -882,12 +882,12 @@ def search_dishes(request):
 
 	
 	if code == -100:
-		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！'}
+		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！','msg_en':'Request parameter incomplete or incorrectly formatted!'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 	# 获取dish_id对应的对象
 	shop_objs = Shop.objects.filter(id=shop_id)
 	if len(shop_objs) == 0:
-		response = {'code':-1,'msg':'shop_id无效'}
+		response = {'code':-1,'msg':'shop_id无效','msg_en':'shop id invalid'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))	
 
 	response = {'code':0,'msg':'success'}
@@ -934,11 +934,11 @@ def get_dish_detail(request):
 		code = -100	
 	
 	if code == -100:
-		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！'}
+		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！','msg_en':'Request parameter incomplete or incorrectly formatted!'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 	dishes = Dish.objects.filter(id=dish_id)
 	if len(dishes) == 0:
-		response = {'code':-1,'msg':'dish_id无效'}
+		response = {'code':-1,'msg':'dish_id无效','msg_en':'dish id invalid'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))		
 	dish = dishes[0]
 	temp_dish_info = {}
@@ -1067,24 +1067,24 @@ def upload_order(request):
 	# print token,shop_id,delivery_address_id,paytype_id,consume_type,tip_type,tip_ratio,remark,freight,distance,tax,dish_order_list
 
 	if code == -100:
-		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！'}
+		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！','msg_en':'Request parameter incomplete or incorrectly formatted!'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))		
 
 	# 查看token是否存在session中
 	if token not in request.session:
-		response = {'code':-1,'msg':'token失效，需重新登录'}
+		response = {'code':-1,'msg':'token失效，需重新登录','msg_en':'Need to re-login'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))		
 
 	# 获取shop_id对应的对象
 	shop_objs = Shop.objects.filter(id=shop_id)
 	if len(shop_objs) == 0:
-		response = {'code':-2,'msg':'shop_id无效'}
+		response = {'code':-2,'msg':'shop_id无效','msg_en':'shop id invalid'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))	
 	shop_obj = shop_objs[0]
 
 	# 查看地址是否有效
 	if len(DeliveryAddress.objects.filter(id=delivery_address_id)) == 0:
-		response = {'code':-3,'msg':'delivery_address_id无效'}
+		response = {'code':-3,'msg':'delivery_address_id无效','msg_en':'delivery address invalid'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
 	delivery_address_obj = DeliveryAddress.objects.get(id=delivery_address_id)
@@ -1092,14 +1092,14 @@ def upload_order(request):
 	# 查看paytype_id是否存在
 	paytypes = UserPayType.objects.filter(id=paytype_id) 
 	if len(paytypes) == 0:
-		response = {'code':-4,'msg':'paytype_id无效'}
+		response = {'code':-4,'msg':'paytype_id无效','msg_en':'pay type id invalid'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))	
 	paytype_obj = paytypes[0]
 	# 获取token对应的用户
 	customer_id = request.session[token]
 	customers = Customer.objects.filter(id=customer_id)
 	if len(customers) == 0:
-		response = {'code':-200,'msg':'其他错误'}
+		response = {'code':-200,'msg':'其他错误','msg_en':'Other Failure'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 	customer = customers[0]
 
@@ -1151,14 +1151,14 @@ def get_all_orders(request):
 
 	# 查看token是否存在session中
 	if token not in request.session:
-		response = {'code':-1,'msg':'token失效，需重新登录'}
+		response = {'code':-1,'msg':'token失效，需重新登录','msg_en':'Need to re-login'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))		
 
 	# 获取token对应的用户
 	customer_id = request.session[token]
 	customers = Customer.objects.filter(id=customer_id)
 	if len(customers) == 0:
-		response = {'code':-200,'msg':'其他错误'}
+		response = {'code':-200,'msg':'其他错误','msg_en':'Other Failure'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 	customer = customers[0]
 
@@ -1199,21 +1199,21 @@ def get_order_detail_info(request):
 
 	# 查看token是否存在session中
 	if token not in request.session:
-		response = {'code':-1,'msg':'token失效，需重新登录'}
+		response = {'code':-1,'msg':'token失效，需重新登录','msg_en':'Need to re-login'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))		
 
 	# 获取token对应的用户
 	customer_id = request.session[token]
 	customers = Customer.objects.filter(id=customer_id)
 	if len(customers) == 0:
-		response = {'code':-200,'msg':'其他错误'}
+		response = {'code':-200,'msg':'其他错误','msg_en':'Other Failure'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 	customer = customers[0]	
 
 	# 获取订单对象
 	orders = Order.objects.filter(id=order_id)
 	if len(orders) == 0:
-		response = {'code':-200,'msg':'其他错误'}
+		response = {'code':-200,'msg':'其他错误','msg_en':'Other Failure'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 	order = orders[0]
 	response = {'code':0,'msg':'success'}
