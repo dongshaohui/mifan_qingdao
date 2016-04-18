@@ -106,7 +106,7 @@ class VerificationCode(models.Model):
 
 # 支付方式
 class UserPayType(models.Model):
-	customer = models.ForeignKey(Customer,related_name='customer_userpaytype') # 支付方式从属的用户
+	customer = models.ForeignKey(Customer,related_name='customer_userpaytype',blank=True,null=True) # 支付方式从属的用户
 	pay_type = models.IntegerField(default = 0,verbose_name=u'支付方式（0-信用卡，1-货到付款）') # 支付方式（0-信用卡，1-货到付款）
 	credit_card = models.CharField(verbose_name=u'信用卡号',max_length=255) # 信用卡号
 	security_code = models.CharField(verbose_name=u'信用安全码',max_length=255) # 信用安全码

@@ -390,7 +390,7 @@ def paytype_infos(request):
 	customer = customers[0]	
 
 	user_pay_type_objs = UserPayType.objects.filter(customer_id=customer.id)
-
+	user_pay_type_no_cards = UserPayType.objects.filter(pay_type=1) # 货到付款
 	response['code'] = 0
 	response['msg'] = 'success'
 	response['count'] = len(user_pay_type_objs)
@@ -402,7 +402,11 @@ def paytype_infos(request):
 		temp_pay_type_obj['type'] = user_pay_type_obj.pay_type
 		temp_pay_type_obj['cardno'] = user_pay_type_obj.credit_card
 		response['paytype_infos'].append(temp_pay_type_obj)
-
+	for user_pay_type_no_card in user_pay_type_no_cards:
+		temp_pay_type_obj = {}
+		temp_pay_type_obj['paytype_id'] = user_pay_type_no_card.id
+		temp_pay_type_obj['type'] = user_pay_type_no_card.pay_type
+		response['paytype_infos'].append(temp_pay_type_obj)
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
 # 获取用户默认支付方式
