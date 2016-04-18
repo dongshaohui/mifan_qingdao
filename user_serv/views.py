@@ -701,7 +701,7 @@ def delete_delivery_address(request):
 	customer = customers[0]
 
 	# 获取地址对象
-	delivery_address_objs = DeliveryAddress.objects.filter(id=delivery_address_id,customer=ccustomer)
+	delivery_address_objs = DeliveryAddress.objects.filter(id=delivery_address_id,customer=customer)
 	if len(delivery_address_objs) == 0:
 		response = {'code':-2,'msg':'delivery_address_id无效','msg_en':'Delivery Address Invalid'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))	
