@@ -442,6 +442,7 @@ def get_paytype(request):
 	user_pay_type_obj = UserPayType.objects.filter(id=user_pay_type_id)[0]
 	response['code'] = 0
 	response['msg'] = 'success'
+	response['paytype_id'] = user_pay_type_obj.id
 	response['pay_type'] = user_pay_type_obj.pay_type
 	response['credit_card'] = user_pay_type_obj.credit_card
 	response['pin_code'] = user_pay_type_obj.security_code

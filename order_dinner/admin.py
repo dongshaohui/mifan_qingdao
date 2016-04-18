@@ -1,6 +1,6 @@
 #coding=utf-8
 from django.contrib import admin
-from .models import Customer,Subdish,Dish,Order,Shop,ShopManager,BannerImg,GlobalSetting
+from .models import Customer,Subdish,Dish,Order,Shop,ShopManager,BannerImg,GlobalSetting,UserPayType
 import xadmin
 from xadmin import views
 from xadmin.layout import Main, TabHolder, Tab, Fieldset, Row, Col, AppendedText, Side
@@ -34,6 +34,8 @@ class GlobalViewSetting(object):
             {'title': '客户管理', 'perm': self.get_model_perm(Customer, 'change'), 'menus':(
             	{'title': '客户管理',  'url': self.get_model_url(Customer, 'changelist')},
             	{'title':'Banner图管理','url': self.get_model_url(BannerImg, 'changelist')},
+            	{'title':'支付方式管理','url': self.get_model_url(UserPayType, 'changelist')},
+            	
             	)},            	
         )
 
@@ -128,6 +130,11 @@ class GlobalSettingAdmin(object):
 	fields = ("setting_key","setting_desc","setting_value")
 	list_display = ("setting_key","setting_desc","setting_value")
 
+
+class UserPayTypeAdmin(object):
+	fields = ("customer","pay_type","credit_card","security_code","expire_year","expire_month")
+	list_display = ("id","customer","pay_type","credit_card","security_code","expire_year","expire_month")
+
 xadmin.site.register(views.CommAdminView, GlobalViewSetting)
 xadmin.site.register(Customer,CustomAdmin)
 xadmin.site.register(Subdish,SubdishAdmin)
@@ -137,5 +144,6 @@ xadmin.site.register(Order)
 xadmin.site.register(ShopManager,ShopManagerAdmin)
 xadmin.site.register(BannerImg,BannerImgAdmin)
 xadmin.site.register(GlobalSetting,GlobalSettingAdmin)
+xadmin.site.register(UserPayType,UserPayTypeAdmin)
 # xadmin.site.register(Customer,CustomAdmin)
 # xadmin.site.register(views.CommAdminView, AdminMuneSetting)
