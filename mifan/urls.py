@@ -53,6 +53,7 @@ urlpatterns = patterns('',
     url(r'^user_serv/select_paytype','user_serv.views.select_paytype'), 
     url(r'^user_serv/paytype_infos','user_serv.views.paytype_infos'), 
     url(r'^user_serv/get_paytype','user_serv.views.get_paytype'), 
+    url(r'^user_serv/delete_paytype','user_serv.views.delete_paytype'), 
 	########################### 
 	#
 	#	USER ADDRESS MODULE

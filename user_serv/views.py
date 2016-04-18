@@ -311,6 +311,55 @@ def select_paytype(request):
 	response = {'code':0,'msg':'success'}
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
+# 删除支付方式
+def delete_paytype(request):
+	response = {}
+	token = None
+	paytype_id = None
+
+	code = 0 # 返回代码，默认为0
+
+	
+	if 'token' in request.GET:
+		token = request.GET['token']
+	else:
+		code = -100	
+
+	if 'paytype_id' in request.GET:
+		paytype_id = request.GET['paytype_id']
+	else:
+		code = -100		
+ 
+ 	if code == -100:
+		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！' ,'msg_en':'Request parameter incomplete or incorrectly formatted!'}
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))	
+
+	# 查看token是否存在session中
+	if token not in request.session:
+		response = {'code':-1,'msg':'token失效，需重新登录','msg_en':'Need to re-login'}
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
+
+	# 获取token对应的用户
+	customer_id = request.session[token]
+	customers = Customer.objects.filter(id=customer_id)
+	if len(customers) == 0:
+		response = {'code':-200,'msg':'其他错误','msg_en':'Other Failure'}
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
+
+	customer = customers[0]
+
+	# 查看paytype_id是否存在
+	paytypes = UserPayType.objects.filter(id=paytype_id,customer=customer) 
+	if len(paytypes) == 0:
+		response = {'code':-2,'msg':'paytype_id无效','msg_en':'paytype_id invalid'}
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))		
+	paytypes[0].delete()
+
+
+	response = {'code':0,'msg':'success'}
+	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
+
+
 # 获取用户支付管理信息
 def paytype_infos(request):
 	response = {}
