@@ -714,6 +714,7 @@ def delete_delivery_address(request):
 # 编辑地址对象
 def edit_delivery_address(request):
 	response = {}
+	
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
 ########################### 

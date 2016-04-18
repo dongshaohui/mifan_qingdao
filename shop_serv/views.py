@@ -615,8 +615,8 @@ def upload_addr(request):
 
 	shop_id = (int)(request.session[token])	
 	shop_obj = Shop.objects.get(id=shop_id)
-	shop_obj.search_addr = search_addr
-	shop_obj.detail_addr = detail_addr
+	shop_obj.search_addr = searched_addr
+	shop_obj.detail_addr = detailed_addr
 	shop_obj.longitude = float(longitude)
 	shop_obj.latitude = float(latitude)
 	shop_obj.postcode = postcode
