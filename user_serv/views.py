@@ -260,7 +260,7 @@ def add_credit_card(request):
 	user_pay_type = UserPayType.objects.create(customer=customer,pay_type=0,credit_card=credit_card_no,
 		security_code=pin_code,expire_year=expire_year,expire_month=expire_month)
 	user_pay_type.save()
-	customer.customer_user_pay_types.add(user_pay_type) # 为用户添加支付方式
+	# customer.customer_user_pay_types.add(user_pay_type) # 为用户添加支付方式
 	response = {'code':0,'msg':'success',"pay_type_id":user_pay_type.id}
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
