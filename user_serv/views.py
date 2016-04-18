@@ -667,6 +667,55 @@ def get_user_delivery_address(request):
 		response['postcode'] = delivery_address_obj.postcode
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
+# 删除收货地址
+def delete_delivery_address(request):
+	response = {}
+	delivery_address_id = None
+	token = None
+	code = None
+	if 'token' in request.GET:
+		token = request.GET['token']
+	else:
+		code = -100	
+
+	if 'delivery_address_id' in request.GET:
+		delivery_address_id = request.GET['delivery_address_id']
+	else:
+		code = -100	
+
+	if code == -100:
+		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！','msg_en':'Request parameter incomplete or incorrectly formatted!'}
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
+
+	# 查看token是否存在session中
+	if token not in request.session:
+		response = {'code':-1,'msg':'token失效，需重新登录','msg_en':'Need to re-login'}
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
+	
+	# 获取token对应的用户
+	customer_id = request.session[token]
+	customers = Customer.objects.filter(id=customer_id)
+	if len(customers) == 0:
+		response = {'code':-200,'msg':'其他错误','msg_en':'Other Failure'}
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
+	customer = customers[0]
+
+	# 获取地址对象
+	delivery_address_objs = DeliveryAddress.objects.filter(id=delivery_address_id,customer=ccustomer)
+	if len(delivery_address_objs) == 0:
+		response = {'code':-2,'msg':'delivery_address_id无效','msg_en':'Delivery Address Invalid'}
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))	
+
+	delivery_address_obj = delivery_address_objs[0]
+	delivery_address_obj.delete()
+	response = {'code':0,'msg':'success'}
+	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
+
+# 编辑地址对象
+def edit_delivery_address(request):
+	response = {}
+	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
+
 ########################### 
 #
 #	SHOP MODULE

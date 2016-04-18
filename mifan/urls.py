@@ -63,6 +63,8 @@ urlpatterns = patterns('',
 	url(r'^user_serv/select_delivery_address','user_serv.views.select_delivery_address'), 
 	url(r'^user_serv/delivery_address_infos','user_serv.views.delivery_address_infos'), 
 	url(r'^user_serv/get_user_delivery_address','user_serv.views.get_user_delivery_address'), 
+    url(r'^user_serv/delete_delivery_address','user_serv.views.delete_delivery_address'), 
+    url(r'^user_serv/edit_delivery_address','user_serv.views.delete_delivery_address'), 
 	########################### 
 	#
 	#	SHOP MODULE
@@ -77,7 +79,7 @@ urlpatterns = patterns('',
     #
     ###########################     
     url(r'^user_serv/get_all_side_dishes','user_serv.views.get_all_side_dishes'), 
-    url(r'^user_serv/search_dishes','user_serv.views.search_dishes'),
+    url(r'^user_serv/search_dishes','user_serv.views.search_dishes'),\
     url(r'^user_serv/get_dish_detail','user_serv.views.get_dish_detail'),
     ########################### 
     #

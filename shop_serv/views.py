@@ -568,23 +568,24 @@ def search_orders(request):
 # 上传商户地址
 def upload_addr(request):
 	token = None
-	search_addr = None
-	detail_addr = None
+	searched_addr = None
+	detailed_addr = None
 	longitude = None
 	latitude = None
 	postcode = None
+	code = None
 	if 'token' in request.GET:
 		token = request.GET['token']
 	else:
 		code = -100		
 
-	if 'search_addr' in request.GET:
-		search_addr = request.GET['search_addr']
+	if 'searched_addr' in request.GET:
+		searched_addr = request.GET['searched_addr']
 	else:
 		code = -100		
 
-	if 'detail_addr' in request.GET:
-		detail_addr = request.GET['detail_addr']
+	if 'detailed_addr' in request.GET:
+		detailed_addr = request.GET['detailed_addr']
 	else:
 		code = -100		
 
