@@ -262,6 +262,18 @@ def get_all_finish_orders(request):
 	print shop_obj.name,shop_obj.id
 	# 获取已经完成的订单
 	orders = Order.objects.filter(shop_id=shop_id,status="SUCCESS")
+
+	pageno = 1
+	pagelength = len(orders)
+
+	if "pageno" in request.GET:
+		if int(request.GET['pageno']) > 0:
+			pageno = int(request.GET['pageno'])
+	if "pagelength" in request.GET:
+		pagelength = int(request.GET['pagelength'])
+
+	orders = orders[(pageno-1)*pagelength:pageno*pagelength]
+
 	response = {'code':0,'msg':'success'}
 	response['orders'] = []
 	for order in orders:
@@ -339,6 +351,20 @@ def get_all_accept_orders(request):
 	print shop_obj.name,shop_obj.id
 	# 获取已经完成的订单
 	orders = Order.objects.filter(shop_id=shop_id,status="ACCEPTED")
+
+	# 分页
+	pageno = 1
+	pagelength = len(orders)
+
+	if "pageno" in request.GET:
+		if int(request.GET['pageno']) > 0:
+			pageno = int(request.GET['pageno'])
+	if "pagelength" in request.GET:
+		pagelength = int(request.GET['pagelength'])
+
+	orders = orders[(pageno-1)*pagelength:pageno*pagelength]
+
+
 	response = {'code':0,'msg':'success'}
 	response['orders'] = []
 	for order in orders:
@@ -416,6 +442,19 @@ def get_all_new_orders(request):
 	print shop_obj.name,shop_obj.id
 	# 获取已经完成的订单
 	orders = Order.objects.filter(shop_id=shop_id,status="PROGRESS")
+
+	# 分页
+	pageno = 1
+	pagelength = len(orders)
+
+	if "pageno" in request.GET:
+		if int(request.GET['pageno']) > 0:
+			pageno = int(request.GET['pageno'])
+	if "pagelength" in request.GET:
+		pagelength = int(request.GET['pagelength'])
+
+	orders = orders[(pageno-1)*pagelength:pageno*pagelength]
+		
 	response = {'code':0,'msg':'success'}
 	response['orders'] = []
 	for order in orders:
