@@ -43,7 +43,7 @@ class GlobalViewSetting(object):
 class CustomAdmin(object):
 	# fields = ('name','mobile','valid')
 	list_display = ('name','mobile','valid')
-
+	list_filter = ('create_time',)
 # 定制配菜管理端信息
 class SubdishAdmin(object):
 	list_display = ('name','price','shop')
@@ -123,7 +123,7 @@ class BannerImgAdmin(object):
 	preview.allow_tags = True
 	preview.short_description = "banner展示图（缩略图）"		
 	# fields = ('name','mobile','valid')
-	list_display = ('name','preview','priority')
+	list_display = ('name','preview','priority','link')
 
 # 定制全局参数管理
 class GlobalSettingAdmin(object):

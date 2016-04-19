@@ -145,6 +145,7 @@ class CreditCard(models.Model):
 # banner图片
 class BannerImg(models.Model):
 	name = models.CharField(default="",verbose_name=u'轮播图片名',max_length=255) # 图片名称
+	link = models.CharField(default="",verbose_name=u'超链接',max_length=255) # 超链接
 	img = models.ImageField(verbose_name=u'轮播图片',upload_to='imgs/') # 轮播图片
 	priority = models.IntegerField(verbose_name=u'优先级(优先级高的优先显示)',default=0) # 优先级
 

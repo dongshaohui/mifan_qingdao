@@ -1363,6 +1363,7 @@ def get_banner_list(request):
 		temp_banner = {}
 		temp_banner['img'] = banner_obj.img.name
 		temp_banner['priority'] = banner_obj.priority
+		temp_banner['link'] = banner_obj.link
 		banner_list.append(temp_banner)
 	response['banner_list'] = banner_list
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
