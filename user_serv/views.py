@@ -1261,15 +1261,15 @@ def upload_order(request):
 	if float(distance) < global_set.freight_thres:
 		freight_price = float("%.1f" % (float(distance) / (float)(1.6)))
 	# 佣金
-	commission = float("%.1f" %((float)total_dish_price * (float)shop_obj.commission))
+	commission = float("%.1f" %(float(total_dish_price) * float(shop_obj.commission)))
 	# 小费
 	tip = 0
 	if tip_type == 0:
-		tip = float("%.1f" %((float)tip_ratio * (float)total_dish_price))
+		tip = float("%.1f" %(float(tip_ratio) * float(total_dish_price)))
 	# 税
-	tax = float("%.1f" %((float)total_dish_price * (float)global_set.tax_rate))
+	tax = float("%.1f" %(float(total_dish_price) * float(global_set.tax_rate)))
 	# 折扣
-	discount_price = float("%.1f" %((float)total_dish_price * (float)global_set.tax_rate))
+	discount_price = float("%.1f" %(float(total_dish_price) * float(global_set.tax_rate)))
 	# 最终应付价格
 	payable_price = total_dish_price + freight_price + tip + tax - discount_price
 	new_order.freight = freight_price
