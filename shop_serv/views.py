@@ -671,6 +671,7 @@ def upload_addr(request):
 
 def get_addr(request):
 	token = None
+	code = None
 	if 'token' in request.GET:
 		token = request.GET['token']
 	else:
@@ -686,6 +687,7 @@ def get_addr(request):
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 	shop_id = (int)(request.session[token])	
 	shop_obj = Shop.objects.get(id=shop_id)		
+	print shop_id
 	response = {'code':0,'msg':'success'}
 	response['search_addr'] = shop_obj.search_addr
 	response['detail_addr'] = shop_obj.detail_addr
