@@ -226,6 +226,8 @@ class Order(models.Model):
 	pay_type = models.ForeignKey(UserPayType,verbose_name=u'支付方式',blank=True,null=True) # 订单对应的支付方式
 	consume_type =  models.IntegerField(verbose_name=u'消费方式（0-配送，1-到店消费）',default=0) # （0-配送，1-到店消费）
 	freight = models.FloatField(verbose_name=u'订单运费',default=0.0) # 订单运费
+	commission_price = models.FloatField(verbose_name=u'佣金',default=0.0) # 佣金
+	discount_price = models.FloatField(verbose_name=u'折扣金额',default=0.0) # 折扣金额
 	tip_type = models.IntegerField(verbose_name=u'小费方式（0-小费比率，1-现金小费）',default=0) # （0-小费比率，1-现金小费）
 	tax = models.FloatField(verbose_name=u'订单税费',default=0.0) # 订单税费
 	distance = models.FloatField(verbose_name=u'订单距离',default=0.0) # 订单距离

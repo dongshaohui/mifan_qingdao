@@ -1161,27 +1161,12 @@ def upload_order(request):
 	else:
 		code = -100		
 
-	# 获取freight
-	if 'freight' in request.POST:
-		freight = request.POST['freight']
-	elif 'freight' in request.GET:
-		freight = request.GET['freight']			
-	else:
-		code = -100	
 
 	# 获取distance
 	if 'distance' in request.POST:
 		distance = request.POST['distance']
 	elif 'distance' in request.GET:
 		distance = request.GET['distance']			
-	else:
-		code = -100	
-
-	# 获取tax
-	if 'tax' in request.POST:
-		tax = request.POST['tax']
-	elif 'tax' in request.GET:
-		tax = request.GET['tax']				
 	else:
 		code = -100	
 
@@ -1235,22 +1220,19 @@ def upload_order(request):
 
 	# 新建订单对象
 	new_order = Order.objects.create(customer=customer,shop=shop_obj,freight=freight,tip_type=tip_type,
-		tax=tax,distance=distance,remark=remark,tip=0.0,status="PROGRESS",delivery_address=delivery_address_obj,
+		distance=distance,remark=remark,status="PROGRESS",delivery_address=delivery_address_obj,
 		pay_type=paytype_obj,consume_type=consume_type)
 	new_order.save()
 
 	# 为此订单添加菜品记录
-	print dish_order_list,"01"
 	dish_order_list = dish_order_list.replace("'","\"")
 	dish_order_list = dish_order_list.replace('u\"',"\"")
-	print dish_order_list,"02"
 	dish_order_list = json.loads(dish_order_list)
-	print dish_order_list,"03"
-	print dish_order_list
+
+	global_set = GlobalSetting.objects.all()[0]
+
+	total_dish_price = 0 # 所点菜品总价格
 	for dish_order in dish_order_list:
-		print dish_order
-		print dish_order['dish_id']
-		print type(dish_order['dish_id'])
 		dish_id = int(dish_order['dish_id'])
 		order_number = int(dish_order['order_number'])
 		dish_obj = Dish.objects.get(id=dish_id)
@@ -1262,12 +1244,41 @@ def upload_order(request):
 				side_dish_id = side_dish['side_dish_id']
 				side_dish_order_number = side_dish['order_number']
 				subdish_obj = Subdish.objects.get(id=side_dish_id)
+				total_dish_price += float(side_dish_order_number) * float(subdish_obj.price) # 价格加总
 				order_subdish_obj = OrderSubDish.objects.create(subdish=subdish_obj,subdish_order_number=side_dish_order_number)
 				order_subdish_obj.save()
 				order_dish_obj.ordered_subdishes.add(order_subdish_obj) # 添加子菜品
 				order_dish_obj.save()
+		else:
+			total_dish_price += float(order_number) * float(dish_obj.price) # 价格加总
 		new_order.order_dishes.add(order_dish_obj) # 订单添加菜品
 		new_order.save()
+	print '总价格',total_dish_price
+
+	# 额外费用
+	# 运费
+	freight_price = 0
+	if float(distance) < global_set.freight_thres:
+		freight_price = float("%.1f" % (float(distance) / (float)(1.6)))
+	# 佣金
+	commission = float("%.1f" %((float)total_dish_price * (float)shop_obj.commission))
+	# 小费
+	tip = 0
+	if tip_type == 0:
+		tip = float("%.1f" %((float)tip_ratio * (float)total_dish_price))
+	# 税
+	tax = float("%.1f" %((float)total_dish_price * (float)global_set.tax_rate))
+	# 折扣
+	discount_price = float("%.1f" %((float)total_dish_price * (float)global_set.tax_rate))
+	# 最终应付价格
+	payable_price = total_dish_price + freight_price + tip + tax - discount_price
+	new_order.freight = freight_price
+	new_order.commission_price = commission
+	new_order.tip = tip
+	new_order.tax = tax
+	new_order.discount_price = discount_price
+	new_order.total_price = payable_price
+	new_order.save()
 	response = {'code':0,'msg':'success'}
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
