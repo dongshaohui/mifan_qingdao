@@ -1347,6 +1347,54 @@ def get_order_detail_info(request):
 		response['dish_order_list'].append(temp_dish_obj)
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
+# 计算用户到商家的距离
+def calculate_distance(request):
+	shop_id = None
+	delivery_address_id = None
+	code = None
+	# 获取shop_id
+	if 'shop_id' in request.GET:
+		order_id = int(request.GET['shop_id'])
+	else:
+		code = -100	
+
+	if 'delivery_address_id' in request.GET:
+		delivery_address_id = int(request.GET['delivery_address_id'])
+	else:
+		code = -100	
+
+	if code == -100:
+		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！','msg_en':'Request parameter incomplete or incorrectly formatted!'}
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
+
+	shop_objs = Shop.objects.filter(id=int(shop_id))
+	if len(shop_objs) == 0:
+		response = {'code':-1,'msg':'shop_id无效','msg_en':'shop id invalid'}
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
+	shop = shop_objs[0]
+
+	delivery_address_objs = DeliveryAddress.objects.filter(id=int(delivery_address_id))	
+	if len(delivery_address_objs) == 0:
+		response = {'code':-2,'msg':'delivery_address_id无效','msg_en':'delivery address id invalid'}
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
+	delivery_address = delivery_address_objs[0]
+
+	if shop.longitude == None or shop.latitude == None or shop.longitude == 0.0 or shop.latitude == 0.0:
+		response = {'code':-3,'msg':'商户尚没有上传地址','msg_en':'The shop has not uploaded address yet!'}
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
+
+	origin_addr = "%f,%f" % (delivery_address.latitude,delivery_address.longitude)
+	dest_addr = "%f,%f" % (shop.latitude,shop.longitude)
+	params = urllib.urlencode({'origins': origin_addr,"destinations":dest_addr,'key': 'AIzaSyAcqwDjEnYPte9qNnCEH3L12doj8fZRnEY',"language":"en"})
+	url = "https://maps.googleapis.com/maps/api/distancematrix/json?%s" % params
+	print url
+	f = urllib.urlopen(url)
+	response_str = f.read().decode('utf-8')
+	response_dict = json.loads(response_str)
+	print response_dict
+	response = {'code':0,'msg':'success',"dict":response_dict}
+	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))	
+	
 ########################### 
 #
 #	Other Module Interface

@@ -90,6 +90,7 @@ urlpatterns = patterns('',
     url(r'^user_serv/upload_order','user_serv.views.upload_order'),
     url(r'^user_serv/get_all_orders','user_serv.views.get_all_orders'),
     url(r'^user_serv/get_order_detail_info','user_serv.views.get_order_detail_info'),
+    url(r'^user_serv/calculate_distance','user_serv.views.calculate_distance'),
     ########################### 
     #
     #   OTHER MODULE
