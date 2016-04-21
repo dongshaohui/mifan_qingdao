@@ -1079,6 +1079,7 @@ def get_dish_detail(request):
 ########################### 
 
 # 用户提交订单
+@csrf_exempt
 def upload_order(request):
 	response = {}
 	# 获取参数
