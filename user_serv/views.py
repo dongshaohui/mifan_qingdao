@@ -1391,8 +1391,21 @@ def calculate_distance(request):
 	f = urllib.urlopen(url)
 	response_str = f.read().decode('utf-8')
 	response_dict = json.loads(response_str)
-	print response_dict
-	response = {'code':0,'msg':'success',"dict":response_dict}
+	distance = 0
+	try:
+		if response_dict["status"] != "OK":
+			response = {'code':-4,'msg':'收货地址无法计算距离，请重新输入地址','msg_en':'Can not calculate the distance! Please enter address again!'}
+			return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
+		distance_row = response_dict["rows"][0]["elements"][0]
+		if distance_row["status"] != "OK":
+			response = {'code':-4,'msg':'收货地址无法计算距离，请重新输入地址','msg_en':'Can not calculate the distance! Please enter address again!'}
+			return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
+		distance = "%.1f" % (distance_row["distance"]["value"] % 1000000.0)
+	except:
+		response = {'code':-4,'msg':'收货地址无法计算距离，请重新输入地址','msg_en':'Can not calculate the distance! Please enter address again!'}
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))	
+	# print response_dict
+	response = {'code':0,'msg':'success',"distance":distance}
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))	
 	
 ########################### 
