@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.shortcuts import HttpResponse, render_to_response, redirect
 from django.views.decorators.csrf import csrf_exempt
 import urllib,urllib2,json,time,datetime
-from order_dinner.models import Customer,UserPayType,DeliveryAddress,Shop,Dish,Subdish,VerificationCode,Order,OrderDish,OrderSubDish,BannerImg
+from order_dinner.models import Customer,UserPayType,DeliveryAddress,Shop,Dish,Subdish,VerificationCode,Order,OrderDish,OrderSubDish,BannerImg,GlobalSetting
 from random import Random
 from django.contrib import auth
 import sms_sender
@@ -1204,6 +1204,7 @@ def upload_order(request):
 		response = {'code':-1,'msg':'token失效，需重新登录','msg_en':'Need to re-login'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))		
 
+
 	# 获取shop_id对应的对象
 	shop_objs = Shop.objects.filter(id=shop_id)
 	if len(shop_objs) == 0:
@@ -1239,8 +1240,11 @@ def upload_order(request):
 	new_order.save()
 
 	# 为此订单添加菜品记录
+	print dish_order_list,"01"
 	dish_order_list = dish_order_list.replace("'","\"")
+	print dish_order_list,"02"
 	dish_order_list = json.loads(dish_order_list)
+	print dish_order_list,"03"
 	print dish_order_list
 	for dish_order in dish_order_list:
 		print dish_order

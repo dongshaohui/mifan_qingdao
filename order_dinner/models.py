@@ -10,17 +10,15 @@ import django.utils.timezone as timezone
 
 # 超级管理员全局设置
 class GlobalSetting(models.Model):
-	setting_key = models.CharField(verbose_name=u'设置变量名',max_length=255,default="设置变量名") 
-	setting_desc = models.CharField(verbose_name=u'变量描述',max_length=255,default="变量描述") 
-	setting_value = models.FloatField(verbose_name=u'值',default=0.0)
+	freight_thres = models.FloatField(verbose_name=u'满X元免运费',default=0.0)
+	tax_rate = models.FloatField(verbose_name=u'税率',default=0.08)
+	discount_rate = models.FloatField(verbose_name=u'折扣率',default=0.0)
 
 	class Meta:
 		verbose_name = '全局设置'
 		verbose_name_plural  = '全局设置'
 		# ordering = ['-priority']	
 
-	def __unicode__(self):
-		return self.setting_key
 
 
 # 商铺营业状态
@@ -53,7 +51,8 @@ class Shop(models.Model):
 	shop_img = models.ImageField(verbose_name=u'商铺图片',upload_to='imgs/') # 商铺图片
 	shop_feature = models.CharField(default='',verbose_name=u'商店特色中文',max_length=255) # 商店特色
 	shop_feature_en = models.CharField(default='',verbose_name=u'商店特色英文',max_length=255) # 商店英文特色
-	commission = models.FloatField(verbose_name=u'佣金百分比',default=0.0) # 佣金百分比
+	commission = models.FloatField(verbose_name=u'佣金百分比',default=0.1) # 佣金百分比
+	# discount = models.FloatField(verbose_name=u'折扣',default=0.0) # 折扣
 	class Meta:
 		verbose_name = '商店'
 		verbose_name_plural  = '商店'
@@ -235,6 +234,7 @@ class Order(models.Model):
 	status = models.CharField(verbose_name=u'订单状态',max_length=255) # 订单状态 -- 'PROGRESS'、'ACCEPTED'、'SUCCESS'、'CLOSE'
 	reject_reason = models.CharField(verbose_name=u'订单取消原因',max_length=255,default='') # 订单取消原因
 	total_price = models.FloatField(verbose_name=u'订单总价格',default=0.0) # 订单总价格
+	payable_price = models.FloatField(verbose_name=u'订单应付价格',default=0) # 订单应付价格（折扣）
 	create_time = models.DateTimeField(verbose_name=u'创建时间',default=timezone.now)
 	update_time = models.DateTimeField(verbose_name=u'修改时间',default=timezone.now,auto_now=True)
 
