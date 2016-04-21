@@ -1219,7 +1219,7 @@ def upload_order(request):
 	customer = customers[0]
 
 	# 新建订单对象
-	new_order = Order.objects.create(customer=customer,shop=shop_obj,freight=freight,tip_type=tip_type,
+	new_order = Order.objects.create(customer=customer,shop=shop_obj,tip_type=tip_type,
 		distance=distance,remark=remark,status="PROGRESS",delivery_address=delivery_address_obj,
 		pay_type=paytype_obj,consume_type=consume_type)
 	new_order.save()
