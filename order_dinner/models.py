@@ -112,7 +112,16 @@ class UserPayType(models.Model):
 	security_code = models.CharField(verbose_name=u'信用安全码',max_length=255) # 信用安全码
 	expire_year = models.CharField(verbose_name=u'过期年份',max_length=255) # 过期年份
 	expire_month = models.CharField(verbose_name=u'过期月份',max_length=255) # 过期月份
+	class Meta:
+		verbose_name = '用户支付方式'
+		verbose_name_plural  = '用户支付方式'
+		# ordering = ['-create_time']	
 
+	def __unicode__(self):
+		if self.customer:
+			return self.customer.mobile + " " + str(self.pay_type) + " " + self.credit_card
+		else:
+			return str(self.pay_type) + " " + self.credit_card
 # 收货地址
 class DeliveryAddress(models.Model):
 	customer = models.ForeignKey(Customer,related_name='customer_delivery_address') # 收货地址从属的用户
@@ -199,16 +208,26 @@ class OrderDish(models.Model):
 	dish_order_number = models.IntegerField(verbose_name=u'菜品点单次数',default=0) 
 	ordered_subdishes = models.ManyToManyField(OrderSubDish,blank=True,null=True) # 订单中菜品包含的子菜品
 
+
+	class Meta:
+		verbose_name = '订单中的菜品'
+		verbose_name_plural  = '订单中的菜品'
+		# ordering = ['-create_time']	
+
+	def __unicode__(self):
+		return self.dish.name 
+
+
 # 订单
 class Order(models.Model):
-	customer = models.ForeignKey(Customer,related_name="customer_order") # 订单对应客户
-	shop = models.ForeignKey(Shop,related_name="shop_order") # 订单对应商铺
-	order_dishes = models.ManyToManyField(OrderDish,blank=True,null=True) # 订单包含的菜品
-	delivery_address = models.ForeignKey(DeliveryAddress,related_name="delivery_address_order",blank=True,null=True) # 订单对应的地址
-	pay_type = models.ForeignKey(UserPayType,related_name="user_pay_type_order",blank=True,null=True) # 订单对应的支付方式
-	consume_type =  models.IntegerField(verbose_name=u'消费方式',default=0) # （0-配送，1-到店消费）
+	customer = models.ForeignKey(Customer,related_name="customer_order",verbose_name="用户手机") # 订单对应客户
+	shop = models.ForeignKey(Shop,related_name="shop_order",verbose_name="店铺") # 订单对应商铺
+	order_dishes = models.ManyToManyField(OrderDish,blank=True,null=True,verbose_name="订单包含菜品") # 订单包含的菜品
+	delivery_address = models.ForeignKey(DeliveryAddress,related_name="delivery_address_order",blank=True,null=True,verbose_name="送货地址") # 订单对应的地址
+	pay_type = models.ForeignKey(UserPayType,verbose_name=u'支付方式',blank=True,null=True) # 订单对应的支付方式
+	consume_type =  models.IntegerField(verbose_name=u'消费方式（0-配送，1-到店消费）',default=0) # （0-配送，1-到店消费）
 	freight = models.FloatField(verbose_name=u'订单运费',default=0.0) # 订单运费
-	tip_type = models.IntegerField(verbose_name=u'小费方式',default=0) # （0-小费比率，1-现金小费）
+	tip_type = models.IntegerField(verbose_name=u'小费方式（0-小费比率，1-现金小费）',default=0) # （0-小费比率，1-现金小费）
 	tax = models.FloatField(verbose_name=u'订单税费',default=0.0) # 订单税费
 	distance = models.FloatField(verbose_name=u'订单距离',default=0.0) # 订单距离
 	remark = models.CharField(verbose_name=u'订单备注',max_length=255) # 订单备注
@@ -216,8 +235,8 @@ class Order(models.Model):
 	status = models.CharField(verbose_name=u'订单状态',max_length=255) # 订单状态 -- 'PROGRESS'、'ACCEPTED'、'SUCCESS'、'CLOSE'
 	reject_reason = models.CharField(verbose_name=u'订单取消原因',max_length=255,default='') # 订单取消原因
 	total_price = models.FloatField(verbose_name=u'订单总价格',default=0.0) # 订单总价格
-	create_time = models.DateTimeField(verbose_name=u'创建时间',auto_now=True)
-	update_time = models.DateTimeField(verbose_name=u'修改时间',default=timezone.now)
+	create_time = models.DateTimeField(verbose_name=u'创建时间',default=timezone.now)
+	update_time = models.DateTimeField(verbose_name=u'修改时间',default=timezone.now,auto_now=True)
 
 	class Meta:
 		verbose_name = '订单'

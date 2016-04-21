@@ -98,9 +98,27 @@ class DishAdmin(object):
 		obj.save()
 		# print "author_id",author_id
 
+class OrderAdmin(object):
+	def order_state_view(self,obj):
+		print "self status = ", self.status
+		if self.status == "PROGRESS":
+			return u"进行中"
+		elif self.status == "ACCEPTED":
+			return u"已接受"
+		elif self.status == "SUCCESS":
+			return u"已完成"
+		elif self.status == "CLOSE":
+			return u"已取消"
+	order_state_view.allow_tags = True
+	order_state_view.short_description = "订单状态"	
+	# fields = ('name','mobile','valid')
+	list_display = ('customer','shop','order_dishes','delivery_address','status','tip','freight','tax','total_price')
+	list_filter = ('create_time','status')
 # 定制商铺管理员信息
 class ShopManagerAdmin(object):
 	def save_models(self):
+		print self.new_obj.user_ptr_id
+		self.new_obj.save()
 		current_user_id = self.new_obj.user_ptr_id
 		current_shop_id = self.new_obj.shop_id
 		current_obj = self.new_obj
@@ -140,7 +158,7 @@ xadmin.site.register(Customer,CustomAdmin)
 xadmin.site.register(Subdish,SubdishAdmin)
 xadmin.site.register(Dish,DishAdmin)
 xadmin.site.register(Shop)
-xadmin.site.register(Order)
+xadmin.site.register(Order,OrderAdmin)
 xadmin.site.register(ShopManager,ShopManagerAdmin)
 xadmin.site.register(BannerImg,BannerImgAdmin)
 xadmin.site.register(GlobalSetting,GlobalSettingAdmin)
