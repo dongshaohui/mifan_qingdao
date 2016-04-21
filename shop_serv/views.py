@@ -365,10 +365,12 @@ def get_all_accept_orders(request):
 		pagelength = int(request.GET['pagelength'])
 
 	orders = orders[(pageno-1)*pagelength:pageno*pagelength]
-
+	totol_order_number = len(orders)
 
 	response = {'code':0,'msg':'success'}
-	response['orders'] = []
+	response['orders'] = {}
+	response['orders']['count'] = totol_order_number
+	order_list = []
 	for order in orders:
 		temp_order_obj = {}
 		temp_order_obj['orderid'] = order.id
@@ -422,8 +424,8 @@ def get_all_accept_orders(request):
 		price_detail['freight_price'] = order.freight
 		price_detail['tip_price'] = order.tip
 		temp_order_obj['price_detail'] = price_detail
-		response['orders'].append(temp_order_obj)
-
+		order_list.append(temp_order_obj)
+    response['orders']['list'] = order_list
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
 # 获取所有新订单
@@ -444,7 +446,7 @@ def get_all_new_orders(request):
 	print shop_obj.name,shop_obj.id
 	# 获取已经完成的订单
 	orders = Order.objects.filter(shop_id=shop_id,status="PROGRESS")
-
+	totol_order_number = len(orders)
 	# 分页
 	pageno = 1
 	pagelength = len(orders)
@@ -458,7 +460,9 @@ def get_all_new_orders(request):
 	orders = orders[(pageno-1)*pagelength:pageno*pagelength]
 		
 	response = {'code':0,'msg':'success'}
-	response['orders'] = []
+	response['orders'] = {}
+	response['orders']['count'] = totol_order_number
+	order_list = []
 	for order in orders:
 		temp_order_obj = {}
 		temp_order_obj['orderid'] = order.id
@@ -512,8 +516,8 @@ def get_all_new_orders(request):
 		price_detail['freight_price'] = order.freight
 		price_detail['tip_price'] = order.tip
 		temp_order_obj['price_detail'] = price_detail
-		response['orders'].append(temp_order_obj)
-
+		order_list.append(temp_order_obj)
+	response['orders']['list'] = order_list
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
 # 订单搜索接口
