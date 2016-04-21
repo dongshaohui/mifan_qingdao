@@ -1354,7 +1354,7 @@ def calculate_distance(request):
 	code = None
 	# 获取shop_id
 	if 'shop_id' in request.GET:
-		order_id = int(request.GET['shop_id'])
+		shop_id = int(request.GET['shop_id'])
 	else:
 		code = -100	
 
