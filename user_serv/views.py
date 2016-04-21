@@ -1100,72 +1100,96 @@ def upload_order(request):
 	# 获取token
 	if 'token' in request.POST:
 		token = request.POST['token']
+	elif 'token' in request.GET:
+		token = request.GET['token']
 	else:
 		code = -100	
 	
 	# 获取shop_id
 	if 'shop_id' in request.POST:
 		shop_id = request.POST['shop_id']
+	elif 'shop_id' in request.GET:
+		shop_id = request.GET['shop_id']		
 	else:
 		code = -100	
 
 	# 获取delivery_address_id
 	if 'delivery_address_id' in request.POST:
 		delivery_address_id = request.POST['delivery_address_id']
+	elif 'delivery_address_id' in request.GET:
+		delivery_address_id = request.GET['delivery_address_id']			
 	else:
 		code = -100	
 
 	# 获取paytype_id
 	if 'paytype_id' in request.POST:
 		paytype_id = request.POST['paytype_id']
+	elif 'paytype_id' in request.GET:
+		paytype_id = request.GET['paytype_id']			
 	else:
 		code = -100	
 
 	# 获取consume_type
 	if 'consume_type' in request.POST:
 		consume_type = request.POST['consume_type']
+	elif 'consume_type' in request.GET:
+		consume_type = request.GET['consume_type']			
 	else:
 		code = -100		
 
 	# 获取tip_type
 	if 'tip_type' in request.POST:
 		tip_type = request.POST['tip_type']
+	elif 'tip_type' in request.GET:
+		tip_type = request.GET['tip_type']			
 	else:
 		code = -100		
 
 	# 获取tip_ratio
 	if 'tip_ratio' in request.POST:
 		tip_ratio = request.POST['tip_ratio']
+	elif 'tip_ratio' in request.GET:
+		tip_ratio = request.GET['tip_ratio']			
 	else:
 		code = -100	
 
 	# 获取remark
 	if 'remark' in request.POST:
 		remark = request.POST['remark']
+	elif 'remark' in request.GET:
+		remark = request.GET['remark']				
 	else:
 		code = -100		
 
 	# 获取freight
 	if 'freight' in request.POST:
 		freight = request.POST['freight']
+	elif 'freight' in request.GET:
+		freight = request.GET['freight']			
 	else:
 		code = -100	
 
 	# 获取distance
 	if 'distance' in request.POST:
 		distance = request.POST['distance']
+	elif 'distance' in request.GET:
+		distance = request.GET['distance']			
 	else:
 		code = -100	
 
 	# 获取tax
 	if 'tax' in request.POST:
 		tax = request.POST['tax']
+	elif 'tax' in request.GET:
+		tax = request.GET['tax']				
 	else:
 		code = -100	
 
 	# 获取dish_order_list
 	if 'dish_order_list' in request.POST:
 		dish_order_list = request.POST['dish_order_list']
+	elif 'dish_order_list' in request.GET:
+		dish_order_list = request.GET['dish_order_list']					
 	else:
 		code = -100	
 
