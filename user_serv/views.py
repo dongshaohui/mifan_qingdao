@@ -1242,6 +1242,7 @@ def upload_order(request):
 	# 为此订单添加菜品记录
 	print dish_order_list,"01"
 	dish_order_list = dish_order_list.replace("'","\"")
+	dish_order_list = dish_order_list.replace('u\"',"\"")
 	print dish_order_list,"02"
 	dish_order_list = json.loads(dish_order_list)
 	print dish_order_list,"03"
