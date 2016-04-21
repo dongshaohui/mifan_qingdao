@@ -1169,7 +1169,7 @@ def upload_order(request):
 	else:
 		code = -100	
 
-	# print token,shop_id,delivery_address_id,paytype_id,consume_type,tip_type,tip_ratio,remark,freight,distance,tax,dish_order_list
+	print token,shop_id,delivery_address_id,paytype_id,consume_type,tip_type,tip_ratio,remark,freight,distance,tax,dish_order_list
 
 	if code == -100:
 		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！','msg_en':'Request parameter incomplete or incorrectly formatted!'}
