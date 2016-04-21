@@ -1257,6 +1257,7 @@ def upload_order(request):
 
 	# 额外费用
 	# 运费
+	print "distance= ",distance
 	freight_price = 0
 	if float(distance) < global_set.freight_thres:
 		freight_price = float("%.1f" % (float(distance) / (float)(1.6)))
@@ -1266,10 +1267,13 @@ def upload_order(request):
 	tip = 0
 	if tip_type == 0:
 		tip = float("%.1f" %(float(tip_ratio) * float(total_dish_price)))
+	print tip_ratio,tip
 	# 税
 	tax = float("%.1f" %(float(total_dish_price) * float(global_set.tax_rate)))
+	print tax
 	# 折扣
 	discount_price = float("%.1f" %(float(total_dish_price) * float(global_set.tax_rate)))
+	print global_set.tax_rate,discount_price
 	# 最终应付价格
 	payable_price = total_dish_price + freight_price + tip + tax - discount_price
 	new_order.freight = freight_price
