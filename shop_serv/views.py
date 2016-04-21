@@ -425,7 +425,7 @@ def get_all_accept_orders(request):
 		price_detail['tip_price'] = order.tip
 		temp_order_obj['price_detail'] = price_detail
 		order_list.append(temp_order_obj)
-    response['orders']['list'] = order_list
+	response['orders']['list'] = order_list
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
 # 获取所有新订单
