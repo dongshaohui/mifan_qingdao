@@ -1400,7 +1400,7 @@ def calculate_distance(request):
 		if distance_row["status"] != "OK":
 			response = {'code':-4,'msg':'收货地址无法计算距离，请重新输入地址','msg_en':'Can not calculate the distance! Please enter address again!'}
 			return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
-		distance = "%.1f" % (distance_row["distance"]["value"] % 1000000.0)
+		distance = "%.1f" % (distance_row["distance"]["value"] / 1000000.0)
 	except:
 		response = {'code':-4,'msg':'收货地址无法计算距离，请重新输入地址','msg_en':'Can not calculate the distance! Please enter address again!'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))	
