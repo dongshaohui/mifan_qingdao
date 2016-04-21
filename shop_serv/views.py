@@ -335,6 +335,99 @@ def get_all_finish_orders(request):
 	response['orders']['list'] = order_list
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
+
+# 获取所有已历史订单
+def get_all_history_orders(request):
+	response = {}
+	token = None
+	if 'token' in request.GET:
+		token = request.GET['token']
+	else:
+		code = -100		
+	# 查看token是否存在session中
+	if token not in request.session:
+		response = {'code':-1,'msg':'token失效，需重新登录'}
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
+
+	shop_id = (int)(request.session[token])	
+	shop_obj = Shop.objects.get(id=shop_id)
+	print shop_obj.name,shop_obj.id
+	# 获取已经完成的订单
+	orders = Order.objects.filter(shop_id=shop_id,status="SUCCESS").filter(create_time__lt=datetime.date.today())
+	totol_order_number = len(orders)
+	pageno = 1
+	pagelength = len(orders)
+
+	if "pageno" in request.GET:
+		if int(request.GET['pageno']) > 0:
+			pageno = int(request.GET['pageno'])
+	if "pagelength" in request.GET:
+		pagelength = int(request.GET['pagelength'])
+
+	orders = orders[(pageno-1)*pagelength:pageno*pagelength]
+
+	response = {'code':0,'msg':'success'}
+	response['orders'] = {}
+	response['orders']['count'] = totol_order_number
+	order_list = []
+	for order in orders:
+		temp_order_obj = {}
+		temp_order_obj['orderid'] = order.id
+		temp_order_obj['ordertime'] = datetime.datetime.strftime(order.create_time,'%Y-%m-%d %H:%M:%S')
+		userinfo = {}
+
+		customer = Customer.objects.get(id=order.customer_id) # 获取订单对应用户
+		userinfo['name'] = customer.name
+		userinfo['phoneno'] = customer.mobile
+		temp_order_obj['userinfo'] = userinfo
+
+		# 地址
+		delivery_address = DeliveryAddress.objects.get(id=order.delivery_address_id) # 获取订单对应地址信息
+		temp_order_obj['orderaddr'] = delivery_address.searched_address + ' ' + delivery_address.detail_address 
+		temp_order_obj['sendtype'] = order.consume_type
+
+		# 支付信息
+		pay_type_obj = UserPayType.objects.get(id=order.pay_type_id)
+		temp_order_obj['paytype'] = pay_type_obj.pay_type
+		creditcard_info = {}
+		if int(pay_type_obj.pay_type) == 1:
+			creditcard_info['cardno'] = pay_type_obj.credit_card
+			creditcard_info['pin'] = pay_type_obj.security_code
+			creditcard_info['validate_year'] = pay_type_obj.expire_year
+			creditcard_info['validate_month'] = pay_type_obj.expire_month
+		temp_order_obj['creditcard_info'] = creditcard_info
+
+		# 菜品详情
+		dishinfos = []
+		for order_dish in order.order_dishes.all():
+			temp_dish_obj = {}
+			temp_dish_obj['dish_number'] = order_dish.dish_order_number
+			temp_dish_obj['dish_name'] = order_dish.dish.name
+			temp_dish_obj['dish_type'] = order_dish.dish.dish_type
+			temp_dish_obj['dish_price'] = order_dish.dish.price
+			sub_dish_list = []
+			if int(order_dish.dish.dish_type) == 1:
+				for subdish in order_dish.dish.subdishes.all():
+					temp_subdish_obj = {}
+					temp_subdish_obj['name'] = subdish.name
+					temp_subdish_obj['price'] = subdish.price
+					sub_dish_list.append(temp_subdish_obj)
+			temp_dish_obj['sub_dish_list'] = sub_dish_list
+			dishinfos.append(temp_dish_obj)
+		temp_order_obj['dishinfos'] = dishinfos
+
+		# 订单价格详情
+		price_detail = {}
+		price_detail['dish_total_price'] = order.total_price
+		price_detail['tax_price'] = order.tax
+		price_detail['freight_price'] = order.freight
+		price_detail['tip_price'] = order.tip
+		temp_order_obj['price_detail'] = price_detail
+		order_list.append(temp_order_obj)
+	response['orders']['list'] = order_list
+	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
+
+
 # 获取所有已接订单
 def get_all_accept_orders(request):
 	response = {}

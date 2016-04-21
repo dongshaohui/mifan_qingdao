@@ -1272,7 +1272,7 @@ def upload_order(request):
 	tax = float("%.1f" %(float(total_dish_price) * float(global_set.tax_rate)))
 	print tax
 	# 折扣
-	discount_price = float("%.1f" %(float(total_dish_price) * float(global_set.discount_rate)))
+	discount_price = float("%.1f" %(float(total_dish_price) * float(global_set.discount_rate	)))
 	print global_set.tax_rate,discount_price
 	# 最终应付价格
 	payable_price = total_dish_price + freight_price + tip + tax - discount_price

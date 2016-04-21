@@ -28,10 +28,11 @@ urlpatterns = patterns('',
     url(r'^shop_serv/get_all_finish_orders','shop_serv.views.get_all_finish_orders'),
     url(r'^shop_serv/get_all_accept_orders','shop_serv.views.get_all_accept_orders'),
     url(r'^shop_serv/get_all_new_orders','shop_serv.views.get_all_new_orders'),
+    url(r'^shop_serv/get_all_history_orders','shop_serv.views.get_all_history_orders'),
     url(r'^shop_serv/search_orders','shop_serv.views.search_orders'),
     url(r'^shop_serv/upload_addr','shop_serv.views.upload_addr'),
     url(r'^shop_serv/get_addr','shop_serv.views.get_addr'), 
-    
+    get_all_history_orders     
     # 客户端接口（IOS）
     ########################### 
     #
