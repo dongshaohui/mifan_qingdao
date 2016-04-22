@@ -7,6 +7,7 @@ from order_dinner.models import Customer,UserPayType,DeliveryAddress,Shop,Dish,S
 from random import Random
 from django.contrib import auth
 import sms_sender
+import jpush
 # from bs4 import BeautifulSoup
 
 ########################### 
@@ -1283,6 +1284,19 @@ def upload_order(request):
 	new_order.discount_price = discount_price
 	new_order.total_price = payable_price
 	new_order.save()
+
+	# 极光推送消息
+	APP_KEY="d574d8f5f6fc8933599e4683"
+	MASTER_SECRET="804fe51a04d44ae35610a25b"
+	_jpush = jpush.JPush(APP_KEY, MASTER_SECRET)	
+	push = _jpush.create_push()
+	push.audience = jpush.audience(jpush.registration_id(shop_obj.registration_id))
+	alert_msg = "您有新订单!手机号: %s下单" % customer.mobile
+	push.notification = jpush.notification(alert=alert_msg)
+	push.options = {"time_to_live":86400, "sendno":12345,"apns_production":True}
+	push.platform = jpush.all_
+	push.send()
+	# 极光推送消息结束
 	response = {'code':0,'msg':'success'}
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
