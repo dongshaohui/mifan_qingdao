@@ -666,7 +666,7 @@ def search_orders(request):
 			pageno = int(request.GET['pageno'])
 	if "pagelength" in request.GET:
 		pagelength = int(request.GET['pagelength'])
-	total_order_count - len(orders)
+	totol_order_number = len(orders)
 	orders = orders[(pageno-1)*pagelength:pageno*pagelength]
 	print "order length = ",len(orders)
 	response = {'code':0,'msg':'success'}
