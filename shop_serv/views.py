@@ -628,6 +628,7 @@ def get_all_new_orders(request):
 
 # 订单搜索接口
 def search_orders(request):
+	print "enter search_orders!"
 	response = {}
 	token = None
 	condition = None
@@ -667,7 +668,7 @@ def search_orders(request):
 		pagelength = int(request.GET['pagelength'])
 
 	orders = orders[(pageno-1)*pagelength:pageno*pagelength]
-
+	print "order length = ",len(orders)
 	response = {'code':0,'msg':'success'}
 	response['orders'] = []
 	for order in orders:
