@@ -52,6 +52,7 @@ class Shop(models.Model):
 	shop_feature = models.CharField(default='',verbose_name=u'商店特色中文',max_length=255) # 商店特色
 	shop_feature_en = models.CharField(default='',verbose_name=u'商店特色英文',max_length=255) # 商店英文特色
 	commission = models.FloatField(verbose_name=u'佣金百分比',default=0.1) # 佣金百分比
+	registration_id = models.CharField(default='',verbose_name=u'极光推送ID',max_length=255) # 极光推送ID
 	# discount = models.FloatField(verbose_name=u'折扣',default=0.0) # 折扣
 	class Meta:
 		verbose_name = '商店'

@@ -16,6 +16,7 @@ def login(request):
 	username = None
 	password = None
 	code = None
+	registration_id = None
 	# 获取用户名
 	if 'username' in request.GET:
 		username = request.GET['username']
@@ -25,6 +26,12 @@ def login(request):
 	# 获取密码
 	if 'password' in request.GET:
 		password = request.GET['password']
+	else:
+		code = -100
+
+	# 极光推送ID
+	if 'registration_id' in request.GET:
+		registration_id = request.GET['registration_id']
 	else:
 		code = -100
 
@@ -38,7 +45,9 @@ def login(request):
 		shop_manager = ShopManager.objects.get(user_ptr_id=user_id)
 		shop_id = shop_manager.shop_id
 		shop_obj = Shop.objects.get(id=shop_id)
-		print shop_id,"shop_id"
+		shop_obj.registration_id = registration_id
+		shop_obj.save()
+		# print shop_id,"shop_id"
 		token = token_str() # 生成token
 		request.session[token] = shop_id # 存入session中
 		response = {'code':0,'msg':'Success','token':token} 		
