@@ -1273,10 +1273,11 @@ def upload_order(request):
 	tax = float("%.1f" %(float(total_dish_price) * float(global_set.tax_rate)))
 	print tax
 	# 折扣
-	discount_price = float("%.1f" %(float(total_dish_price) * float(global_set.discount_rate	)))
+	discount_price = float("%.1f" %(float(total_dish_price) * float(global_set.discount_rate)))
 	print global_set.tax_rate,discount_price
 	# 最终应付价格
 	payable_price = total_dish_price + freight_price + tip + tax - discount_price
+	new_order.origin_price = total_dish_price
 	new_order.freight = freight_price
 	new_order.commission_price = commission
 	new_order.tip = tip
@@ -1317,6 +1318,7 @@ def get_all_orders(request):
 		response = {'code':-1,'msg':'token失效，需重新登录','msg_en':'Need to re-login'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))		
 
+	global_set = GlobalSetting.objects.all()[0]
 	# 获取token对应的用户
 	customer_id = request.session[token]
 	customers = Customer.objects.filter(id=customer_id)
@@ -1336,6 +1338,9 @@ def get_all_orders(request):
 		temp_order_obj['shop_en_name'] = order.shop.name_en
 		temp_order_obj['shop_img'] = order.shop.shop_img.name
 		temp_order_obj['total_price'] = order.total_price
+		temp_order_obj['discount_rate'] = global_set.discount_rate
+		temp_order_obj['dish_price'] = order.origin_price #菜品总价
+		temp_order_obj['payable_price'] = order.total_price #应付价格
 		temp_order_obj['order_create_time'] = datetime.datetime.strftime(order.create_time,'%Y-%m-%d %H:%M:%S')
 		response['order_list'].append(temp_order_obj)
 
@@ -1363,7 +1368,9 @@ def get_order_detail_info(request):
 	# 查看token是否存在session中
 	if token not in request.session:
 		response = {'code':-1,'msg':'token失效，需重新登录','msg_en':'Need to re-login'}
-		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))		
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))	
+
+	global_set = GlobalSetting.objects.all()[0]
 
 	# 获取token对应的用户
 	customer_id = request.session[token]
@@ -1389,6 +1396,9 @@ def get_order_detail_info(request):
 	response['freight'] = order.freight
 	response['distance'] = order.distance
 	response['tax'] = order.tax
+	response['discount_rate'] = global_set.discount_rate
+	response['dish_price'] = order.origin_price
+	response['payable_price'] = order.total_price
 	response['order_create_time'] = datetime.datetime.strftime(order.create_time,'%Y-%m-%d %H:%M:%S')
 	response['dish_order_list'] = []
 	for order_dish in order.order_dishes.all():

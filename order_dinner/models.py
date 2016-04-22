@@ -237,7 +237,7 @@ class Order(models.Model):
 	status = models.CharField(verbose_name=u'订单状态',max_length=255) # 订单状态 -- 'PROGRESS'、'ACCEPTED'、'SUCCESS'、'CLOSE'
 	reject_reason = models.CharField(verbose_name=u'订单取消原因',max_length=255,default='') # 订单取消原因
 	total_price = models.FloatField(verbose_name=u'订单总价格',default=0.0) # 订单总价格
-	payable_price = models.FloatField(verbose_name=u'订单应付价格',default=0) # 订单应付价格（折扣）
+	origin_price = models.FloatField(verbose_name=u'菜品总价格',default=0) # 菜品总价格
 	create_time = models.DateTimeField(verbose_name=u'创建时间',default=timezone.now)
 	update_time = models.DateTimeField(verbose_name=u'修改时间',default=timezone.now,auto_now=True)
 
