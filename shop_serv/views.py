@@ -656,6 +656,18 @@ def search_orders(request):
 		customer = customers[0]
 		orders_by_mobile = Order.objects.filter(customer=customer)
 	orders = list(orders_by_id) + list(orders_by_mobile)
+
+	pageno = 1
+	pagelength = len(orders)
+
+	if "pageno" in request.GET:
+		if int(request.GET['pageno']) > 0:
+			pageno = int(request.GET['pageno'])
+	if "pagelength" in request.GET:
+		pagelength = int(request.GET['pagelength'])
+
+	orders = orders[(pageno-1)*pagelength:pageno*pagelength]
+
 	response = {'code':0,'msg':'success'}
 	response['orders'] = []
 	for order in orders:
