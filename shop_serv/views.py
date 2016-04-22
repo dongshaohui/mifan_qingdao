@@ -674,6 +674,14 @@ def search_orders(request):
 	for order in orders:
 		temp_order_obj = {}
 		temp_order_obj['orderid'] = order.id
+		if order.status == "PROGRESS":
+			temp_order_obj['order_status'] = 1
+		elif order.status == "ACCEPTED":
+			temp_order_obj['order_status'] = 2
+		elif order.status == "SUCCESS":
+			temp_order_obj['SUCCESS'] = 3
+		elif order.status == "CLOSE":
+			temp_order_obj['SUCCESS'] = 4			
 		temp_order_obj['ordertime'] = datetime.datetime.strftime(order.create_time,'%Y-%m-%d %H:%M:%S')
 		userinfo = {}
 
