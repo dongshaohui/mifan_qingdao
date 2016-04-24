@@ -1406,13 +1406,22 @@ def get_order_detail_info(request):
 		temp_dish_obj['dish_id'] = order_dish.dish.id
 		temp_dish_obj['dish_type'] = order_dish.dish.dish_type
 		temp_dish_obj['order_number'] = order_dish.dish_order_number
+		temp_dish_obj['dish_name_cn'] = order_dish.dish.name
+		temp_dish_obj['dish_name_en'] = order_dish.dish.name_en
+		temp_dish_obj['dish_price'] = order_dish.dish.price
 		if int(temp_dish_obj['dish_type']) == 1:
 			temp_dish_obj['side_dish_list'] = []
+			temp_dish_price = 0.0
 			for ordered_subdish in order_dish.ordered_subdishes.all():
 				temp_subdish_obj = {}
 				temp_subdish_obj['side_dish_id'] = ordered_subdish.subdish.id
 				temp_subdish_obj['order_number'] = ordered_subdish.subdish_order_number
+				temp_subdish_obj['side_dish_name_cn'] = ordered_subdish.subdish.name
+				temp_subdish_obj['side_dish_name_en'] = ordered_subdish.subdish.name_en
+				temp_subdish_obj['side_dish_price'] = ordered_subdish.subdish.price
+				temp_dish_price += float(ordered_subdish.subdish_order_number) * float(ordered_subdish.subdish.price)
 				temp_dish_obj['side_dish_list'].append(temp_subdish_obj)
+			temp_dish_obj['dish_price'] = temp_dish_price
 		response['dish_order_list'].append(temp_dish_obj)
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
