@@ -1512,6 +1512,23 @@ def calculate_freight(request):
 	response = {'code':0,'msg':'success','freight_price':freight_price}	
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
+# 计算税
+def calculate_tax(request):
+	response = {}
+	total_price = None	
+	code = None
+	if 'total_price' in request.GET:
+		total_price = request.GET['total_price']
+	else:
+		code = -100		
+	if code == -100:
+		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！','msg_en':'Request parameter incomplete or incorrectly formatted!'}
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))		
+	global_set = GlobalSetting.objects.all()[0]			
+	# 税
+	tax = float("%.1f" %(float(total_price) * float(global_set.tax_rate)))	
+	response = {'code':0,'msg':'success','tax':tax}	
+	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 ########################### 
 #
 #	Other Module Interface

@@ -94,7 +94,8 @@ urlpatterns = patterns('',
     url(r'^user_serv/calculate_distance','user_serv.views.calculate_distance'),
 
     # 提交订单
-    url(r'^user_serv/calculate_freight','user_serv.views.calculate_freight'),
+    url(r'^user_serv/calculate_freight','user_serv.views.calculate_freight'), # 计算运费
+    url(r'^user_serv/calculate_tax','user_serv.views.calculate_tax'),
 
     ########################### 
     #
