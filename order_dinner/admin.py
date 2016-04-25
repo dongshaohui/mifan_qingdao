@@ -145,8 +145,8 @@ class BannerImgAdmin(object):
 
 # 定制全局参数管理
 class GlobalSettingAdmin(object):
-	fields = ("setting_key","setting_desc","setting_value")
-	list_display = ("setting_key","setting_desc","setting_value")
+	fields = ("freight_thres","tax_rate","discount_rate")
+	list_display = ("freight_thres","tax_rate","discount_rate")
 
 # 商铺管理
 class ShopAdmin(object):

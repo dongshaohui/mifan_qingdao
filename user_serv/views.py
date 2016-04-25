@@ -1260,7 +1260,7 @@ def upload_order(request):
 	# 运费
 	print "distance= ",distance
 	freight_price = 0
-	if float(distance) < global_set.freight_thres:
+	if float(total_price) < global_set.freight_thres:
 		freight_price = float("%.1f" % (float(distance) / (float)(1.6)))
 	# 佣金
 	commission = float("%.1f" %(float(total_dish_price) * float(shop_obj.commission)))
@@ -1507,7 +1507,7 @@ def calculate_freight(request):
 	# 运费
 	print "distance= ",distance
 	freight_price = 0
-	if float(distance) < global_set.freight_thres:
+	if float(total_price) < global_set.freight_thres:
 		freight_price = float("%.1f" % (float(distance) / (float)(1.6)))
 	response = {'code':0,'msg':'success','freight_price':freight_price}	
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
