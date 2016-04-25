@@ -148,6 +148,11 @@ class GlobalSettingAdmin(object):
 	fields = ("setting_key","setting_desc","setting_value")
 	list_display = ("setting_key","setting_desc","setting_value")
 
+# 商铺管理
+class ShopAdmin(object):
+	fields = ("name","name_en","postcode",'mobile','business_hour','remark','remark_en','shop_img','shop_feature','shop_feature_en','commission')
+	list_display = ("name","name_en","postcode",'mobile','business_hour','remark','remark_en','shop_img','shop_feature','shop_feature_en','commission','registration_id')
+
 
 class UserPayTypeAdmin(object):
 	fields = ("customer","pay_type","credit_card","security_code","expire_year","expire_month")
@@ -157,7 +162,7 @@ xadmin.site.register(views.CommAdminView, GlobalViewSetting)
 xadmin.site.register(Customer,CustomAdmin)
 xadmin.site.register(Subdish,SubdishAdmin)
 xadmin.site.register(Dish,DishAdmin)
-xadmin.site.register(Shop)
+xadmin.site.register(Shop,ShopAdmin)
 xadmin.site.register(Order,OrderAdmin)
 xadmin.site.register(ShopManager,ShopManagerAdmin)
 xadmin.site.register(BannerImg,BannerImgAdmin)

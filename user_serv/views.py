@@ -1486,6 +1486,32 @@ def calculate_distance(request):
 	response = {'code':0,'msg':'success',"distance":distance}
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))	
 	
+# 计算运费
+def calculate_freight(request):
+	response = {}
+	total_price = None
+	distance = None
+	code = None
+	if 'total_price' in request.GET:
+		total_price = request.GET['total_price']
+	else:
+		code = -100		
+	if 'distance' in request.GET:
+		distance = request.GET['distance']
+	else:
+		code = -100				
+	if code == -100:
+		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！','msg_en':'Request parameter incomplete or incorrectly formatted!'}
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))		
+	global_set = GlobalSetting.objects.all()[0]
+	# 运费
+	print "distance= ",distance
+	freight_price = 0
+	if float(distance) < global_set.freight_thres:
+		freight_price = float("%.1f" % (float(distance) / (float)(1.6)))
+	response = {'code':0,'msg':'success','freight_price':freight_price}	
+	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
+
 ########################### 
 #
 #	Other Module Interface
