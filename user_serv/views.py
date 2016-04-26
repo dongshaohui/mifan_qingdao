@@ -797,11 +797,13 @@ def search_shop_infos(request):
 	searched_by_id = []
 	searched_by_name = []
 	searched_by_phone = []
+	searched_by_name_en = []
 	if shop_search_term.isdigit():
 		searched_by_id = Shop.objects.filter(id=(int)(shop_search_term))
 	searched_by_name = Shop.objects.filter(name__icontains=shop_search_term)
 	searched_by_phone = Shop.objects.filter(mobile__icontains=shop_search_term)
-	searched_results = list(searched_by_id) + list(searched_by_name) + list(searched_by_phone)
+	searched_by_name_en = Shop.objects.filter(name_en__icontains=shop_search_term)
+	searched_results = list(searched_by_id) + list(searched_by_name) + list(searched_by_phone) + list(searched_by_name_en)
 	response = {'code':0,'msg':'success'}
 	response['shop_info_list'] = []
 	now = datetime.datetime.now()
@@ -997,7 +999,7 @@ def search_dishes(request):
 
 	response = {'code':0,'msg':'success'}
 	response['dish_info_list'] = []
-	dish_objs = Dish.objects.filter(name__icontains=dish_search_term)
+	dish_objs = Dish.objects.filter(name__icontains=dish_search_term) | Dish.objects.filter(name_en__icontains=dish_search_term)
 	now = datetime.datetime.now()
 	month = now.month
 	year = now.year
@@ -1529,6 +1531,8 @@ def calculate_tax(request):
 	tax = float("%.1f" %(float(total_price) * float(global_set.tax_rate)))	
 	response = {'code':0,'msg':'success','tax':tax}	
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
+
+	
 ########################### 
 #
 #	Other Module Interface
