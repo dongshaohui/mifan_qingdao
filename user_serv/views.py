@@ -69,7 +69,7 @@ def register(request):
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
 	# 判断验证码是否正确
-	verification_code_objs = VerificationCode.objects.filter(mobile=phoneno)
+	verification_code_objs = VerificationCode.objects.filter(mobile="+1"+phoneno)
 	if len(verification_code_objs) == 0:
 		response = {'code':-3,'msg':'验证码错误','msg_en':'Verification code error'} 
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
