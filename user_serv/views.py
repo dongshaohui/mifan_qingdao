@@ -70,11 +70,13 @@ def register(request):
 
 	# 判断验证码是否正确
 	verification_code_objs = VerificationCode.objects.filter(mobile="+1"+phoneno)
+	print len(verification_code_objs)
 	if len(verification_code_objs) == 0:
 		response = {'code':-3,'msg':'验证码错误','msg_en':'Verification code error'} 
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 	else:
 		verification_code_record = verification_code_objs[0].verification_code
+		print verification_code_record,verification_code
 		if str(verification_code_record) != verification_code:
 			response = {'code':-3,'msg':'验证码错误','msg_en':'Verification code error'} 
 			return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))			
