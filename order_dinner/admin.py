@@ -48,6 +48,13 @@ class CustomAdmin(object):
 class SubdishAdmin(object):
 	list_display = ('name','price','shop')
 
+	def get_model_form(self, **kwargs):
+		form = super(SubdishAdmin, self).get_model_form(**kwargs)
+		# print self.user.id
+		shop_id = ShopManager.objects.get(user_ptr_id=self.user.id).shop_id
+		shop = Shop.objects.get(id=shop_id)
+		form.base_fields['shop'].queryset = Shop.objects.filter(id=shop_id)
+		return form
 	# 为显示增加外键项
 	# def get_shop_name(self,obj):
 	# 	return obj.shop.name
@@ -71,6 +78,14 @@ class DishAdmin(object):
 
 	# def changelist_view(self):
 	# 	print "changelist"
+
+	def get_model_form(self, **kwargs):
+		form = super(DishAdmin, self).get_model_form(**kwargs)
+		# print self.user.id
+		shop_id = ShopManager.objects.get(user_ptr_id=self.user.id).shop_id
+		form.base_fields['subdishes'].queryset = Subdish.objects.filter(shop_id=shop_id)
+		return form
+
 
 	def preview(self,obj):
 		return '<img src="/media/%s" height="80" width="100" />' %(obj.dish_img)
