@@ -14,9 +14,9 @@ class GlobalSetting(models.Model):
 	tax_rate = models.FloatField(verbose_name=u'税率',default=0.08)
 	discount_rate = models.FloatField(verbose_name=u'折扣率',default=0.0)
 
-	class Meta:
-		verbose_name = '全局设置'
-		verbose_name_plural  = '全局设置'
+	# class Meta:
+	# 	verbose_name = '全局设置'
+	# 	verbose_name_plural  = '全局设置'
 		# ordering = ['-priority']	
 
 
@@ -26,10 +26,10 @@ class ShopBusinessStatus(models.Model):
 	desc = models.CharField(verbose_name=u'状态描述',max_length=255) 
 	status_tag =  models.IntegerField(verbose_name=u'是否营业',default=1) # 是否营业（0-未营业 1-营业）
 
-	class Meta:
-		verbose_name = '商铺营业状态'
-		verbose_name_plural  = '商铺营业状态'
-		# ordering = ['-priority']	
+	# class Meta:
+	# 	verbose_name = '商铺营业状态'
+	# 	verbose_name_plural  = '商铺营业状态'
+	# 	# ordering = ['-priority']	
 
 	def __unicode__(self):
 		return self.desc
@@ -54,10 +54,10 @@ class Shop(models.Model):
 	commission = models.FloatField(verbose_name=u'佣金百分比',default=0.1) # 佣金百分比
 	registration_id = models.CharField(default='',verbose_name=u'极光推送ID',max_length=255) # 极光推送ID
 	# discount = models.FloatField(verbose_name=u'折扣',default=0.0) # 折扣
-	class Meta:
-		verbose_name = '商店'
-		verbose_name_plural  = '商店'
-		# ordering = ['-priority']	
+	# class Meta:
+	# 	verbose_name = '商店'
+	# 	verbose_name_plural  = '商店'
+	# 	# ordering = ['-priority']	
 
 	def __unicode__(self):
 		return self.name
@@ -89,10 +89,10 @@ class Customer(models.Model):
 	create_time = models.DateTimeField(verbose_name=u'创建时间',auto_now=True)
 	update_time = models.DateTimeField(verbose_name=u'修改时间',default=timezone.now)
 
-	class Meta:
-		verbose_name = '用户'
-		verbose_name_plural  = '用户'
-		ordering = ['-create_time']	
+	# class Meta:
+	# 	verbose_name = '用户'
+	# 	verbose_name_plural  = '用户'
+	# 	ordering = ['-create_time']	
 
 	def __unicode__(self):
 		return self.mobile
@@ -112,10 +112,11 @@ class UserPayType(models.Model):
 	security_code = models.CharField(verbose_name=u'信用安全码',max_length=255) # 信用安全码
 	expire_year = models.CharField(verbose_name=u'过期年份',max_length=255) # 过期年份
 	expire_month = models.CharField(verbose_name=u'过期月份',max_length=255) # 过期月份
-	class Meta:
-		verbose_name = '用户支付方式'
-		verbose_name_plural  = '用户支付方式'
-		# ordering = ['-create_time']	
+	
+	# class Meta:
+	# 	verbose_name = '用户支付方式'
+	# 	verbose_name_plural  = '用户支付方式'
+	# 	# ordering = ['-create_time']	
 
 	def __unicode__(self):
 		if self.customer:
@@ -133,10 +134,10 @@ class DeliveryAddress(models.Model):
 	detail_address = models.CharField(verbose_name=u'详细地址',max_length=255,default='') # 详细地址
 	postcode = models.CharField(verbose_name=u'邮编',max_length=255,default='') # 邮编
 
-	class Meta:
-		verbose_name = '收货地址'
-		verbose_name_plural  = '收货地址'
-		# ordering = ['-create_time']	
+	# class Meta:
+	# 	verbose_name = '收货地址'
+	# 	verbose_name_plural  = '收货地址'
+	# 	# ordering = ['-create_time']	
 
 	def __unicode__(self):
 		return self.receiver_name
@@ -158,10 +159,10 @@ class BannerImg(models.Model):
 	img = models.ImageField(verbose_name=u'轮播图片',upload_to='imgs/') # 轮播图片
 	priority = models.IntegerField(verbose_name=u'优先级(优先级高的优先显示)',default=0) # 优先级
 
-	class Meta:
-		verbose_name = '轮播图'
-		verbose_name_plural  = '轮播图'
-		ordering = ['-priority']	
+	# class Meta:
+	# 	verbose_name = '轮播图'
+	# 	verbose_name_plural  = '轮播图'
+	# 	ordering = ['-priority']	
 
 	def __unicode__(self):
 		return self.name
@@ -173,9 +174,9 @@ class Subdish(models.Model):
 	name_en = models.CharField(default='',verbose_name=u'配菜英文名',max_length=255) # 子菜品的英文名称
 	price = models.FloatField(verbose_name=u'配菜单价',default=0.0) # 子菜品的价格
 
-	class Meta:
-		verbose_name = '配菜'
-		verbose_name_plural  = '配菜'
+	# class Meta:
+	# 	verbose_name = '配菜'
+	# 	verbose_name_plural  = '配菜'
 
 	def __unicode__(self):
 		return self.name
@@ -189,10 +190,10 @@ class Dish(models.Model):
  	dish_img = models.ImageField(verbose_name=u'菜品图片',upload_to='imgs/') # 菜品的图片
 	price = models.FloatField(verbose_name=u'菜品价格',default=0.0) # 菜品的价格
 
-	class Meta:
-		verbose_name = '菜品'
-		verbose_name_plural  = '菜品'
-		# ordering = ['-priority']	
+	# class Meta:
+	# 	verbose_name = '菜品'
+	# 	verbose_name_plural  = '菜品'
+	# 	# ordering = ['-priority']	
 
 	def __unicode__(self):
 		return self.name
@@ -209,10 +210,10 @@ class OrderDish(models.Model):
 	ordered_subdishes = models.ManyToManyField(OrderSubDish,blank=True,null=True) # 订单中菜品包含的子菜品
 
 
-	class Meta:
-		verbose_name = '订单中的菜品'
-		verbose_name_plural  = '订单中的菜品'
-		# ordering = ['-create_time']	
+	# class Meta:
+	# 	verbose_name = '订单中的菜品'
+	# 	verbose_name_plural  = '订单中的菜品'
+	# 	# ordering = ['-create_time']	
 
 	def __unicode__(self):
 		return self.dish.name 
@@ -241,10 +242,10 @@ class Order(models.Model):
 	create_time = models.DateTimeField(verbose_name=u'创建时间',default=timezone.now)
 	update_time = models.DateTimeField(verbose_name=u'修改时间',default=timezone.now,auto_now=True)
 
-	class Meta:
-		verbose_name = '订单'
-		verbose_name_plural  = '订单'
-		ordering = ['-create_time']	
+	# class Meta:
+	# 	verbose_name = '订单'
+	# 	verbose_name_plural  = '订单'
+	# 	ordering = ['-create_time']	
 
 	# def __unicode__(self):
 	# 	return self.name
