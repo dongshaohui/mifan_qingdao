@@ -250,7 +250,7 @@ def personal_info(request):
 	response['business_status'] = shop_obj.status
 	response['username'] = shop_obj.name
 	response['phoneno'] = shop_obj.mobile
-	response['shopimg']  = "http://resource.jindouyunonline.com:8001/media" + shop_obj.shop_img.name
+	response['shopimg']  = "http://resource.jindouyunonline.com:8001/media/" + shop_obj.shop_img.name
 	response['addr'] = shop_obj.search_addr + ' ' + shop_obj.detail_addr
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
