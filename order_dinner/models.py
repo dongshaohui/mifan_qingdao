@@ -31,8 +31,8 @@ class ShopBusinessStatus(models.Model):
 	# 	verbose_name_plural  = '商铺营业状态'
 	# 	# ordering = ['-priority']	
 
-	def __unicode__(self):
-		return self.desc
+	# def __unicode__(self):
+	# 	return self.desc
 
 # 商铺
 class Shop(models.Model):
@@ -59,8 +59,8 @@ class Shop(models.Model):
 	# 	verbose_name_plural  = '商店'
 	# 	# ordering = ['-priority']	
 
-	def __unicode__(self):
-		return self.name
+	# def __unicode__(self):
+	# 	return self.name
 
 # 佣金设置
 # class CommissionSetting(models.Model):
@@ -94,8 +94,8 @@ class Customer(models.Model):
 	# 	verbose_name_plural  = '用户'
 	# 	ordering = ['-create_time']	
 
-	def __unicode__(self):
-		return self.mobile
+	# def __unicode__(self):
+	# 	return self.mobile
 
 # 手机验证码记录
 class VerificationCode(models.Model):
@@ -118,11 +118,11 @@ class UserPayType(models.Model):
 	# 	verbose_name_plural  = '用户支付方式'
 	# 	# ordering = ['-create_time']	
 
-	def __unicode__(self):
-		if self.customer:
-			return self.customer.mobile + " " + str(self.pay_type) + " " + self.credit_card
-		else:
-			return str(self.pay_type) + " " + self.credit_card
+	# def __unicode__(self):
+	# 	if self.customer:
+	# 		return self.customer.mobile + " " + str(self.pay_type) + " " + self.credit_card
+	# 	else:
+	# 		return str(self.pay_type) + " " + self.credit_card
 # 收货地址
 class DeliveryAddress(models.Model):
 	customer = models.ForeignKey(Customer,related_name='customer_delivery_address') # 收货地址从属的用户
@@ -139,8 +139,8 @@ class DeliveryAddress(models.Model):
 	# 	verbose_name_plural  = '收货地址'
 	# 	# ordering = ['-create_time']	
 
-	def __unicode__(self):
-		return self.receiver_name
+	# def __unicode__(self):
+	# 	return self.receiver_name
 
 # 信用卡
 class CreditCard(models.Model):
@@ -164,8 +164,8 @@ class BannerImg(models.Model):
 	# 	verbose_name_plural  = '轮播图'
 	# 	ordering = ['-priority']	
 
-	def __unicode__(self):
-		return self.name
+	# def __unicode__(self):
+	# 	return self.name
 
 # 子菜品
 class Subdish(models.Model):
@@ -178,8 +178,8 @@ class Subdish(models.Model):
 	# 	verbose_name = '配菜'
 	# 	verbose_name_plural  = '配菜'
 
-	def __unicode__(self):
-		return self.name
+	# def __unicode__(self):
+	# 	return self.name
 # 菜品
 class Dish(models.Model):
 	shop = models.ForeignKey(Shop,related_name='shop_dish',verbose_name="选取店铺") # 菜品隶属的商铺
@@ -195,8 +195,8 @@ class Dish(models.Model):
 	# 	verbose_name_plural  = '菜品'
 	# 	# ordering = ['-priority']	
 
-	def __unicode__(self):
-		return self.name
+	# def __unicode__(self):
+	# 	return self.name
 
 # 订单中的子菜品
 class OrderSubDish(models.Model):
@@ -215,8 +215,8 @@ class OrderDish(models.Model):
 	# 	verbose_name_plural  = '订单中的菜品'
 	# 	# ordering = ['-create_time']	
 
-	def __unicode__(self):
-		return self.dish.name 
+	# def __unicode__(self):
+	# 	return self.dish.name 
 
 
 # 订单
