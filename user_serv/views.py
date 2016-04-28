@@ -1321,7 +1321,8 @@ def get_all_orders(request):
 	if token not in request.session:
 		response = {'code':-1,'msg':'token失效，需重新登录','msg_en':'Need to re-login'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))		
-
+	print token
+	print request.session[token]
 	global_set = GlobalSetting.objects.all()[0]
 	# 获取token对应的用户
 	customer_id = request.session[token]
@@ -1547,7 +1548,10 @@ def get_global_conf(request):
 def delete_token(request):
 	response = {}
 	token = request.GET['token']
-	del request.session[token]
+	print token
+	if token in request.session:
+		print "存在token，删除之"
+		del request.session[token]
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))	
 
 ########################### 
