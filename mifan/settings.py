@@ -70,7 +70,7 @@ DATABASES = {
         'NAME': 'mifan_qingdao',
         'USER': 'dongsh',
         'PASSWORD': '5561225',
-        'HOST': 'rdsjjuvbqjjuvbqout.mysql.rds.aliyuncs.com',
+        'HOST': 'rm-0xiakhqixk095fd0i.mysql.rds.aliyuncs.com',
         'PORT': '3306',
     }
 }
