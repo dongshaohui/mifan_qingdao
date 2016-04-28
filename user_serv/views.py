@@ -1547,8 +1547,10 @@ def get_global_conf(request):
 
 def delete_token(request):
 	response = {}
-	for key in request.session:
-		del request.session[key]
+	print request.session
+	request.session = {}
+	# for key in request.session:
+	# 	del request.session[key]
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))	
 
 ########################### 
