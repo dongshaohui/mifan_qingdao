@@ -1547,11 +1547,8 @@ def get_global_conf(request):
 
 def delete_token(request):
 	response = {}
-	token = request.GET['token']
-	print token
-	if token in request.session:
-		print "存在token，删除之"
-		del request.session[token]
+	for key in request.session:
+		del request.session[key]
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))	
 
 ########################### 
