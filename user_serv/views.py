@@ -1544,7 +1544,12 @@ def get_global_conf(request):
 	response['policy_link'] = global_set.policy_link
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
-	
+def delete_token(request):
+	response = {}
+	token = request.GET['token']
+	del request.session[token]
+	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))	
+
 ########################### 
 #
 #	Other Module Interface

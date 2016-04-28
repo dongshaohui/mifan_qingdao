@@ -104,5 +104,6 @@ urlpatterns = patterns('',
     #
     ########################### 
     url(r'^user_serv/get_banner_list','user_serv.views.get_banner_list'),
+    url(r'^user_serv/delete_token','user_serv.views.delete_token'),
     url(r'^user_serv/get_global_conf','user_serv.views.get_global_conf'),
 )+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)   
