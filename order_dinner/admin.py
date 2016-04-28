@@ -124,6 +124,16 @@ class OrderAdmin(object):
 			return u"已完成"
 		elif self.status == "CLOSE":
 			return u"已取消"
+	# 客户查询过滤
+	def get_list_queryset(self):
+		print "current user id = ", self.user.id
+		# 判断是否为超级用户
+		if not self.user.is_superuser:
+			# 获取shop id
+			current_shop_id = ShopManager.objects.get(user_ptr_id=self.user.id).shop_id
+			return super(OrderAdmin,self).get_list_queryset().filter(shop_id=current_shop_id)
+		else:
+			return super(OrderAdmin,self).get_list_queryset()			
 	order_state_view.allow_tags = True
 	order_state_view.short_description = "订单状态"	
 	# fields = ('name','mobile','valid')
