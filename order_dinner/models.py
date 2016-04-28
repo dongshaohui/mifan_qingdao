@@ -13,6 +13,9 @@ class GlobalSetting(models.Model):
 	freight_thres = models.FloatField(verbose_name=u'满X元免运费',default=0.0)
 	tax_rate = models.FloatField(verbose_name=u'税率',default=0.08)
 	discount_rate = models.FloatField(verbose_name=u'折扣率',default=0.0)
+	customer_service = models.CharField(verbose_name=u'客服电话',max_length=255,default="")
+	policy_link = models.CharField(verbose_name=u'协议链接地址',max_length=255,default="")
+	working_hours = models.CharField(verbose_name=u'工作时间设置',max_length=255,default="")
 
 	class Meta:
 		verbose_name = '全局设置'

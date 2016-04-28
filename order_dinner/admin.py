@@ -170,8 +170,8 @@ class BannerImgAdmin(object):
 
 # 定制全局参数管理
 class GlobalSettingAdmin(object):
-	fields = ("freight_thres","tax_rate","discount_rate")
-	list_display = ("freight_thres","tax_rate","discount_rate")
+	fields = ("freight_thres","tax_rate","discount_rate","customer_service","policy_link","working_hours")
+	list_display = ("freight_thres","tax_rate","discount_rate","customer_service","policy_link","working_hours")
 
 # 商铺管理
 class ShopAdmin(object):

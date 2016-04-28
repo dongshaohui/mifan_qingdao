@@ -1534,6 +1534,16 @@ def calculate_tax(request):
 	response = {'code':0,'msg':'success','tax':tax}	
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
+# 全局设置
+def get_global_conf(request):
+	response = {}
+	global_set = GlobalSetting.objects.all()[0]
+	response = {'code':0,'msg':'success'}
+	response['working_hours'] = global_set.working_hours
+	response['customer_service'] = global_set.customer_service
+	response['policy_link'] = global_set.policy_link
+	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
+
 	
 ########################### 
 #
