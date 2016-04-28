@@ -815,7 +815,7 @@ def search_shop_infos(request):
 		temp_searched_result = {}
 		temp_searched_result['shop_id'] = searched_result.id
 		temp_searched_result['status'] = searched_result.status
-		temp_searched_result['img'] = searched_result.shop_img.name
+		temp_searched_result['img'] = "http://resource.jindouyunonline.com:8001/media/" + searched_result.shop_img.name
 		temp_searched_result['name_en'] = searched_result.name_en
 		temp_searched_result['name_cn'] = searched_result.name
 		temp_searched_result['shop_feature'] = searched_result.shop_feature
@@ -854,7 +854,7 @@ def get_shop_detail_info(request):
 	shop = shop_objs[0]
 	response = {'code':0,'msg':'success'}
 	response['status'] = shop.status
-	response['shop_img'] = shop.shop_img.name
+	response['shop_img'] = "http://resource.jindouyunonline.com:8001/media/" + shop.shop_img.name
 	response['name_cn'] = shop.name
 	response['name_en'] = shop.name_en
 	response['shop_feature'] = shop.shop_feature
@@ -874,7 +874,7 @@ def get_shop_detail_info(request):
 		temp_dish_info['dish_type'] = dish.dish_type
 		temp_dish_info['dish_name_cn'] = dish.name
 		temp_dish_info['dish_name_en'] = dish.name_en
-		temp_dish_info['dish_img'] = dish.dish_img.name
+		temp_dish_info['dish_img'] = "http://resource.jindouyunonline.com:8001/media/" + dish.dish_img.name
 		temp_dish_info['dish_price'] = dish.price
 		temp_dish_info['current_month_order'] = 0
 		start_date = datetime.date(year,month,1)
@@ -917,7 +917,7 @@ def get_all_shop_infos(request):
 		temp_shop_obj = {}
 		temp_shop_obj['status'] = shop.status
 		temp_shop_obj['shop_id'] = shop.id
-		temp_shop_obj['img'] = shop.shop_img.name
+		temp_shop_obj['img'] = "http://resource.jindouyunonline.com:8001/media/" + shop.shop_img.name
 		temp_shop_obj['name_cn'] = shop.name
 		temp_shop_obj['name_en'] = shop.name_en
 		temp_shop_obj['shop_feature'] = shop.shop_feature
@@ -1011,7 +1011,7 @@ def search_dishes(request):
 			temp_dish_obj = {}
 			temp_dish_obj['dish_id'] = dish_obj.id
 			temp_dish_obj['dish_type'] = dish_obj.dish_type
-			temp_dish_obj['dish_img'] = dish_obj.dish_img.name
+			temp_dish_obj['dish_img'] = "http://resource.jindouyunonline.com:8001/media/" + dish_obj.dish_img.name
 			temp_dish_obj['dish_cn_name'] = dish_obj.name
 			temp_dish_obj['dish_en_name'] = dish_obj.name_en
 			start_date = datetime.date(year,month,1)
@@ -1056,7 +1056,7 @@ def get_dish_detail(request):
 	temp_dish_info['dish_type'] = dish.dish_type
 	temp_dish_info['dish_name_cn'] = dish.name
 	temp_dish_info['dish_name_en'] = dish.name_en
-	temp_dish_info['dish_img'] = dish.dish_img.name
+	temp_dish_info['dish_img'] = "http://resource.jindouyunonline.com:8001/media/" + dish.dish_img.name
 	temp_dish_info['dish_price'] = dish.price
 	temp_dish_info['current_month_order'] = 0
 	now = datetime.datetime.now()
@@ -1340,7 +1340,7 @@ def get_all_orders(request):
 		temp_order_obj['order_status'] = order.status
 		temp_order_obj['shop_cn_name'] = order.shop.name
 		temp_order_obj['shop_en_name'] = order.shop.name_en
-		temp_order_obj['shop_img'] = order.shop.shop_img.name
+		temp_order_obj['shop_img'] = "http://resource.jindouyunonline.com:8001/media/" + order.shop.shop_img.name
 		temp_order_obj['total_price'] = order.total_price
 		temp_order_obj['discount_rate'] = global_set.discount_rate
 		temp_order_obj['dish_price'] = order.origin_price #菜品总价
@@ -1559,7 +1559,7 @@ def get_banner_list(request):
 	all_banner_objs = BannerImg.objects.order_by('-priority')
 	for banner_obj in all_banner_objs:
 		temp_banner = {}
-		temp_banner['img'] = banner_obj.img.name
+		temp_banner['img'] = "http://resource.jindouyunonline.com:8001/media/" + banner_obj.img.name
 		temp_banner['priority'] = banner_obj.priority
 		temp_banner['link'] = banner_obj.link
 		banner_list.append(temp_banner)
