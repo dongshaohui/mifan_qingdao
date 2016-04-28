@@ -182,7 +182,7 @@ class Subdish(models.Model):
 # 菜品
 class Dish(models.Model):
 	shop = models.ForeignKey(Shop,related_name='shop_dish',verbose_name="选取店铺") # 菜品隶属的商铺
-	dish_type = models.IntegerField(verbose_name=u'菜品类型',default=0) # （0-单品菜，1-含配菜）
+	dish_type = models.IntegerField(verbose_name=u'菜品类型（0-单品菜，1-含配菜）',default=0) # （0-单品菜，1-含配菜）
 	subdishes = models.ManyToManyField(Subdish,blank=True,null=True,verbose_name="选取子菜品") # 菜品中包含的子菜品
  	name = models.CharField(default='',verbose_name=u'中文菜名',max_length=255) # 中文菜品的名称
  	name_en = models.CharField(default='',verbose_name=u'英文菜名',max_length=255) # 英文菜品的名称
