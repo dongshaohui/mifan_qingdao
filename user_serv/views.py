@@ -859,6 +859,7 @@ def get_shop_detail_info(request):
 	response['name_en'] = shop.name_en
 	response['shop_feature'] = shop.shop_feature
 	response['shop_feature_en'] = shop.shop_feature_en
+	response['min_distribution_cost'] = shop.min_distribution_cost
 	response['dish_info_list'] = []
 	response['shop_detail_info'] = {}
 	response['shop_detail_info']['address'] = shop.search_addr + ' ' + shop.detail_addr
