@@ -189,7 +189,7 @@ class Dish(models.Model):
 	subdishes = models.ManyToManyField(Subdish,blank=True,null=True,verbose_name="选取子菜品") # 菜品中包含的子菜品
  	name = models.CharField(default='',verbose_name=u'中文菜名',max_length=255) # 中文菜品的名称
  	name_en = models.CharField(default='',verbose_name=u'英文菜名',max_length=255) # 英文菜品的名称
- 	dish_img = models.ImageField(verbose_name=u'菜品图片',upload_to='imgs/',blank=True,null=True) # 菜品的图片
+ 	dish_img = models.ImageField(verbose_name=u'菜品图片',upload_to='imgs/') # 菜品的图片
 	price = models.FloatField(verbose_name=u'菜品价格',default=0.0) # 菜品的价格
 	dish_order_checkout_thres = models.FloatField(verbose_name=u'菜品成菜价格下限（只对含配菜有效）',default=0.0) #菜品成菜价格下限（只对含配菜有效）
 	class Meta:
