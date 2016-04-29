@@ -1267,7 +1267,7 @@ def upload_order(request):
 	# 如果菜品总价格低于配送费用
 	print total_dish_price
 	print shop_obj.min_distribution_cost
-	if total_dish_price < shop_obj.min_distribution_cost & consume_type == 0:
+	if total_dish_price < shop_obj.min_distribution_cost and consume_type == 0:
 		print "订单总价小于%.1f元，请重新选取菜品" % shop_obj.min_distribution_cost
 		temp_msg = "订单总价小于%.1f元，请重新选取菜品" % shop_obj.min_distribution_cost
 		temp_msg_en = "Total order price is less than %.1f yuan, please re select dishes" % shop_obj.min_distribution_cost
@@ -1288,7 +1288,7 @@ def upload_order(request):
 		tip = float("%.1f" %(float(tip_ratio) * float(total_dish_price)))
 	print tip_ratio,tip
 	# 税
-	tax = float("%.1f" %(float(total_dish_price) * float(global_set.tax_rate)))
+	tax = float("%.2f" %(float(total_dish_price) * float(global_set.tax_rate)))
 	print tax
 	# 折扣
 	discount_price = float("%.1f" %(float(total_dish_price) * float(global_set.discount_rate)))
@@ -1409,6 +1409,10 @@ def get_order_detail_info(request):
 	response['delivery_address_id'] = order.delivery_address.id
 	response['paytype_id'] = order.pay_type.id
 	response['consume_type'] = order.consume_type
+	response['customer_phone'] = order.customer.mobile
+	response['customer_name'] = order.customer.name
+	delivery_address_obj = DeliveryAddress.objects.get(id=int(order.delivery_address.id))
+	response['customer_addr'] = delivery_address_obj.searched_address + " " + searched_address.detail_address
 	response['tip_type'] = order.tip_type
 	response['tip'] = order.tip
 	response['remark'] = order.remark
