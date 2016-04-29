@@ -1058,6 +1058,7 @@ def get_dish_detail(request):
 	temp_dish_info['dish_name_en'] = dish.name_en
 	temp_dish_info['dish_img'] = "http://resource.jindouyunonline.com:8001/media/" + dish.dish_img.name
 	temp_dish_info['dish_price'] = dish.price
+	temp_dish_info['dish_order_checkout_thres'] = dish.dish_order_checkout_thres
 	temp_dish_info['current_month_order'] = 0
 	now = datetime.datetime.now()
 	month = now.month
