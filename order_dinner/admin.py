@@ -73,8 +73,8 @@ class SubdishAdmin(object):
 
 # 定制菜品管理端信息
 class DishAdmin(object):
-	fields = ('name','price','dish_type','subdishes','name','name_en','dish_img')
-	list_display = ('name','price','shop','preview')
+	fields = ('name','price','dish_type','subdishes','name','name_en','dish_img','dish_order_checkout_thres')
+	list_display = ('name','price','shop','preview','dish_order_checkout_thres')
 
 	# def changelist_view(self):
 	# 	print "changelist"
