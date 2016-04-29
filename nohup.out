@@ -1,0 +1,1681 @@
+/usr/local/lib/python2.7/dist-packages/reversion/admin.py:383: RemovedInDjango18Warning: commit_on_success is deprecated in favor of atomic.
+  def recover_view(self, request, version_id, extra_context=None):
+
+/usr/local/lib/python2.7/dist-packages/reversion/admin.py:395: RemovedInDjango18Warning: commit_on_success is deprecated in favor of atomic.
+  def revision_view(self, request, object_id, version_id, extra_context=None):
+
+/usr/local/lib/python2.7/dist-packages/django/forms/widgets.py:143: RemovedInDjango18Warning: `VersionMetaAdmin.queryset` method should be renamed `get_queryset`.
+  .__new__(mcs, name, bases, attrs))
+
+/usr/local/lib/python2.7/dist-packages/reversion/admin.py:383: RemovedInDjango18Warning: commit_on_success is deprecated in favor of atomic.
+  def recover_view(self, request, version_id, extra_context=None):
+
+/usr/local/lib/python2.7/dist-packages/reversion/admin.py:395: RemovedInDjango18Warning: commit_on_success is deprecated in favor of atomic.
+  def revision_view(self, request, object_id, version_id, extra_context=None):
+
+/usr/local/lib/python2.7/dist-packages/django/forms/widgets.py:143: RemovedInDjango18Warning: `VersionMetaAdmin.queryset` method should be renamed `get_queryset`.
+  .__new__(mcs, name, bases, attrs))
+
+/usr/local/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:1222: RuntimeWarning: DateTimeField Order.create_time received a naive datetime (2016-04-01 00:00:00) while time zone support is active.
+  RuntimeWarning)
+
+/usr/local/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:1222: RuntimeWarning: DateTimeField Order.create_time received a naive datetime (2016-05-01 00:00:00) while time zone support is active.
+  RuntimeWarning)
+
+[28/Apr/2016 16:48:18] "GET /user_serv/get_all_shop_infos?pagelength=20&pageno=1 HTTP/1.1" 200 2570
+[28/Apr/2016 16:48:18] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 16:48:18] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 16:48:19] "GET /jdy_admin/ HTTP/1.1" 200 4140
+[28/Apr/2016 16:48:21] "GET /static/xadmin/vendor/bootstrap/css/bootstrap.css HTTP/1.1" 304 0
+[28/Apr/2016 16:48:21] "GET /static/xadmin/vendor/font-awesome/css/font-awesome.css HTTP/1.1" 304 0
+[28/Apr/2016 16:48:21] "GET /static/xadmin/css/xadmin.main.css HTTP/1.1" 304 0
+[28/Apr/2016 16:48:21] "GET /static/xadmin/css/xadmin.plugins.css HTTP/1.1" 304 0
+[28/Apr/2016 16:48:22] "GET /static/xadmin/vendor/jquery/jquery.js HTTP/1.1" 304 0
+[28/Apr/2016 16:48:22] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4147
+[28/Apr/2016 16:48:23] "GET /static/xadmin/css/themes/bootstrap-xadmin.css HTTP/1.1" 304 0
+[28/Apr/2016 16:48:24] "GET /static/xadmin/vendor/jquery-ui/jquery.ui.widget.js HTTP/1.1" 304 0
+[28/Apr/2016 16:48:24] "GET /static/xadmin/vendor/jquery-ui/jquery.ui.mouse.js HTTP/1.1" 304 0
+[28/Apr/2016 16:48:25] "GET /static/xadmin/css/xadmin.responsive.css HTTP/1.1" 304 0
+[28/Apr/2016 16:48:26] "GET /static/xadmin/vendor/jquery-ui/jquery.ui.sortable.js HTTP/1.1" 304 0
+[28/Apr/2016 16:48:26] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 16:48:26] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 16:48:27] "GET /static/xadmin/js/xadmin.main.js HTTP/1.1" 304 0
+[28/Apr/2016 16:48:27] "GET /user_serv/get_all_orders?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 57
+[28/Apr/2016 16:48:28] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 16:48:28] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 16:48:28] "GET /static/xadmin/vendor/jquery-ui/jquery.ui.core.js HTTP/1.1" 304 0
+[28/Apr/2016 16:48:29] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 16:48:29] "GET /user_serv/get_shop_detail_info?shop_id=2 HTTP/1.1" 200 348
+[28/Apr/2016 16:48:32] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 16:48:32] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 16:48:37] "POST /jdy_admin/ HTTP/1.1" 302 0
+[28/Apr/2016 16:48:37] "GET /user_serv/get_shop_detail_info?shop_id=6 HTTP/1.1" 200 2112
+[28/Apr/2016 16:48:38] "GET /static/xadmin/js/xadmin.responsive.js HTTP/1.1" 304 0
+[28/Apr/2016 16:48:39] "GET /jdy_admin/ HTTP/1.1" 200 7059
+[28/Apr/2016 16:48:41] "GET /static/xadmin/vendor/bootstrap/js/bootstrap.js HTTP/1.1" 200 58327
+[28/Apr/2016 16:48:41] "GET /static/xadmin/js/xadmin.page.dashboard.js HTTP/1.1" 304 0
+[28/Apr/2016 16:48:42] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 16:48:42] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 16:48:43] "GET /user_serv/get_shop_detail_info?shop_id=6 HTTP/1.1" 200 2112
+[28/Apr/2016 16:48:44] "GET /static/xadmin/js/xadmin.plugin.portal.js HTTP/1.1" 304 0
+[28/Apr/2016 16:48:44] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 16:48:44] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 16:48:50] "GET /user_serv/get_shop_detail_info?shop_id=7 HTTP/1.1" 200 534
+[28/Apr/2016 16:48:57] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 16:48:57] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 16:48:59] "GET /user_serv/get_all_shop_infos?pagelength=20&pageno=1 HTTP/1.1" 200 2570
+[28/Apr/2016 16:48:59] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 16:48:59] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 16:49:00] "GET /static/xadmin/vendor/font-awesome/fonts/fontawesome-webfont.woff?v=4.0.3 HTTP/1.1" 200 44432
+[28/Apr/2016 16:49:15] "GET /user_serv/get_shop_detail_info?shop_id=6 HTTP/1.1" 200 2112
+[28/Apr/2016 16:49:28] "GET /media/http://resource.jindouyunonline.com:8001/media/imgs/shop.jpg HTTP/1.1" 404 1822
+[28/Apr/2016 16:49:28] "GET /media/http://resource.jindouyunonline.com:8001/media/ HTTP/1.1" 404 1782
+[28/Apr/2016 16:49:32] "GET /user_serv/get_all_shop_infos?pagelength=20&pageno=1 HTTP/1.1" 200 2570
+[28/Apr/2016 16:49:34] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 16:49:34] "GET /media/http://resource.jindouyunonline.com:8001/media/ HTTP/1.1" 404 1782
+[28/Apr/2016 16:49:34] "GET /media/http://resource.jindouyunonline.com:8001/media/imgs/shop.jpg HTTP/1.1" 404 1822
+[28/Apr/2016 16:49:38] "GET /jdy_admin/order_dinner/dish/ HTTP/1.1" 200 22395
+[28/Apr/2016 16:49:41] "GET /static/xadmin/js/xadmin.plugin.details.js HTTP/1.1" 304 0
+[28/Apr/2016 16:49:41] "GET /static/xadmin/js/xadmin.plugin.filters.js HTTP/1.1" 304 0
+[28/Apr/2016 16:49:41] "GET /static/xadmin/js/xadmin.plugin.actions.js HTTP/1.1" 304 0
+[28/Apr/2016 16:49:43] "GET /static/xadmin/js/xadmin.page.list.js HTTP/1.1" 304 0
+[28/Apr/2016 16:49:43] "GET /static/xadmin/js/xadmin.plugin.bookmark.js HTTP/1.1" 304 0
+[28/Apr/2016 16:49:50] "GET /static/xadmin/js/xadmin.page.form.js HTTP/1.1" 304 0
+[28/Apr/2016 16:49:50] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 16:49:50] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 16:49:59] "GET /static/xadmin/css/xadmin.form.css HTTP/1.1" 304 0
+[28/Apr/2016 16:50:01] "GET /media/imgs/-11362ecccbdee507.jpg HTTP/1.1" 200 4096
+[28/Apr/2016 16:50:01] "GET /media/imgs/-53922eaf5be6a81c.jpg HTTP/1.1" 200 2810
+[28/Apr/2016 16:50:01] "GET /media/imgs/liangban.jpg HTTP/1.1" 304 0
+[28/Apr/2016 16:50:01] "GET /media/imgs/babe.jpg HTTP/1.1" 304 0
+[28/Apr/2016 16:50:01] "GET /media/imgs/1.jpg HTTP/1.1" 304 0
+[28/Apr/2016 16:50:10] "GET /jdy_admin/order_dinner/dish/add/ HTTP/1.1" 200 13360
+[28/Apr/2016 16:50:12] "GET /static/xadmin/vendor/bootstrap-image-gallery/css/bootstrap-image-gallery.css HTTP/1.1" 304 0
+[28/Apr/2016 16:50:12] "GET /static/xadmin/vendor/bootstrap-image-gallery/js/bootstrap-image-gallery.js HTTP/1.1" 304 0
+[28/Apr/2016 16:50:15] "GET /static/xadmin/js/xadmin.plugin.quick-form.js HTTP/1.1" 304 0
+[28/Apr/2016 16:50:15] "GET /static/xadmin/vendor/load-image/load-image.js HTTP/1.1" 304 0
+[28/Apr/2016 16:50:30] "GET /jdy_admin/logout/ HTTP/1.1" 200 2683
+[28/Apr/2016 16:51:06] "GET /user_serv/get_shop_detail_info?shop_id=6 HTTP/1.1" 200 2112
+[28/Apr/2016 16:51:42] "GET /shop_serv/login?password=liuwebo&registration_id=120c83f76027fb22c3f&username=jindouyun_lwb HTTP/1.1" 200 69
+[28/Apr/2016 16:51:54] "GET /shop_serv/login?password=liuwenbo&registration_id=120c83f76027fb22c3f&username=jindouyun_lwb HTTP/1.1" 200 92
+[28/Apr/2016 16:51:55] "GET /shop_serv/get_all_new_orders?pageno=1&pagelength=10&token=P5KF2kmpUoxpfduBS1oqklVhfgpLhz9aFIIX75xV HTTP/1.1" 200 88
+[28/Apr/2016 16:51:59] "GET /shop_serv/entry_addr_status?token=P5KF2kmpUoxpfduBS1oqklVhfgpLhz9aFIIX75xV HTTP/1.1" 200 44
+[28/Apr/2016 16:52:43] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 16:52:44] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 16:52:58] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 16:52:58] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 16:52:58] "GET /user_serv/get_all_orders?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 57
+[28/Apr/2016 16:53:00] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 16:53:00] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 16:53:02] "GET /user_serv/get_shop_detail_info?shop_id=7 HTTP/1.1" 200 534
+[28/Apr/2016 16:53:07] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 16:53:07] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 16:54:53] "GET /shop_serv/get_all_new_orders?pageno=1&pagelength=10&token=P5KF2kmpUoxpfduBS1oqklVhfgpLhz9aFIIX75xV HTTP/1.1" 200 59
+[28/Apr/2016 16:54:54] "GET /shop_serv/login?password=liuwenbo&registration_id=120c83f76027fb22c3f&username=jindouyun_lwb HTTP/1.1" 200 92
+[28/Apr/2016 16:54:55] "GET /shop_serv/get_all_new_orders?pageno=1&pagelength=10&token=FVpXTNHPzjqXldQQX6dEbSZWakF12EdXudG2M6xG HTTP/1.1" 200 88
+[28/Apr/2016 16:56:22] "GET /jdy_admin/ HTTP/1.1" 200 7109
+[28/Apr/2016 16:56:23] "GET /static/xadmin/vendor/bootstrap/css/bootstrap.css HTTP/1.1" 304 0
+[28/Apr/2016 16:56:23] "GET /static/xadmin/css/themes/bootstrap-xadmin.css HTTP/1.1" 304 0
+[28/Apr/2016 16:56:23] "GET /static/xadmin/vendor/jquery-ui/jquery.ui.widget.js HTTP/1.1" 304 0
+[28/Apr/2016 16:56:23] "GET /static/xadmin/js/xadmin.main.js HTTP/1.1" 304 0
+[28/Apr/2016 16:56:23] "GET /static/xadmin/vendor/jquery/jquery.js HTTP/1.1" 304 0
+[28/Apr/2016 16:56:23] "GET /static/xadmin/vendor/font-awesome/css/font-awesome.css HTTP/1.1" 304 0
+[28/Apr/2016 16:56:23] "GET /static/xadmin/vendor/bootstrap/js/bootstrap.js HTTP/1.1" 304 0
+[28/Apr/2016 16:56:23] "GET /static/xadmin/vendor/jquery-ui/jquery.ui.sortable.js HTTP/1.1" 304 0
+[28/Apr/2016 16:56:23] "GET /static/xadmin/js/xadmin.responsive.js HTTP/1.1" 304 0
+[28/Apr/2016 16:56:23] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 16:56:23] "GET /static/xadmin/js/xadmin.page.dashboard.js HTTP/1.1" 304 0
+[28/Apr/2016 16:56:23] "GET /static/xadmin/css/xadmin.main.css HTTP/1.1" 304 0
+[28/Apr/2016 16:56:23] "GET /static/xadmin/css/xadmin.plugins.css HTTP/1.1" 304 0
+[28/Apr/2016 16:56:23] "GET /static/xadmin/css/xadmin.responsive.css HTTP/1.1" 304 0
+[28/Apr/2016 16:56:24] "GET /static/xadmin/css/xadmin.page.dashboard.css HTTP/1.1" 304 0
+[28/Apr/2016 16:56:24] "GET /static/xadmin/vendor/jquery-ui/jquery.ui.core.js HTTP/1.1" 304 0
+[28/Apr/2016 16:56:25] "GET /static/xadmin/js/xadmin.plugin.portal.js HTTP/1.1" 304 0
+[28/Apr/2016 16:56:25] "GET /static/xadmin/vendor/jquery-ui/jquery.ui.mouse.js HTTP/1.1" 304 0
+[28/Apr/2016 16:56:25] "GET /static/xadmin/vendor/font-awesome/fonts/fontawesome-webfont.woff?v=4.0.3 HTTP/1.1" 304 0
+[28/Apr/2016 16:56:27] "GET /favicon.ico HTTP/1.1" 404 8015
+[28/Apr/2016 16:56:28] "GET /favicon.ico HTTP/1.1" 404 8015
+[28/Apr/2016 16:56:29] "GET /favicon.ico HTTP/1.1" 404 8015
+[28/Apr/2016 16:56:36] "GET /jdy_admin/order_dinner/dish/ HTTP/1.1" 200 22445
+[28/Apr/2016 16:56:37] "GET /static/xadmin/css/xadmin.form.css HTTP/1.1" 304 0
+[28/Apr/2016 16:56:38] "GET /media/imgs/-11362ecccbdee507.jpg HTTP/1.1" 304 0
+[28/Apr/2016 16:56:38] "GET /static/xadmin/js/xadmin.plugin.details.js HTTP/1.1" 304 0
+[28/Apr/2016 16:56:38] "GET /static/xadmin/js/xadmin.page.list.js HTTP/1.1" 304 0
+[28/Apr/2016 16:56:38] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 16:56:38] "GET /static/xadmin/js/xadmin.plugin.actions.js HTTP/1.1" 304 0
+[28/Apr/2016 16:56:38] "GET /static/xadmin/js/xadmin.page.form.js HTTP/1.1" 304 0
+[28/Apr/2016 16:56:38] "GET /static/xadmin/js/xadmin.plugin.bookmark.js HTTP/1.1" 304 0
+[28/Apr/2016 16:56:38] "GET /static/xadmin/js/xadmin.plugin.filters.js HTTP/1.1" 304 0
+[28/Apr/2016 16:56:38] "GET /media/imgs/-53922eaf5be6a81c.jpg HTTP/1.1" 304 0
+[28/Apr/2016 16:56:38] "GET /media/imgs/liangban.jpg HTTP/1.1" 304 0
+[28/Apr/2016 16:56:38] "GET /media/imgs/babe.jpg HTTP/1.1" 304 0
+[28/Apr/2016 16:56:38] "GET /media/imgs/1.jpg HTTP/1.1" 304 0
+[28/Apr/2016 16:57:00] "GET /jdy_admin/order_dinner/dish/add/ HTTP/1.1" 200 13410
+[28/Apr/2016 16:57:01] "GET /static/xadmin/vendor/bootstrap-image-gallery/css/bootstrap-image-gallery.css HTTP/1.1" 304 0
+[28/Apr/2016 16:57:01] "GET /static/xadmin/js/xadmin.plugin.quick-form.js HTTP/1.1" 304 0
+[28/Apr/2016 16:57:01] "GET /static/xadmin/vendor/bootstrap-image-gallery/js/bootstrap-image-gallery.js HTTP/1.1" 304 0
+[28/Apr/2016 16:57:01] "GET /static/xadmin/vendor/load-image/load-image.js HTTP/1.1" 304 0
+[28/Apr/2016 16:57:01] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 16:57:53] "POST /jdy_admin/order_dinner/dish/add/ HTTP/1.1" 302 0
+[28/Apr/2016 16:57:54] "GET /jdy_admin/order_dinner/dish/ HTTP/1.1" 200 23445
+[28/Apr/2016 16:57:57] "GET /media/ HTTP/1.1" 404 1622
+[28/Apr/2016 16:57:57] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 16:57:58] "GET /media/ HTTP/1.1" 404 1622
+[28/Apr/2016 16:58:03] "GET /jdy_admin/order_dinner/dish/add/ HTTP/1.1" 200 13410
+[28/Apr/2016 17:21:20] "GET /jdy_admin/ HTTP/1.1" 200 4140
+[28/Apr/2016 17:21:20] "GET /static/xadmin/css/themes/bootstrap-xadmin.css HTTP/1.1" 200 1888
+[28/Apr/2016 17:21:20] "GET /static/xadmin/vendor/font-awesome/css/font-awesome.css HTTP/1.1" 200 21658
+[28/Apr/2016 17:21:20] "GET /static/xadmin/css/xadmin.plugins.css HTTP/1.1" 200 175
+[28/Apr/2016 17:21:20] "GET /static/xadmin/css/xadmin.main.css HTTP/1.1" 200 8324
+[28/Apr/2016 17:21:20] "GET /static/xadmin/css/xadmin.responsive.css HTTP/1.1" 200 4361
+[28/Apr/2016 17:21:20] "GET /static/xadmin/vendor/bootstrap/css/bootstrap.css HTTP/1.1" 200 126432
+[28/Apr/2016 17:21:21] "GET /static/xadmin/vendor/jquery-ui/jquery.ui.core.js HTTP/1.1" 200 8195
+[28/Apr/2016 17:21:21] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4147
+[28/Apr/2016 17:21:21] "GET /static/xadmin/vendor/jquery-ui/jquery.ui.widget.js HTTP/1.1" 200 15069
+[28/Apr/2016 17:21:21] "GET /static/xadmin/vendor/jquery-ui/jquery.ui.mouse.js HTTP/1.1" 200 4561
+[28/Apr/2016 17:21:21] "GET /static/xadmin/vendor/jquery-ui/jquery.ui.sortable.js HTTP/1.1" 200 42543
+[28/Apr/2016 17:21:21] "GET /static/xadmin/vendor/bootstrap/js/bootstrap.js HTTP/1.1" 200 58327
+[28/Apr/2016 17:21:21] "GET /static/xadmin/js/xadmin.main.js HTTP/1.1" 200 3401
+[28/Apr/2016 17:21:21] "GET /static/xadmin/vendor/jquery/jquery.js HTTP/1.1" 200 240196
+[28/Apr/2016 17:21:21] "GET /static/xadmin/js/xadmin.responsive.js HTTP/1.1" 200 4165
+[28/Apr/2016 17:21:22] "GET /static/xadmin/vendor/font-awesome/fonts/fontawesome-webfont.woff?v=4.0.3 HTTP/1.1" 200 44432
+[28/Apr/2016 17:21:22] "GET /favicon.ico HTTP/1.1" 404 8015
+[28/Apr/2016 17:21:48] "POST /jdy_admin/ HTTP/1.1" 302 0
+[28/Apr/2016 17:21:48] "GET /jdy_admin/ HTTP/1.1" 200 7059
+[28/Apr/2016 17:21:48] "GET /static/xadmin/css/xadmin.page.dashboard.css HTTP/1.1" 200 855
+[28/Apr/2016 17:21:48] "GET /static/xadmin/js/xadmin.page.dashboard.js HTTP/1.1" 200 3208
+[28/Apr/2016 17:21:48] "GET /static/xadmin/js/xadmin.plugin.portal.js HTTP/1.1" 200 1000
+[28/Apr/2016 17:21:48] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 17:21:54] "GET /jdy_admin/order_dinner/subdish/ HTTP/1.1" 200 21966
+[28/Apr/2016 17:21:55] "GET /static/xadmin/css/xadmin.form.css HTTP/1.1" 200 3692
+[28/Apr/2016 17:21:55] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 17:21:55] "GET /static/xadmin/js/xadmin.plugin.details.js HTTP/1.1" 200 2319
+[28/Apr/2016 17:21:55] "GET /static/xadmin/js/xadmin.plugin.bookmark.js HTTP/1.1" 200 529
+[28/Apr/2016 17:21:55] "GET /static/xadmin/js/xadmin.plugin.filters.js HTTP/1.1" 200 2016
+[28/Apr/2016 17:21:55] "GET /static/xadmin/js/xadmin.plugin.actions.js HTTP/1.1" 200 4198
+[28/Apr/2016 17:21:55] "GET /static/xadmin/js/xadmin.page.list.js HTTP/1.1" 200 1105
+[28/Apr/2016 17:21:55] "GET /static/xadmin/js/xadmin.page.form.js HTTP/1.1" 200 1948
+[28/Apr/2016 17:21:59] "GET /jdy_admin/order_dinner/dish/ HTTP/1.1" 200 23096
+[28/Apr/2016 17:21:59] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 17:21:59] "GET /media/ HTTP/1.1" 404 1622
+[28/Apr/2016 17:21:59] "GET /media/imgs/-11362ecccbdee507.jpg HTTP/1.1" 200 4096
+[28/Apr/2016 17:21:59] "GET /media/imgs/-53922eaf5be6a81c.jpg HTTP/1.1" 200 2810
+[28/Apr/2016 17:21:59] "GET /media/imgs/liangban.jpg HTTP/1.1" 200 28232
+[28/Apr/2016 17:21:59] "GET /media/imgs/1.jpg HTTP/1.1" 200 20049
+[28/Apr/2016 17:21:59] "GET /media/imgs/babe.jpg HTTP/1.1" 200 6440
+[28/Apr/2016 17:22:00] "GET /media/ HTTP/1.1" 404 1622
+[28/Apr/2016 17:22:03] "GET /jdy_admin/order_dinner/subdish/ HTTP/1.1" 200 21966
+[28/Apr/2016 17:22:03] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 17:22:06] "GET /jdy_admin/order_dinner/order/ HTTP/1.1" 200 33420
+[28/Apr/2016 17:22:06] "GET /static/xadmin/vendor/bootstrap-datepicker/css/datepicker.css HTTP/1.1" 200 10225
+[28/Apr/2016 17:22:06] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 17:22:06] "GET /static/xadmin/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js HTTP/1.1" 200 32656
+[28/Apr/2016 17:22:06] "GET /static/xadmin/js/xadmin.widget.datetime.js HTTP/1.1" 200 2490
+[28/Apr/2016 17:22:22] "GET /jdy_admin/order_dinner/order/ HTTP/1.1" 200 33420
+[28/Apr/2016 17:22:22] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 17:22:23] "GET /jdy_admin/order_dinner/dish/ HTTP/1.1" 200 23096
+[28/Apr/2016 17:22:23] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 17:22:23] "GET /media/ HTTP/1.1" 404 1622
+[28/Apr/2016 17:22:23] "GET /media/ HTTP/1.1" 404 1622
+[28/Apr/2016 17:22:25] "GET /jdy_admin/order_dinner/order/ HTTP/1.1" 200 33420
+[28/Apr/2016 17:22:25] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 17:22:30] "GET /jdy_admin/order_dinner/dish/ HTTP/1.1" 200 23096
+[28/Apr/2016 17:22:31] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 17:22:31] "GET /media/ HTTP/1.1" 404 1622
+[28/Apr/2016 17:22:31] "GET /media/ HTTP/1.1" 404 1622
+[28/Apr/2016 17:22:40] "GET /jdy_admin/order_dinner/subdish/ HTTP/1.1" 200 21966
+[28/Apr/2016 17:22:40] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 17:25:04] "GET /jdy_admin/order_dinner/subdish/ HTTP/1.1" 200 4161
+[28/Apr/2016 17:25:05] "GET /static/xadmin/css/themes/bootstrap-xadmin.css HTTP/1.1" 200 1888
+[28/Apr/2016 17:25:05] "GET /static/xadmin/css/xadmin.plugins.css HTTP/1.1" 200 175
+[28/Apr/2016 17:25:05] "GET /static/xadmin/vendor/font-awesome/css/font-awesome.css HTTP/1.1" 200 21658
+[28/Apr/2016 17:25:05] "GET /static/xadmin/css/xadmin.main.css HTTP/1.1" 200 8324
+[28/Apr/2016 17:25:06] "GET /static/xadmin/css/xadmin.responsive.css HTTP/1.1" 200 4361
+[28/Apr/2016 17:25:06] "GET /static/xadmin/vendor/bootstrap/css/bootstrap.css HTTP/1.1" 200 126432
+[28/Apr/2016 17:25:06] "GET /static/xadmin/vendor/jquery-ui/jquery.ui.core.js HTTP/1.1" 200 8195
+[28/Apr/2016 17:25:06] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4147
+[28/Apr/2016 17:25:07] "GET /static/xadmin/vendor/jquery-ui/jquery.ui.widget.js HTTP/1.1" 200 15069
+[28/Apr/2016 17:25:07] "GET /static/xadmin/vendor/jquery-ui/jquery.ui.mouse.js HTTP/1.1" 200 4561
+[28/Apr/2016 17:25:07] "GET /static/xadmin/vendor/jquery-ui/jquery.ui.sortable.js HTTP/1.1" 200 42543
+[28/Apr/2016 17:25:07] "GET /static/xadmin/vendor/bootstrap/js/bootstrap.js HTTP/1.1" 200 58327
+[28/Apr/2016 17:25:08] "GET /static/xadmin/vendor/jquery/jquery.js HTTP/1.1" 200 240196
+[28/Apr/2016 17:25:08] "GET /static/xadmin/js/xadmin.main.js HTTP/1.1" 200 3401
+[28/Apr/2016 17:25:08] "GET /static/xadmin/js/xadmin.responsive.js HTTP/1.1" 200 4165
+[28/Apr/2016 17:25:09] "GET /static/xadmin/vendor/font-awesome/fonts/fontawesome-webfont.woff?v=4.0.3 HTTP/1.1" 200 44432
+[28/Apr/2016 17:43:19] "GET /shop_serv/login?password=dsh5561225&registration_id=13065ffa4e0baa93211&username=genawang HTTP/1.1" 200 92
+[28/Apr/2016 17:43:20] "GET /shop_serv/get_all_new_orders?pageno=1&pagelength=10&token=gNXG7OB7pmTZOZ0jVzgqOIo4mhuAJUWN1Kx2bvXj HTTP/1.1" 200 3496
+/usr/local/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:1222: RuntimeWarning: DateTimeField Order.create_time received a naive datetime (2016-04-28 00:00:00) while time zone support is active.
+  RuntimeWarning)
+
+[28/Apr/2016 17:43:26] "GET /shop_serv/get_all_history_orders?pageno=1&pagelength=10&token=gNXG7OB7pmTZOZ0jVzgqOIo4mhuAJUWN1Kx2bvXj HTTP/1.1" 200 88
+[28/Apr/2016 17:43:27] "GET /shop_serv/entry_addr_status?token=gNXG7OB7pmTZOZ0jVzgqOIo4mhuAJUWN1Kx2bvXj HTTP/1.1" 200 44
+[28/Apr/2016 17:43:27] "GET /shop_serv/personal_info?token=gNXG7OB7pmTZOZ0jVzgqOIo4mhuAJUWN1Kx2bvXj HTTP/1.1" 200 330
+[28/Apr/2016 17:43:27] "GET /shop_serv/modify_business_status?business_status=1&token=gNXG7OB7pmTZOZ0jVzgqOIo4mhuAJUWN1Kx2bvXj HTTP/1.1" 200 36
+[28/Apr/2016 17:43:28] "GET /media/imgs/ge.jpg HTTP/1.1" 200 10371
+[28/Apr/2016 17:43:34] "GET /shop_serv/get_all_history_orders?pageno=1&pagelength=10&token=gNXG7OB7pmTZOZ0jVzgqOIo4mhuAJUWN1Kx2bvXj HTTP/1.1" 200 88
+[28/Apr/2016 17:43:35] "GET /shop_serv/get_all_new_orders?pageno=1&pagelength=10&token=gNXG7OB7pmTZOZ0jVzgqOIo4mhuAJUWN1Kx2bvXj HTTP/1.1" 200 3496
+[28/Apr/2016 17:43:51] "GET /shop_serv/accept_new_order?orderid=65&token=gNXG7OB7pmTZOZ0jVzgqOIo4mhuAJUWN1Kx2bvXj HTTP/1.1" 200 36
+[28/Apr/2016 17:43:58] "GET /shop_serv/reject_new_order?reason=kk&orderid=64&token= HTTP/1.1" 200 59
+[28/Apr/2016 17:43:58] "GET /shop_serv/login?password=dsh5561225&registration_id=13065ffa4e0baa93211&username=genawang HTTP/1.1" 200 92
+[28/Apr/2016 17:43:59] "GET /shop_serv/reject_new_order?reason=kk&orderid=64&token=me29upXMexWj9HtB3RAqVgkvHgPvZL2e55meBTj3 HTTP/1.1" 200 36
+[28/Apr/2016 17:44:08] "GET /shop_serv/accept_new_order?orderid=64&token= HTTP/1.1" 200 59
+[28/Apr/2016 17:44:08] "GET /shop_serv/login?password=dsh5561225&registration_id=13065ffa4e0baa93211&username=genawang HTTP/1.1" 200 92
+[28/Apr/2016 17:44:09] "GET /shop_serv/accept_new_order?orderid=64&token=CYIffSJQ4kZ5meCFE9yTNesQvN78mdA2P8fPDHun HTTP/1.1" 200 55
+[28/Apr/2016 17:44:20] "GET /shop_serv/accept_new_order?orderid=60&token=CYIffSJQ4kZ5meCFE9yTNesQvN78mdA2P8fPDHun HTTP/1.1" 200 36
+[28/Apr/2016 17:44:22] "GET /shop_serv/accept_new_order?orderid=61&token= HTTP/1.1" 200 59
+[28/Apr/2016 17:44:22] "GET /shop_serv/login?password=dsh5561225&registration_id=13065ffa4e0baa93211&username=genawang HTTP/1.1" 200 92
+[28/Apr/2016 17:44:22] "GET /shop_serv/accept_new_order?orderid=61&token=sv724jO5umPCt88nNbDGplEjfeReb7ZDXLC1YUnV HTTP/1.1" 200 36
+[28/Apr/2016 17:44:29] "GET /shop_serv/reject_new_order?reason=m&orderid=64&token= HTTP/1.1" 200 59
+[28/Apr/2016 17:44:29] "GET /shop_serv/login?password=dsh5561225&registration_id=13065ffa4e0baa93211&username=genawang HTTP/1.1" 200 92
+[28/Apr/2016 17:44:29] "GET /shop_serv/reject_new_order?reason=m&orderid=64&token=2BocdKjOw5m9qUd6qrAxnjFud2vfeUvDkId5sccH HTTP/1.1" 200 55
+[28/Apr/2016 17:44:30] "GET /shop_serv/reject_new_order?reason=m&orderid=64&token=2BocdKjOw5m9qUd6qrAxnjFud2vfeUvDkId5sccH HTTP/1.1" 200 55
+[28/Apr/2016 17:44:31] "GET /shop_serv/reject_new_order?reason=m&orderid=64&token=2BocdKjOw5m9qUd6qrAxnjFud2vfeUvDkId5sccH HTTP/1.1" 200 55
+[28/Apr/2016 17:44:33] "GET /shop_serv/reject_new_order?reason=m&orderid=64&token=2BocdKjOw5m9qUd6qrAxnjFud2vfeUvDkId5sccH HTTP/1.1" 200 55
+[28/Apr/2016 17:44:38] "GET /shop_serv/reject_new_order?reason=m&orderid=64&token=2BocdKjOw5m9qUd6qrAxnjFud2vfeUvDkId5sccH HTTP/1.1" 200 55
+[28/Apr/2016 17:50:43] "GET /shop_serv/accept_new_order?orderid=64&token=2BocdKjOw5m9qUd6qrAxnjFud2vfeUvDkId5sccH HTTP/1.1" 200 55
+[28/Apr/2016 17:50:49] "GET /shop_serv/accept_new_order?orderid=64&token=2BocdKjOw5m9qUd6qrAxnjFud2vfeUvDkId5sccH HTTP/1.1" 200 55
+[28/Apr/2016 17:51:30] "GET /jdy_admin/order_dinner/dish/ HTTP/1.1" 200 23096
+[28/Apr/2016 17:51:30] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 17:51:30] "GET /media/ HTTP/1.1" 404 1622
+[28/Apr/2016 17:51:30] "GET /media/imgs/-11362ecccbdee507.jpg HTTP/1.1" 304 0
+[28/Apr/2016 17:51:30] "GET /media/imgs/-53922eaf5be6a81c.jpg HTTP/1.1" 304 0
+[28/Apr/2016 17:51:32] "GET /jdy_admin/order_dinner/subdish/ HTTP/1.1" 200 21966
+[28/Apr/2016 17:51:32] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 17:51:37] "GET /user_serv/get_shop_detail_info?shop_id=6 HTTP/1.1" 200 2364
+[28/Apr/2016 17:51:40] "GET /user_serv/get_all_side_dishes?dish_id=7 HTTP/1.1" 200 221
+[28/Apr/2016 17:51:45] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 17:51:53] "GET /user_serv/get_all_side_dishes?dish_id=7 HTTP/1.1" 200 221
+[28/Apr/2016 17:52:01] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 17:52:10] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 17:52:12] "GET /user_serv/get_all_side_dishes?dish_id=10 HTTP/1.1" 200 357
+[28/Apr/2016 17:52:14] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 17:52:21] "GET /jdy_admin/order_dinner/subdish/9/update/ HTTP/1.1" 200 12082
+[28/Apr/2016 17:52:22] "GET /static/xadmin/vendor/selectize/selectize.css HTTP/1.1" 200 8425
+[28/Apr/2016 17:52:22] "GET /static/xadmin/vendor/select2/select2.css HTTP/1.1" 200 19226
+[28/Apr/2016 17:52:22] "GET /static/xadmin/vendor/selectize/selectize.bootstrap3.css HTTP/1.1" 200 10602
+[28/Apr/2016 17:52:22] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 17:52:22] "GET /static/xadmin/vendor/selectize/selectize.js HTTP/1.1" 200 98602
+[28/Apr/2016 17:52:22] "GET /static/xadmin/vendor/select2/select2_locale_zh-cn.js HTTP/1.1" 404 1761
+[28/Apr/2016 17:52:22] "GET /static/xadmin/js/xadmin.widget.select.js HTTP/1.1" 200 1344
+[28/Apr/2016 17:52:23] "GET /static/xadmin/vendor/select2/select2.js HTTP/1.1" 200 104906
+[28/Apr/2016 17:52:33] "POST /jdy_admin/order_dinner/subdish/9/update/ HTTP/1.1" 302 0
+[28/Apr/2016 17:52:34] "GET /jdy_admin/order_dinner/subdish/ HTTP/1.1" 200 22192
+[28/Apr/2016 17:52:34] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 17:52:37] "GET /jdy_admin/order_dinner/dish/ HTTP/1.1" 200 23096
+[28/Apr/2016 17:52:37] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 17:52:37] "GET /media/ HTTP/1.1" 404 1622
+[28/Apr/2016 17:52:53] "GET /jdy_admin/order_dinner/dish/10/update/ HTTP/1.1" 200 13915
+[28/Apr/2016 17:52:53] "GET /static/xadmin/vendor/bootstrap-image-gallery/css/bootstrap-image-gallery.css HTTP/1.1" 200 3339
+[28/Apr/2016 17:52:53] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 17:52:53] "GET /static/xadmin/js/xadmin.plugin.quick-form.js HTTP/1.1" 200 7546
+[28/Apr/2016 17:52:53] "GET /static/xadmin/vendor/load-image/load-image.js HTTP/1.1" 200 8309
+[28/Apr/2016 17:52:53] "GET /static/xadmin/vendor/bootstrap-image-gallery/js/bootstrap-image-gallery.js HTTP/1.1" 200 15611
+[28/Apr/2016 17:53:16] "POST /jdy_admin/order_dinner/dish/10/update/ HTTP/1.1" 302 0
+[28/Apr/2016 17:53:17] "GET /jdy_admin/order_dinner/dish/ HTTP/1.1" 200 23326
+[28/Apr/2016 17:53:18] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 17:53:18] "GET /media/ HTTP/1.1" 404 1622
+[28/Apr/2016 17:53:24] "GET /jdy_admin/order_dinner/dish/8/update/ HTTP/1.1" 200 13872
+[28/Apr/2016 17:53:25] "GET /jdy_admin/order_dinner/dish/8/update/ HTTP/1.1" 200 13872
+[28/Apr/2016 17:53:26] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 17:53:33] "GET /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 200 3829
+[28/Apr/2016 17:53:33] "GET /static/xadmin/vendor/select2/select2_locale_zh-cn.js HTTP/1.1" 404 1761
+[28/Apr/2016 17:53:34] "GET /static/xadmin/vendor/select2/select2_locale_zh-cn.js HTTP/1.1" 404 1761
+[28/Apr/2016 17:53:36] "POST /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 200 271
+/usr/local/lib/python2.7/dist-packages/django_xadmin-0.5.0-py2.7.egg/xadmin/util.py:204: RemovedInDjango18Warning: `Options.get_delete_permission` has been deprecated in favor of `django.contrib.auth.get_permission_codename`.
+  opts.get_delete_permission())
+
+[28/Apr/2016 17:54:08] "GET /jdy_admin/order_dinner/dish/8/delete/ HTTP/1.1" 200 8013
+[28/Apr/2016 17:54:08] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 17:54:11] "POST /jdy_admin/order_dinner/dish/8/delete/ HTTP/1.1" 302 0
+[28/Apr/2016 17:54:12] "GET /jdy_admin/order_dinner/dish/ HTTP/1.1" 200 22605
+[28/Apr/2016 17:54:12] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 17:54:12] "GET /media/ HTTP/1.1" 404 1622
+[28/Apr/2016 17:54:15] "GET /jdy_admin/order_dinner/dish/add/ HTTP/1.1" 200 13360
+[28/Apr/2016 17:54:15] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 17:54:41] "POST /jdy_admin/order_dinner/dish/add/ HTTP/1.1" 200 13682
+[28/Apr/2016 17:54:41] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 17:54:47] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 17:54:47] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 17:54:52] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 17:54:52] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 17:55:00] "GET /user_serv/get_shop_detail_info?shop_id=6 HTTP/1.1" 200 2078
+[28/Apr/2016 17:55:01] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 17:55:03] "GET /user_serv/get_all_side_dishes?dish_id=7 HTTP/1.1" 200 221
+[28/Apr/2016 17:55:04] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 17:55:08] "GET /user_serv/get_all_side_dishes?dish_id=7 HTTP/1.1" 200 221
+[28/Apr/2016 17:55:09] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 17:55:50] "POST /jdy_admin/order_dinner/dish/add/ HTTP/1.1" 302 0
+[28/Apr/2016 17:55:51] "GET /jdy_admin/order_dinner/dish/ HTTP/1.1" 200 23380
+[28/Apr/2016 17:55:52] "POST /jdy_admin/order_dinner/dish/add/ HTTP/1.1" 302 0
+[28/Apr/2016 17:55:52] "GET /jdy_admin/order_dinner/dish/ HTTP/1.1" 200 24371
+[28/Apr/2016 17:55:52] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 17:55:53] "GET /media/ HTTP/1.1" 404 1622
+[28/Apr/2016 17:56:03] "GET /jdy_admin/order_dinner/dish/12/update/ HTTP/1.1" 200 13684
+[28/Apr/2016 17:56:03] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 17:56:11] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 17:56:14] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 17:56:14] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 17:56:15] "GET /user_serv/get_shop_detail_info?shop_id=6 HTTP/1.1" 200 2596
+[28/Apr/2016 17:56:16] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 17:56:25] "GET /jdy_admin/order_dinner/dish/12/delete/ HTTP/1.1" 200 7827
+[28/Apr/2016 17:56:26] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 17:56:28] "POST /jdy_admin/order_dinner/dish/12/delete/ HTTP/1.1" 302 0
+[28/Apr/2016 17:56:28] "GET /jdy_admin/order_dinner/dish/ HTTP/1.1" 200 23307
+[28/Apr/2016 17:56:28] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 17:56:28] "GET /media/ HTTP/1.1" 404 1622
+[28/Apr/2016 17:56:35] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 17:56:35] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 17:56:38] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 17:56:38] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 17:56:40] "GET /user_serv/get_shop_detail_info?shop_id=6 HTTP/1.1" 200 2337
+[28/Apr/2016 17:56:41] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 17:56:48] "GET /jdy_admin/order_dinner/dish/13/update/ HTTP/1.1" 200 13684
+[28/Apr/2016 17:56:48] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 17:56:56] "POST /jdy_admin/order_dinner/dish/13/update/ HTTP/1.1" 302 0
+[28/Apr/2016 17:56:57] "GET /jdy_admin/order_dinner/dish/ HTTP/1.1" 200 23307
+[28/Apr/2016 17:56:57] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 17:56:57] "GET /media/ HTTP/1.1" 404 1622
+[28/Apr/2016 17:57:01] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 17:57:01] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 17:57:04] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 17:57:04] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 17:57:04] "GET /user_serv/get_shop_detail_info?shop_id=6 HTTP/1.1" 200 2334
+[28/Apr/2016 17:57:05] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 17:57:08] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 17:57:12] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 17:57:12] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 17:57:15] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 17:57:15] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 17:57:16] "GET /user_serv/get_shop_detail_info?shop_id=6 HTTP/1.1" 200 2334
+[28/Apr/2016 17:57:17] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 17:57:36] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 17:57:39] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 17:57:39] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 17:57:39] "GET /user_serv/get_shop_detail_info?shop_id=7 HTTP/1.1" 200 534
+[28/Apr/2016 17:57:42] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 17:57:42] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 17:57:44] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 17:57:44] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 17:57:52] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 17:57:52] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 17:57:59] "GET /user_serv/get_shop_detail_info?shop_id=6 HTTP/1.1" 200 2334
+[28/Apr/2016 18:00:33] "GET /user_serv/get_all_side_dishes?dish_id=7 HTTP/1.1" 200 221
+[28/Apr/2016 18:00:35] "GET /user_serv/get_all_side_dishes?dish_id=7 HTTP/1.1" 200 221
+[28/Apr/2016 18:01:48] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 18:01:48] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:01:49] "GET /user_serv/get_shop_detail_info?shop_id=7 HTTP/1.1" 200 534
+[28/Apr/2016 18:01:51] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:01:51] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 18:01:55] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 18:01:55] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:01:55] "GET /user_serv/get_all_orders?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 57
+[28/Apr/2016 18:01:57] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 18:01:57] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:01:59] "GET /user_serv/get_shop_detail_info?shop_id=6 HTTP/1.1" 200 2334
+[28/Apr/2016 18:02:00] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:02:01] "GET /user_serv/get_all_side_dishes?dish_id=10 HTTP/1.1" 200 357
+[28/Apr/2016 18:02:08] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:02:12] "GET /user_serv/get_all_side_dishes?dish_id=10 HTTP/1.1" 200 357
+[28/Apr/2016 18:02:13] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:02:14] "GET /user_serv/get_all_side_dishes?dish_id=10 HTTP/1.1" 200 357
+[28/Apr/2016 18:02:16] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:02:17] "GET /user_serv/get_all_side_dishes?dish_id=10 HTTP/1.1" 200 357
+[28/Apr/2016 18:02:19] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:02:23] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:02:24] "GET /user_serv/calculate_tax?total_price=27.40 HTTP/1.1" 200 51
+[28/Apr/2016 18:02:24] "GET /user_serv/get_user_delivery_address?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 211
+[28/Apr/2016 18:02:24] "GET /user_serv/get_paytype?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 99
+[28/Apr/2016 18:02:25] "GET /user_serv/calculate_distance?delivery_address_id=17&shop_id=6 HTTP/1.1" 200 58
+[28/Apr/2016 18:02:25] "GET /user_serv/calculate_freight?distance=0.2&total_price=27.40 HTTP/1.1" 200 61
+[28/Apr/2016 18:03:57] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:04:00] "GET /user_serv/calculate_tax?total_price=27.40 HTTP/1.1" 200 51
+[28/Apr/2016 18:04:00] "GET /user_serv/get_user_delivery_address?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 211
+[28/Apr/2016 18:04:00] "GET /user_serv/get_paytype?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 99
+[28/Apr/2016 18:04:01] "GET /user_serv/calculate_distance?delivery_address_id=17&shop_id=6 HTTP/1.1" 200 58
+[28/Apr/2016 18:04:02] "GET /user_serv/calculate_freight?distance=0.2&total_price=27.40 HTTP/1.1" 200 61
+[28/Apr/2016 18:04:05] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:04:06] "GET /user_serv/calculate_tax?total_price=27.40 HTTP/1.1" 200 51
+[28/Apr/2016 18:04:06] "GET /user_serv/get_user_delivery_address?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 211
+[28/Apr/2016 18:04:06] "GET /user_serv/get_paytype?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 99
+[28/Apr/2016 18:04:07] "GET /user_serv/calculate_distance?delivery_address_id=17&shop_id=6 HTTP/1.1" 200 58
+[28/Apr/2016 18:04:08] "GET /user_serv/calculate_freight?distance=0.2&total_price=27.40 HTTP/1.1" 200 61
+[28/Apr/2016 18:04:11] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:04:21] "GET /user_serv/calculate_tax?total_price=27.40 HTTP/1.1" 200 51
+[28/Apr/2016 18:04:21] "GET /user_serv/get_user_delivery_address?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 211
+[28/Apr/2016 18:04:21] "GET /user_serv/get_paytype?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 99
+[28/Apr/2016 18:04:22] "GET /user_serv/calculate_distance?delivery_address_id=17&shop_id=6 HTTP/1.1" 200 58
+[28/Apr/2016 18:04:22] "GET /user_serv/calculate_freight?distance=0.2&total_price=27.40 HTTP/1.1" 200 61
+[28/Apr/2016 18:06:52] "GET /user_serv/add_credit_card?credit_card_no=1234&expire_month=0&expire_year=0&pin_code=000&token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 58
+[28/Apr/2016 18:06:53] "GET /user_serv/select_paytype?paytype_id=20&token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 36
+[28/Apr/2016 18:06:53] "GET /user_serv/get_paytype?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 170
+[28/Apr/2016 18:06:54] "GET /user_serv/paytype_infos?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 211
+[28/Apr/2016 18:07:08] "GET /user_serv/paytype_infos?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 211
+[28/Apr/2016 18:07:17] "GET /user_serv/paytype_infos?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 211
+[28/Apr/2016 18:07:26] "GET /user_serv/paytype_infos?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 211
+[28/Apr/2016 18:07:35] "GET /user_serv/select_paytype?paytype_id=11&token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 36
+[28/Apr/2016 18:07:35] "GET /user_serv/get_paytype?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 161
+[28/Apr/2016 18:07:41] "GET /user_serv/upload_order?consume_type=0&delivery_address_id=17&dish_order_list=%5B%7B%22dish_id%22%3A%2211%22%2C%22dish_type%22%3A%220%22%2C%22order_number%22%3A%222%22%7D%2C%7B%22order_number%22%3A%221%22%2C%22dish_id%22%3A%2210%22%2C%22side_dish_list%22%3A%5B%7B%22order_number%22%3A%222%22%2C%22side_dish_id%22%3A%228%22%7D%2C%7B%22order_number%22%3A%222%22%2C%22side_dish_id%22%3A%229%22%7D%5D%2C%22dish_type%22%3A%221%22%7D%5D&distance=0.2&paytype_id=11&remark=&shop_id=6&tip_ratio=0.10&tip_type=0&token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 36
+[28/Apr/2016 18:07:42] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 18:07:42] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:07:48] "GET /shop_serv/get_all_new_orders?pageno=1&pagelength=10&token=2BocdKjOw5m9qUd6qrAxnjFud2vfeUvDkId5sccH HTTP/1.1" 200 1348
+[28/Apr/2016 18:07:53] "GET /shop_serv/accept_new_order?orderid=66&token=2BocdKjOw5m9qUd6qrAxnjFud2vfeUvDkId5sccH HTTP/1.1" 200 36
+[28/Apr/2016 18:07:59] "GET /shop_serv/get_all_accept_orders?pageno=1&pagelength=10&token= HTTP/1.1" 200 59
+[28/Apr/2016 18:07:59] "GET /shop_serv/login?password=dsh5561225&registration_id=13065ffa4e0baa93211&username=genawang HTTP/1.1" 200 92
+[28/Apr/2016 18:08:00] "GET /shop_serv/get_all_accept_orders?pageno=1&pagelength=10&token=EhXTke1pjxT1AfRslksLoDl3edrsTZ33cnd3s5kY HTTP/1.1" 200 4680
+[28/Apr/2016 18:08:15] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:08:15] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 18:08:15] "GET /user_serv/get_all_orders?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 473
+[28/Apr/2016 18:08:16] "GET /user_serv/get_order_detail_info?order_id=66&token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 1152
+[28/Apr/2016 18:10:17] "GET /shop_serv/login?password=dsh5561225&registration_id=13065ffa4e0baa93211&username=genawang HTTP/1.1" 200 92
+[28/Apr/2016 18:10:18] "GET /shop_serv/get_all_new_orders?pageno=1&pagelength=10&token=qHw0v5vnJK2AzoX0EoNV7OLCyKVJKJuyx0P6x3H8 HTTP/1.1" 200 88
+[28/Apr/2016 18:10:21] "GET /shop_serv/get_all_accept_orders?pageno=1&pagelength=10&token=qHw0v5vnJK2AzoX0EoNV7OLCyKVJKJuyx0P6x3H8 HTTP/1.1" 200 4680
+[28/Apr/2016 18:10:29] "GET /shop_serv/finish_order?orderid=66&token=qHw0v5vnJK2AzoX0EoNV7OLCyKVJKJuyx0P6x3H8 HTTP/1.1" 200 36
+[28/Apr/2016 18:10:41] "GET /user_serv/get_order_detail_info?order_id=66&token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 1152
+[28/Apr/2016 18:10:44] "GET /shop_serv/get_all_finish_orders?pageno=1&pagelength=10&token= HTTP/1.1" 200 59
+[28/Apr/2016 18:10:44] "GET /shop_serv/login?password=dsh5561225&registration_id=13065ffa4e0baa93211&username=genawang HTTP/1.1" 200 92
+[28/Apr/2016 18:10:45] "GET /shop_serv/get_all_finish_orders?pageno=1&pagelength=10&token=MCnfSJCmSMJEWJiOeejq8wV3MAeLMYAswDCS8lwW HTTP/1.1" 200 1348
+[28/Apr/2016 18:13:39] "GET /user_serv/get_order_detail_info?order_id=66&token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 1152
+[28/Apr/2016 18:13:47] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 18:13:48] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:13:54] "GET /jdy_admin/order_dinner/subdish/ HTTP/1.1" 200 21966
+[28/Apr/2016 18:13:54] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 18:13:57] "GET /jdy_admin/order_dinner/dish/ HTTP/1.1" 200 23078
+[28/Apr/2016 18:13:57] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 18:13:57] "GET /media/imgs/-53922eaf5be6a81c.jpg HTTP/1.1" 304 0
+[28/Apr/2016 18:13:57] "GET /media/ HTTP/1.1" 404 1622
+[28/Apr/2016 18:13:57] "GET /media/imgs/-11362ecccbdee507.jpg HTTP/1.1" 304 0
+[28/Apr/2016 18:14:25] "GET /user_serv/get_shop_detail_info?shop_id=6 HTTP/1.1" 200 2334
+[28/Apr/2016 18:14:29] "GET /user_serv/calculate_tax?total_price=28.00 HTTP/1.1" 200 51
+[28/Apr/2016 18:14:29] "GET /user_serv/get_user_delivery_address?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 211
+[28/Apr/2016 18:14:29] "GET /user_serv/get_paytype?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 161
+[28/Apr/2016 18:14:30] "GET /user_serv/paytype_infos?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 211
+[28/Apr/2016 18:14:30] "GET /user_serv/calculate_distance?delivery_address_id=17&shop_id=6 HTTP/1.1" 200 58
+[28/Apr/2016 18:14:31] "GET /user_serv/calculate_freight?distance=0.2&total_price=28.00 HTTP/1.1" 200 61
+[28/Apr/2016 18:14:45] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:14:45] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 18:14:46] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 18:14:46] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:14:47] "GET /user_serv/get_all_orders?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 472
+[28/Apr/2016 18:14:48] "GET /user_serv/get_order_detail_info?order_id=66&token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 1152
+[28/Apr/2016 18:15:33] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:15:33] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 18:15:34] "GET /user_serv/get_shop_detail_info?shop_id=7 HTTP/1.1" 200 534
+[28/Apr/2016 18:15:37] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 18:15:37] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:15:38] "GET /user_serv/get_shop_detail_info?shop_id=6 HTTP/1.1" 200 2334
+[28/Apr/2016 18:15:43] "GET /user_serv/get_all_side_dishes?dish_id=7 HTTP/1.1" 200 221
+[28/Apr/2016 18:15:45] "GET /user_serv/calculate_tax?total_price=14.00 HTTP/1.1" 200 51
+[28/Apr/2016 18:15:46] "GET /user_serv/get_user_delivery_address?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 211
+[28/Apr/2016 18:15:46] "GET /user_serv/get_paytype?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 161
+[28/Apr/2016 18:15:47] "GET /user_serv/calculate_distance?delivery_address_id=17&shop_id=6 HTTP/1.1" 200 58
+[28/Apr/2016 18:15:47] "GET /user_serv/paytype_infos?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 211
+[28/Apr/2016 18:15:47] "GET /user_serv/calculate_freight?distance=0.2&total_price=14.00 HTTP/1.1" 200 61
+[28/Apr/2016 18:15:49] "GET /user_serv/select_paytype?paytype_id=20&token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 36
+[28/Apr/2016 18:15:49] "GET /user_serv/get_paytype?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 170
+[28/Apr/2016 18:16:01] "GET /user_serv/upload_order?consume_type=0&delivery_address_id=17&dish_order_list=%5B%7B%22dish_id%22%3A%226%22%2C%22dish_type%22%3A%220%22%2C%22order_number%22%3A%221%22%7D%5D&distance=0.2&paytype_id=20&remark=&shop_id=6&tip_ratio=&tip_type=1&token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 36
+[28/Apr/2016 18:16:02] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 18:16:02] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:16:04] "GET /shop_serv/get_all_new_orders?pageno=1&pagelength=10&token=MCnfSJCmSMJEWJiOeejq8wV3MAeLMYAswDCS8lwW HTTP/1.1" 200 839
+[28/Apr/2016 18:16:20] "GET /user_serv/get_all_orders?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 887
+[28/Apr/2016 18:16:22] "GET /user_serv/get_order_detail_info?order_id=67&token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 557
+[28/Apr/2016 18:16:26] "GET /user_serv/get_order_detail_info?order_id=67&token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 557
+[28/Apr/2016 18:16:32] "GET /shop_serv/accept_new_order?orderid=67&token=MCnfSJCmSMJEWJiOeejq8wV3MAeLMYAswDCS8lwW HTTP/1.1" 200 36
+[28/Apr/2016 18:16:34] "GET /shop_serv/get_all_accept_orders?pageno=1&pagelength=10&token= HTTP/1.1" 200 59
+[28/Apr/2016 18:16:34] "GET /shop_serv/login?password=dsh5561225&registration_id=13065ffa4e0baa93211&username=genawang HTTP/1.1" 200 92
+[28/Apr/2016 18:16:35] "GET /shop_serv/get_all_accept_orders?pageno=1&pagelength=10&token=m2Pgg7NUY7QzygzObDh56TZz80BtZWNkih27TKEk HTTP/1.1" 200 4171
+[28/Apr/2016 18:18:01] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:18:01] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 18:18:02] "GET /user_serv/get_shop_detail_info?shop_id=6 HTTP/1.1" 200 2334
+[28/Apr/2016 18:18:03] "GET /user_serv/get_all_side_dishes?dish_id=7 HTTP/1.1" 200 221
+[28/Apr/2016 18:18:37] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:18:39] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:18:40] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:18:43] "GET /user_serv/get_all_side_dishes?dish_id=10 HTTP/1.1" 200 357
+[28/Apr/2016 18:18:44] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:18:59] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:19:04] "GET /user_serv/search_dishes?dish_search_term=%E7%81%AB%E9%94%85&shop_id=6 HTTP/1.1" 200 314
+[28/Apr/2016 18:19:04] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:19:06] "GET /user_serv/get_shop_detail_info?shop_id=6 HTTP/1.1" 200 2334
+[28/Apr/2016 18:19:13] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:20:50] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:20:54] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:20:55] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:20:55] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:20:56] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:20:57] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:20:59] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:20:59] "GET /user_serv/get_all_side_dishes?dish_id=10 HTTP/1.1" 200 357
+[28/Apr/2016 18:21:03] "GET /user_serv/calculate_tax?total_price=81.70 HTTP/1.1" 200 51
+[28/Apr/2016 18:21:03] "GET /user_serv/get_user_delivery_address?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 211
+[28/Apr/2016 18:21:03] "GET /user_serv/get_paytype?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 170
+[28/Apr/2016 18:21:04] "GET /user_serv/calculate_distance?delivery_address_id=17&shop_id=6 HTTP/1.1" 200 58
+[28/Apr/2016 18:21:04] "GET /user_serv/calculate_freight?distance=0.2&total_price=81.70 HTTP/1.1" 200 59
+[28/Apr/2016 18:21:10] "GET /user_serv/calculate_tax?total_price=81.70 HTTP/1.1" 200 51
+[28/Apr/2016 18:21:10] "GET /user_serv/get_user_delivery_address?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 211
+[28/Apr/2016 18:21:10] "GET /user_serv/get_paytype?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 170
+[28/Apr/2016 18:21:11] "GET /user_serv/calculate_distance?delivery_address_id=17&shop_id=6 HTTP/1.1" 200 58
+[28/Apr/2016 18:21:11] "GET /user_serv/calculate_freight?distance=0.2&total_price=81.70 HTTP/1.1" 200 59
+[28/Apr/2016 18:21:15] "GET /user_serv/calculate_tax?total_price=81.70 HTTP/1.1" 200 51
+[28/Apr/2016 18:21:15] "GET /user_serv/get_user_delivery_address?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 211
+[28/Apr/2016 18:21:15] "GET /user_serv/get_paytype?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 170
+[28/Apr/2016 18:21:16] "GET /user_serv/calculate_distance?delivery_address_id=17&shop_id=6 HTTP/1.1" 200 58
+[28/Apr/2016 18:21:17] "GET /user_serv/calculate_freight?distance=0.2&total_price=81.70 HTTP/1.1" 200 59
+[28/Apr/2016 18:21:45] "GET /user_serv/paytype_infos?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 211
+[28/Apr/2016 18:21:48] "GET /user_serv/delivery_address_infos?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 291
+Performing system checks...
+
+System check identified no issues (0 silenced).
+April 28, 2016 - 16:48:10
+Django version 1.7.11, using settings 'mifan.settings'
+Starting development server at http://0.0.0.0:8001/
+Quit the server with CONTROL-C.
+YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX
+16
+current user id =  10
+阳光铁板烧餐厅 7
+YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX
+16
+阳光铁板烧餐厅 7
+current user id =  10
+current user id =  10
+current user id =  10
+current user id =  10
+current user id =  10
+current user id =  10
+current user id =  10
+current user id =  10
+current user id =  10
+current user id =  10
+current user id =  10
+戈拿旺巴西烤肉 6
+戈拿旺巴西烤肉 6
+戈拿旺巴西烤肉 6
+戈拿旺巴西烤肉 6
+current user id =  10
+current user id =  10
+current user id =  10
+current user id =  10
+current user id =  10
+current user id =  10
+current user id =  10
+current user id =  10
+current user id =  10
+current user id =  10
+YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX
+16
+https://maps.googleapis.com/maps/api/distancematrix/json?language=en&key=AIzaSyAcqwDjEnYPte9qNnCEH3L12doj8fZRnEY&origins=39.953986%2C-75.157041&destinations=38.895964%2C-77.054545
+distance=  0.2
+https://maps.googleapis.com/maps/api/distancematrix/json?language=en&key=AIzaSyAcqwDjEnYPte9qNnCEH3L12doj8fZRnEY&origins=39.953986%2C-75.157041&destinations=38.895964%2C-77.054545
+distance=  0.2
+https://maps.googleapis.com/maps/api/distancematrix/json?language=en&key=AIzaSyAcqwDjEnYPte9qNnCEH3L12doj8fZRnEY&origins=39.953986%2C-75.157041&destinations=38.895964%2C-77.054545
+distance=  0.2
+https://maps.googleapis.com/maps/api/distancematrix/json?language=en&key=AIzaSyAcqwDjEnYPte9qNnCEH3L12doj8fZRnEY&origins=39.953986%2C-75.157041&destinations=38.895964%2C-77.054545
+distance=  0.2
+1234 000 0 0
+YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX 6 17 11 0 0 0.10  None 0.2 None [{"dish_id":"11","dish_type":"0","order_number":"2"},{"order_number":"1","dish_id":"10","side_dish_list":[{"order_number":"2","side_dish_id":"8"},{"order_number":"2","side_dish_id":"9"}],"dish_type":"1"}]
+总价格 27.4
+distance=  0.2
+0.10 0
+2.2
+0.08 0.5
+{"sendno":"12345","msg_id":"2629559814"}
+戈拿旺巴西烤肉 6
+戈拿旺巴西烤肉 6
+YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX
+16
+戈拿旺巴西烤肉 6
+戈拿旺巴西烤肉 6
+戈拿旺巴西烤肉 6
+current user id =  10
+current user id =  10
+https://maps.googleapis.com/maps/api/distancematrix/json?language=en&key=AIzaSyAcqwDjEnYPte9qNnCEH3L12doj8fZRnEY&origins=39.953986%2C-75.157041&destinations=38.895964%2C-77.054545
+distance=  0.2
+YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX
+16
+https://maps.googleapis.com/maps/api/distancematrix/json?language=en&key=AIzaSyAcqwDjEnYPte9qNnCEH3L12doj8fZRnEY&origins=39.953986%2C-75.157041&destinations=38.895964%2C-77.054545
+distance=  0.2
+YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX 6 17 20 0 1   None 0.2 None [{"dish_id":"6","dish_type":"0","order_number":"1"}]
+总价格 14.0
+distance=  0.2
+ 0
+1.1
+0.08 0.3
+{"sendno":"12345","msg_id":"326452657"}
+戈拿旺巴西烤肉 6
+YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX
+16
+戈拿旺巴西烤肉 6
+6 6 False
+{'dish_type': 0L, 'dish_img': u'http://resource.jindouyunonline.com:8001/media/', 'dish_cn_name': u'\u706b\u9505', 'dish_price': 5.2, 'dish_id': 11L, 'dish_en_name': u'huoguo', 'current_month_order': 1}
+https://maps.googleapis.com/maps/api/distancematrix/json?language=en&key=AIzaSyAcqwDjEnYPte9qNnCEH3L12doj8fZRnEY&origins=39.953986%2C-75.157041&destinations=38.895964%2C-77.054545
+distance=  0.2
+https://maps.googleapis.com/maps/api/distancematrix/json?language=en&key=AIzaSyAcqwDjEnYPte9qNnCEH3L12doj8fZRnEY&origins=39.953986%2C-75.157041&destinations=38.895964%2C-77.054545
+distance=  0.2
+https://maps.googleapis.com/maps/api/distancematrix/json?language=en&key=AIzaSyAcqwDjEnYPte9qNnCEH3L12doj8fZRnEY&origins=39.953986%2C-75.157041&destinations=38.895964%2C-77.054545
+distance=  0.2
+YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX 6 17 20 0 1  iiiiiiiiiiiiiiiii None 0.2 None [{"order_number":"1","dish_id":"10","side_dish_list":[{"order_number":"1","side_dish_id":"8"},{"order_numb[28/Apr/2016 18:22:03] "GET /user_serv/upload_order?consume_type=0&delivery_address_id=17&dish_order_list=%5B%7B%22order_number%22%3A%221%22%2C%22dish_id%22%3A%2210%22%2C%22side_dish_list%22%3A%5B%7B%22order_number%22%3A%221%22%2C%22side_dish_id%22%3A%228%22%7D%2C%7B%22order_number%22%3A%222%22%2C%22side_dish_id%22%3A%229%22%7D%5D%2C%22dish_type%22%3A%221%22%7D%2C%7B%22dish_id%22%3A%2213%22%2C%22dish_type%22%3A%220%22%2C%22order_number%22%3A%222%22%7D%2C%7B%22dish_id%22%3A%226%22%2C%22dish_type%22%3A%220%22%2C%22order_number%22%3A%222%22%7D%2C%7B%22dish_id%22%3A%229%22%2C%22dish_type%22%3A%220%22%2C%22order_number%22%3A%224%22%7D%2C%7B%22dish_id%22%3A%2211%22%2C%22dish_type%22%3A%220%22%2C%22order_number%22%3A%221%22%7D%5D&distance=0.2&paytype_id=20&remark=iiiiiiiiiiiiiiiii&shop_id=6&tip_ratio=&tip_type=1&token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 36
+[28/Apr/2016 18:22:04] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 18:22:04] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:23:42] "GET /shop_serv/login?password=dsh5561225&registration_id=13065ffa4e0baa93211&username=genawang HTTP/1.1" 200 92
+[28/Apr/2016 18:23:43] "GET /shop_serv/get_all_new_orders?pageno=1&pagelength=10&token=R9E6EcFw0IIcaoN3FGD5AFmiyt3fV1WY69H7saAX HTTP/1.1" 200 1801
+[28/Apr/2016 18:23:59] "GET /jdy_admin/ HTTP/1.1" 200 7059
+[28/Apr/2016 18:23:59] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 18:24:02] "GET /jdy_admin/ HTTP/1.1" 200 4140
+[28/Apr/2016 18:24:03] "GET /static/xadmin/css/themes/bootstrap-xadmin.css HTTP/1.1" 200 1888
+[28/Apr/2016 18:24:03] "GET /static/xadmin/vendor/font-awesome/css/font-awesome.css HTTP/1.1" 200 21658
+[28/Apr/2016 18:24:03] "GET /static/xadmin/css/xadmin.main.css HTTP/1.1" 200 8324
+[28/Apr/2016 18:24:03] "GET /static/xadmin/css/xadmin.plugins.css HTTP/1.1" 200 175
+[28/Apr/2016 18:24:03] "GET /static/xadmin/css/xadmin.responsive.css HTTP/1.1" 200 4361
+[28/Apr/2016 18:24:03] "GET /static/xadmin/vendor/bootstrap/css/bootstrap.css HTTP/1.1" 200 126432
+[28/Apr/2016 18:24:03] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4147
+[28/Apr/2016 18:24:03] "GET /static/xadmin/vendor/jquery-ui/jquery.ui.core.js HTTP/1.1" 200 8195
+[28/Apr/2016 18:24:03] "GET /static/xadmin/vendor/jquery-ui/jquery.ui.widget.js HTTP/1.1" 200 15069
+[28/Apr/2016 18:24:03] "GET /static/xadmin/vendor/jquery-ui/jquery.ui.mouse.js HTTP/1.1" 200 4561
+[28/Apr/2016 18:24:04] "GET /static/xadmin/vendor/jquery-ui/jquery.ui.sortable.js HTTP/1.1" 200 42543
+[28/Apr/2016 18:24:04] "GET /static/xadmin/js/xadmin.main.js HTTP/1.1" 200 3401
+[28/Apr/2016 18:24:04] "GET /static/xadmin/vendor/bootstrap/js/bootstrap.js HTTP/1.1" 200 58327
+[28/Apr/2016 18:24:04] "GET /static/xadmin/vendor/jquery/jquery.js HTTP/1.1" 200 240196
+[28/Apr/2016 18:24:04] "GET /static/xadmin/js/xadmin.responsive.js HTTP/1.1" 200 4165
+[28/Apr/2016 18:24:04] "GET /static/xadmin/vendor/font-awesome/fonts/fontawesome-webfont.woff?v=4.0.3 HTTP/1.1" 200 44432
+[28/Apr/2016 18:24:09] "GET /jdy_admin/ HTTP/1.1" 200 7059
+[28/Apr/2016 18:24:09] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 18:24:10] "GET /jdy_admin/order_dinner/subdish/ HTTP/1.1" 200 21966
+[28/Apr/2016 18:24:10] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 18:24:14] "GET /jdy_admin/ HTTP/1.1" 200 7059
+[28/Apr/2016 18:24:14] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 18:24:50] "GET /shop_serv/accept_new_order?orderid=68&token=R9E6EcFw0IIcaoN3FGD5AFmiyt3fV1WY69H7saAX HTTP/1.1" 200 36
+[28/Apr/2016 18:24:55] "GET /user_serv/get_all_orders?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 1302
+[28/Apr/2016 18:24:57] "GET /user_serv/get_order_detail_info?order_id=68&token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 1722
+[28/Apr/2016 18:25:44] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 18:25:44] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:25:45] "GET /user_serv/get_shop_detail_info?shop_id=6 HTTP/1.1" 200 2334
+[28/Apr/2016 18:25:48] "GET /user_serv/calculate_tax?total_price=28.00 HTTP/1.1" 200 51
+[28/Apr/2016 18:25:48] "GET /user_serv/get_user_delivery_address?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 211
+[28/Apr/2016 18:25:48] "GET /user_serv/get_paytype?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 170
+[28/Apr/2016 18:25:49] "GET /user_serv/calculate_distance?delivery_address_id=17&shop_id=6 HTTP/1.1" 200 58
+[28/Apr/2016 18:25:49] "GET /user_serv/calculate_freight?distance=0.2&total_price=28.00 HTTP/1.1" 200 61
+[28/Apr/2016 18:25:51] "GET /user_serv/calculate_tax?total_price=33.00 HTTP/1.1" 200 51
+[28/Apr/2016 18:25:51] "GET /user_serv/get_user_delivery_address?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 211
+[28/Apr/2016 18:25:51] "GET /user_serv/get_paytype?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 170
+[28/Apr/2016 18:25:52] "GET /user_serv/calculate_distance?delivery_address_id=17&shop_id=6 HTTP/1.1" 200 58
+[28/Apr/2016 18:25:52] "GET /user_serv/calculate_freight?distance=0.2&total_price=33.00 HTTP/1.1" 200 61
+[28/Apr/2016 18:25:58] "GET /user_serv/upload_order?consume_type=0&delivery_address_id=17&dish_order_list=%5B%7B%22dish_id%22%3A%226%22%2C%22dish_type%22%3A%220%22%2C%22order_number%22%3A%222%22%7D%2C%7B%22dish_id%22%3A%229%22%2C%22dish_type%22%3A%220%22%2C%22order_number%22%3A%222%22%7D%5D&distance=0.2&paytype_id=20&remark=&shop_id=6&tip_ratio=&tip_type=1&token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 36
+[28/Apr/2016 18:25:59] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 18:25:59] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:26:01] "GET /shop_serv/get_all_accept_orders?pageno=1&pagelength=10&token= HTTP/1.1" 200 59
+[28/Apr/2016 18:26:02] "GET /shop_serv/login?password=dsh5561225&registration_id=13065ffa4e0baa93211&username=genawang HTTP/1.1" 200 92
+[28/Apr/2016 18:26:02] "GET /shop_serv/get_all_accept_orders?pageno=1&pagelength=10&token=5V90OzbbmxlBlCqEP04q1RSQgZX7iHMi8V5bksGR HTTP/1.1" 200 5881
+[28/Apr/2016 18:26:03] "GET /shop_serv/get_all_new_orders?pageno=1&pagelength=10&token=5V90OzbbmxlBlCqEP04q1RSQgZX7iHMi8V5bksGR HTTP/1.1" 200 1028
+[28/Apr/2016 18:26:13] "GET /shop_serv/reject_new_order?reason=kk&orderid=69&token=5V90OzbbmxlBlCqEP04q1RSQgZX7iHMi8V5bksGR HTTP/1.1" 200 36
+[28/Apr/2016 18:26:19] "GET /shop_serv/get_all_accept_orders?pageno=1&pagelength=10&token= HTTP/1.1" 200 59
+[28/Apr/2016 18:26:19] "GET /shop_serv/login?password=dsh5561225&registration_id=13065ffa4e0baa93211&username=genawang HTTP/1.1" 200 92
+[28/Apr/2016 18:26:19] "GET /shop_serv/get_all_accept_orders?pageno=1&pagelength=10&token=HNwYihBtQ4qlIN8jWnXQ25hf6cOp1Ekdns2V3XgS HTTP/1.1" 200 5881
+[28/Apr/2016 18:26:21] "GET /shop_serv/get_all_new_orders?pageno=1&pagelength=10&token=HNwYihBtQ4qlIN8jWnXQ25hf6cOp1Ekdns2V3XgS HTTP/1.1" 200 88
+[28/Apr/2016 18:26:23] "GET /user_serv/get_all_orders?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 1714
+[28/Apr/2016 18:26:24] "GET /user_serv/get_order_detail_info?order_id=69&token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 736
+[28/Apr/2016 18:26:27] "GET /user_serv/get_order_detail_info?order_id=69&token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 736
+[28/Apr/2016 18:26:38] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:26:38] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 18:26:40] "GET /user_serv/get_shop_detail_info?shop_id=6 HTTP/1.1" 200 2334
+[28/Apr/2016 18:26:43] "GET /user_serv/calculate_tax?total_price=28.00 HTTP/1.1" 200 51
+[28/Apr/2016 18:26:43] "GET /user_serv/get_user_delivery_address?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 211
+[28/Apr/2016 18:26:43] "GET /user_serv/get_paytype?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 170
+[28/Apr/2016 18:26:44] "GET /user_serv/calculate_distance?delivery_address_id=17&shop_id=6 HTTP/1.1" 200 58
+[28/Apr/2016 18:26:44] "GET /user_serv/calculate_freight?distance=0.2&total_price=28.00 HTTP/1.1" 200 61
+[28/Apr/2016 18:26:53] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:27:22] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:27:26] "GET /user_serv/calculate_tax?total_price=43.40 HTTP/1.1" 200 51
+[28/Apr/2016 18:27:26] "GET /user_serv/get_user_delivery_address?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 211
+[28/Apr/2016 18:27:26] "GET /user_serv/get_paytype?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 170
+[28/Apr/2016 18:27:27] "GET /user_serv/calculate_distance?delivery_address_id=17&shop_id=6 HTTP/1.1" 200 58
+[28/Apr/2016 18:27:27] "GET /user_serv/calculate_freight?distance=0.2&total_price=43.40 HTTP/1.1" 200 59
+[28/Apr/2016 18:31:10] "GET /user_serv/paytype_infos?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 211
+[28/Apr/2016 18:31:20] "GET /user_serv/select_paytype?paytype_id=11&token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 36
+[28/Apr/2016 18:31:20] "GET /user_serv/get_paytype?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 161
+[28/Apr/2016 18:31:22] "GET /user_serv/paytype_infos?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 211
+[28/Apr/2016 18:31:23] "GET /user_serv/select_paytype?paytype_id=20&token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 36
+[28/Apr/2016 18:31:23] "GET /user_serv/get_paytype?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 170
+[28/Apr/2016 18:31:25] "GET /user_serv/paytype_infos?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 211
+[28/Apr/2016 18:33:07] "GET /user_serv/upload_order?consume_type=0&delivery_address_id=17&dish_order_list=%5B%7B%22dish_id%22%3A%226%22%2C%22dish_type%22%3A%220%22%2C%22order_number%22%3A%222%22%7D%2C%7B%22dish_id%22%3A%229%22%2C%22dish_type%22%3A%220%22%2C%22order_number%22%3A%222%22%7D%2C%7B%22dish_id%22%3A%2211%22%2C%22dish_type%22%3A%220%22%2C%22order_number%22%3A%222%22%7D%5D&distance=0.2&paytype_id=20&remark=&shop_id=6&tip_ratio=0.10&tip_type=0&token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 36
+[28/Apr/2016 18:33:07] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 18:33:07] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:33:47] "GET /shop_serv/login?password=dsh5561225&registration_id=13065ffa4e0baa93211&username=genawang HTTP/1.1" 200 92
+[28/Apr/2016 18:33:48] "GET /shop_serv/get_all_new_orders?pageno=1&pagelength=10&token=X5bivEEsBoZUyQ6ef7fOqEjJI5dT46iUwcohON80 HTTP/1.1" 200 1214
+[28/Apr/2016 18:34:24] "GET /user_serv/get_all_orders?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 2129
+[28/Apr/2016 18:34:25] "GET /user_serv/get_order_detail_info?order_id=70&token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 911
+[28/Apr/2016 18:36:27] "GET /shop_serv/accept_new_order?orderid=70&token=X5bivEEsBoZUyQ6ef7fOqEjJI5dT46iUwcohON80 HTTP/1.1" 200 36
+[28/Apr/2016 18:36:31] "GET /user_serv/get_order_detail_info?order_id=70&token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 911
+[28/Apr/2016 18:36:34] "GET /user_serv/get_order_detail_info?order_id=70&token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 911
+[28/Apr/2016 18:36:36] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 18:36:36] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:36:37] "GET /user_serv/get_shop_detail_info?shop_id=6 HTTP/1.1" 200 2334
+[28/Apr/2016 18:36:38] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:36:38] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 18:36:39] "GET /user_serv/get_all_orders?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 2129
+[28/Apr/2016 18:36:41] "GET /user_serv/get_order_detail_info?order_id=70&token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 911
+[28/Apr/2016 18:36:42] "GET /shop_serv/get_all_history_orders?pageno=1&pagelength=10&token= HTTP/1.1" 200 59
+[28/Apr/2016 18:36:42] "GET /shop_serv/login?password=dsh5561225&registration_id=13065ffa4e0baa93211&username=genawang HTTP/1.1" 200 92
+[28/Apr/2016 18:36:43] "GET /shop_serv/get_all_history_orders?pageno=1&pagelength=10&token=tR5TSAN3LkF9bJNHIvYpRsAtmzsD4Tt7nZtQuAR3 HTTP/1.1" 200 88
+[28/Apr/2016 18:36:44] "GET /shop_serv/get_all_new_orders?pageno=1&pagelength=10&token=tR5TSAN3LkF9bJNHIvYpRsAtmzsD4Tt7nZtQuAR3 HTTP/1.1" 200 88
+[28/Apr/2016 18:36:45] "GET /shop_serv/get_all_finish_orders?pageno=1&pagelength=10&token=tR5TSAN3LkF9bJNHIvYpRsAtmzsD4Tt7nZtQuAR3 HTTP/1.1" 200 1348
+[28/Apr/2016 18:36:49] "GET /shop_serv/get_all_history_orders?pageno=1&pagelength=10&token=tR5TSAN3LkF9bJNHIvYpRsAtmzsD4Tt7nZtQuAR3 HTTP/1.1" 200 88
+[28/Apr/2016 18:36:51] "GET /shop_serv/get_all_finish_orders?pageno=1&pagelength=10&token=tR5TSAN3LkF9bJNHIvYpRsAtmzsD4Tt7nZtQuAR3 HTTP/1.1" 200 1348
+[28/Apr/2016 18:36:55] "GET /shop_serv/get_all_accept_orders?pageno=1&pagelength=10&token=tR5TSAN3LkF9bJNHIvYpRsAtmzsD4Tt7nZtQuAR3 HTTP/1.1" 200 7004
+[28/Apr/2016 18:37:06] "GET /shop_serv/finish_order?orderid=70&token=tR5TSAN3LkF9bJNHIvYpRsAtmzsD4Tt7nZtQuAR3 HTTP/1.1" 200 36
+[28/Apr/2016 18:37:11] "GET /shop_serv/get_all_finish_orders?pageno=1&pagelength=10&token= HTTP/1.1" 200 59
+[28/Apr/2016 18:37:12] "GET /shop_serv/login?password=dsh5561225&registration_id=13065ffa4e0baa93211&username=genawang HTTP/1.1" 200 92
+[28/Apr/2016 18:37:12] "GET /shop_serv/get_all_finish_orders?pageno=1&pagelength=10&token=aq4R153VtWjC0SG2YWi6rIwZvqLwZGSPfpKDrEnb HTTP/1.1" 200 2471
+[28/Apr/2016 18:37:16] "GET /shop_serv/get_all_accept_orders?pageno=1&pagelength=10&token=aq4R153VtWjC0SG2YWi6rIwZvqLwZGSPfpKDrEnb HTTP/1.1" 200 5881
+[28/Apr/2016 18:37:51] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:37:51] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 18:37:52] "GET /user_serv/get_all_orders?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 2128
+[28/Apr/2016 18:37:53] "GET /user_serv/get_order_detail_info?order_id=70&token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 911
+[28/Apr/2016 18:37:59] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 18:37:59] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:38:18] "GET /user_serv/get_shop_detail_info?shop_id=6 HTTP/1.1" 200 2334
+[28/Apr/2016 18:38:23] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 18:38:23] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:39:55] "GET /user_serv/get_shop_detail_info?shop_id=1 HTTP/1.1" 200 1609
+[28/Apr/2016 18:40:38] "GET /user_serv/calculate_tax?total_price=30.00 HTTP/1.1" 200 51
+[28/Apr/2016 18:40:38] "GET /user_serv/get_user_delivery_address?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 211
+[28/Apr/2016 18:40:38] "GET /user_serv/get_paytype?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 170
+[28/Apr/2016 18:40:39] "GET /user_serv/calculate_distance?delivery_address_id=17&shop_id=1 HTTP/1.1" 200 58
+[28/Apr/2016 18:40:40] "GET /user_serv/calculate_freight?distance=0.9&total_price=30.00 HTTP/1.1" 200 61
+[28/Apr/2016 18:40:52] "GET /user_serv/calculate_tax?total_price=20.00 HTTP/1.1" 200 51
+[28/Apr/2016 18:40:52] "GET /user_serv/get_user_delivery_address?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 211
+[28/Apr/2016 18:40:52] "GET /user_serv/get_paytype?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 170
+[28/Apr/2016 18:40:54] "GET /user_serv/calculate_distance?delivery_address_id=17&shop_id=1 HTTP/1.1" 200 58
+[28/Apr/2016 18:40:54] "GET /user_serv/calculate_freight?distance=0.9&total_price=20.00 HTTP/1.1" 200 61
+[28/Apr/2016 18:43:19] "GET /user_serv/get_all_side_dishes?dish_id=2 HTTP/1.1" 200 369
+[28/Apr/2016 18:43:27] "GET /user_serv/calculate_tax?total_price=32.50 HTTP/1.1" 200 51
+[28/Apr/2016 18:43:27] "GET /user_serv/get_user_delivery_address?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 211
+[28/Apr/2016 18:43:27] "GET /user_serv/get_paytype?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 170
+[28/Apr/2016 18:43:28] "GET /user_serv/calculate_distance?delivery_address_id=17&shop_id=1 HTTP/1.1" 200 58
+[28/Apr/2016 18:43:29] "GET /user_serv/calculate_freight?distance=0.9&total_price=32.50 HTTP/1.1" 200 61
+[28/Apr/2016 18:43:31] "GET /user_serv/get_all_side_dishes?dish_id=2 HTTP/1.1" 200 369
+[28/Apr/2016 18:43:38] "GET /user_serv/get_all_side_dishes?dish_id=2 HTTP/1.1" 200 369
+[28/Apr/2016 18:43:44] "GET /user_serv/get_all_side_dishes?dish_id=2 HTTP/1.1" 200 369
+[28/Apr/2016 18:43:49] "GET /user_serv/get_all_side_dishes?dish_id=2 HTTP/1.1" 200 369
+[28/Apr/2016 18:43:52] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:43:52] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 18:44:07] "GET /user_serv/get_shop_detail_info?shop_id=6 HTTP/1.1" 200 2334
+[28/Apr/2016 18:44:09] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:44:11] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:44:11] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 18:44:14] "GET /user_serv/get_shop_detail_info?shop_id=1 HTTP/1.1" 200 1609
+[28/Apr/2016 18:44:17] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 18:44:17] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:44:19] "GET /user_serv/get_shop_detail_info?shop_id=6 HTTP/1.1" 200 2334
+[28/Apr/2016 18:44:30] "GET /user_serv/get_all_side_dishes?dish_id=7 HTTP/1.1" 200 221
+[28/Apr/2016 18:44:34] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:45:48] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:46:19] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:46:51] "GET /user_serv/calculate_tax?total_price=24.00 HTTP/1.1" 200 51
+[28/Apr/2016 18:46:51] "GET /user_serv/get_user_delivery_address?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 211
+[28/Apr/2016 18:46:52] "GET /user_serv/get_paytype?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 170
+[28/Apr/2016 18:46:53] "GET /user_serv/calculate_distance?delivery_address_id=17&shop_id=6 HTTP/1.1" 200 58
+[28/Apr/2016 18:46:53] "GET /user_serv/calculate_freight?distance=0.2&total_price=24.00 HTTP/1.1" 200 61
+[28/Apr/2016 18:46:56] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 18:46:57] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:52:18] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:52:18] "GET /user_serv/get_all_shop_infos?pagelength=20&pageno=1 HTTP/1.1" 200 2571
+[28/Apr/2016 18:52:18] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 18:52:18] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:52:20] "GET /user_serv/get_all_orders?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 2128
+[28/Apr/2016 18:52:22] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 18:52:23] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:52:25] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:52:25] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 18:52:29] "GET /user_serv/get_shop_detail_info?shop_id=6 HTTP/1.1" 200 2334
+[28/Apr/2016 18:52:29] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:52:31] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:52:34] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:52:37] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:52:39] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:52:41] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:52:46] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:52:48] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:52:49] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:52:52] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:52:55] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:52:56] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:53:26] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:53:29] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:53:31] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 18:53:31] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 18:54:33] "GET /jdy_admin/ HTTP/1.1" 200 7059
+[28/Apr/2016 18:54:33] "GET /static/xadmin/vendor/bootstrap/css/bootstrap.css HTTP/1.1" 304 0
+[28/Apr/2016 18:54:33] "GET /static/xadmin/css/themes/bootstrap-xadmin.css HTTP/1.1" 304 0
+[28/Apr/2016 18:54:33] "GET /static/xadmin/vendor/font-awesome/css/font-awesome.css HTTP/1.1" 304 0
+[28/Apr/2016 18:54:33] "GET /static/xadmin/css/xadmin.main.css HTTP/1.1" 304 0
+[28/Apr/2016 18:54:33] "GET /static/xadmin/css/xadmin.plugins.css HTTP/1.1" 304 0
+[28/Apr/2016 18:54:33] "GET /static/xadmin/css/xadmin.responsive.css HTTP/1.1" 304 0
+[28/Apr/2016 18:54:34] "GET /static/xadmin/css/xadmin.page.dashboard.css HTTP/1.1" 304 0
+[28/Apr/2016 18:54:34] "GET /static/xadmin/vendor/jquery/jquery.js HTTP/1.1" 304 0
+[28/Apr/2016 18:54:34] "GET /static/xadmin/vendor/jquery-ui/jquery.ui.core.js HTTP/1.1" 304 0
+[28/Apr/2016 18:54:34] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 18:54:34] "GET /static/xadmin/vendor/jquery-ui/jquery.ui.widget.js HTTP/1.1" 304 0
+[28/Apr/2016 18:54:34] "GET /static/xadmin/vendor/jquery-ui/jquery.ui.mouse.js HTTP/1.1" 304 0
+[28/Apr/2016 18:54:34] "GET /static/xadmin/vendor/jquery-ui/jquery.ui.sortable.js HTTP/1.1" 304 0
+[28/Apr/2016 18:54:34] "GET /static/xadmin/vendor/bootstrap/js/bootstrap.js HTTP/1.1" 304 0
+[28/Apr/2016 18:54:34] "GET /static/xadmin/js/xadmin.main.js HTTP/1.1" 304 0
+[28/Apr/2016 18:54:34] "GET /static/xadmin/js/xadmin.responsive.js HTTP/1.1" 304 0
+[28/Apr/2016 18:54:34] "GET /static/xadmin/js/xadmin.page.dashboard.js HTTP/1.1" 304 0
+[28/Apr/2016 18:54:34] "GET /static/xadmin/js/xadmin.plugin.portal.js HTTP/1.1" 304 0
+[28/Apr/2016 18:54:35] "GET /jdy_admin/order_dinner/subdish/ HTTP/1.1" 200 21966
+[28/Apr/2016 18:54:35] "GET /static/xadmin/css/xadmin.form.css HTTP/1.1" 304 0
+[28/Apr/2016 18:54:35] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 18:54:35] "GET /static/xadmin/js/xadmin.plugin.details.js HTTP/1.1" 304 0
+[28/Apr/2016 18:54:35] "GET /static/xadmin/js/xadmin.plugin.bookmark.js HTTP/1.1" 304 0
+[28/Apr/2016 18:54:35] "GET /static/xadmin/js/xadmin.plugin.filters.js HTTP/1.1" 304 0
+[28/Apr/2016 18:54:35] "GET /static/xadmin/js/xadmin.plugin.actions.js HTTP/1.1" 304 0
+[28/Apr/2016 18:54:35] "GET /static/xadmin/js/xadmin.page.list.js HTTP/1.1" 304 0
+[28/Apr/2016 18:54:35] "GET /static/xadmin/js/xadmin.page.form.js HTTP/1.1" 304 0
+[28/Apr/2016 18:54:37] "GET /jdy_admin/order_dinner/dish/ HTTP/1.1" 200 23078
+[28/Apr/2016 18:54:37] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 18:54:37] "GET /media/imgs/-53922eaf5be6a81c.jpg HTTP/1.1" 304 0
+[28/Apr/2016 18:54:37] "GET /media/ HTTP/1.1" 404 1622
+[28/Apr/2016 18:54:37] "GET /media/imgs/-11362ecccbdee507.jpg HTTP/1.1" 304 0
+[28/Apr/2016 18:54:37] "GET /media/imgs/babe.jpg HTTP/1.1" 304 0
+[28/Apr/2016 18:54:37] "GET /media/imgs/1.jpg HTTP/1.1" 304 0
+[28/Apr/2016 18:54:39] "GET /jdy_admin/order_dinner/order/ HTTP/1.1" 200 38204
+[28/Apr/2016 18:54:39] "GET /static/xadmin/vendor/bootstrap-datepicker/css/datepicker.css HTTP/1.1" 304 0
+[28/Apr/2016 18:54:39] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 18:54:39] "GET /static/xadmin/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js HTTP/1.1" 304 0
+[28/Apr/2016 18:54:39] "GET /static/xadmin/js/xadmin.widget.datetime.js HTTP/1.1" 304 0
+[28/Apr/2016 18:54:46] "GET /jdy_admin/order_dinner/dish/ HTTP/1.1" 200 23078
+[28/Apr/2016 18:54:46] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 18:54:46] "GET /media/ HTTP/1.1" 404 1622
+[28/Apr/2016 18:54:53] "GET /jdy_admin/order_dinner/order/ HTTP/1.1" 200 38204
+[28/Apr/2016 18:54:53] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+/usr/local/lib/python2.7/dist-packages/django_xadmin-0.5.0-py2.7.egg/xadmin/views/detail.py:206: RemovedInDjango18Warning: Calling modelform_factory without defining 'fields' or 'exclude' explicitly is deprecated
+  return modelform_factory(self.model, **defaults)
+
+/usr/local/lib/python2.7/dist-packages/django/forms/models.py:539: RemovedInDjango18Warning: Creating a ModelForm without either the 'fields' attribute or the 'exclude' attribute is deprecated - form OrderForm needs updating
+  return type(form)(class_name, (form,), form_class_attrs)
+
+[28/Apr/2016 18:55:00] "GET /jdy_admin/order_dinner/order/70/detail/ HTTP/1.1" 500 568954
+[28/Apr/2016 18:55:22] "GET /jdy_admin/order_dinner/order/69/detail/ HTTP/1.1" 500 568954
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 128, in finish_response
+    self.write(data)
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 217, in write
+    self._write(data)
+  File "/usr/lib/python2.7/socket.py", line 324, in write
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[28/Apr/2016 18:55:22] "GET /jdy_admin/order_dinner/order/69/detail/ HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 129, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 710, in finish
+    self.wfile.close()
+  File "/usr/lib/python2.7/socket.py", line 279, in close
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[28/Apr/2016 18:55:23] "GET /jdy_admin/order_dinner/order/69/detail/ HTTP/1.1" 500 568954
+[28/Apr/2016 18:55:26] "GET /jdy_admin/order_dinner/order/69/detail/ HTTP/1.1" 200 4169
+[28/Apr/2016 18:55:26] "GET /static/xadmin/css/themes/bootstrap-xadmin.css HTTP/1.1" 200 1888
+[28/Apr/2016 18:55:26] "GET /static/xadmin/vendor/font-awesome/css/font-awesome.css HTTP/1.1" 200 21658
+[28/Apr/2016 18:55:26] "GET /static/xadmin/css/xadmin.main.css HTTP/1.1" 200 8324
+[28/Apr/2016 18:55:26] "GET /static/xadmin/css/xadmin.plugins.css HTTP/1.1" 200 175
+[28/Apr/2016 18:55:26] "GET /static/xadmin/css/xadmin.responsive.css HTTP/1.1" 200 4361
+[28/Apr/2016 18:55:27] "GET /static/xadmin/vendor/bootstrap/css/bootstrap.css HTTP/1.1" 200 126432
+[28/Apr/2016 18:55:27] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4147
+[28/Apr/2016 18:55:27] "GET /static/xadmin/vendor/jquery-ui/jquery.ui.core.js HTTP/1.1" 200 8195
+[28/Apr/2016 18:55:27] "GET /static/xadmin/vendor/jquery-ui/jquery.ui.widget.js HTTP/1.1" 200 15069
+[28/Apr/2016 18:55:27] "GET /static/xadmin/vendor/jquery-ui/jquery.ui.mouse.js HTTP/1.1" 200 4561
+[28/Apr/2016 18:55:27] "GET /static/xadmin/vendor/bootstrap/js/bootstrap.js HTTP/1.1" 200 58327
+[28/Apr/2016 18:55:27] "GET /static/xadmin/vendor/jquery-ui/jquery.ui.sortable.js HTTP/1.1" 200 42543
+[28/Apr/2016 18:55:27] "GET /static/xadmin/vendor/jquery/jquery.js HTTP/1.1" 200 240196
+[28/Apr/2016 18:55:27] "GET /static/xadmin/js/xadmin.main.js HTTP/1.1" 200 3401
+[28/Apr/2016 18:55:28] "GET /static/xadmin/js/xadmin.responsive.js HTTP/1.1" 200 4165
+[28/Apr/2016 18:55:28] "GET /static/xadmin/vendor/font-awesome/fonts/fontawesome-webfont.woff?v=4.0.3 HTTP/1.1" 200 44432
+[28/Apr/2016 18:56:23] "GET /jdy_admin/order_dinner/order/70/detail/ HTTP/1.1" 500 568954
+[28/Apr/2016 18:57:11] "GET /jdy_admin/order_dinner/order/65/detail/ HTTP/1.1" 500 568954
+[28/Apr/2016 18:57:13] "GET /jdy_admin/order_dinner/order/65/detail/ HTTP/1.1" 200 4169
+[28/Apr/2016 18:57:14] "GET /static/xadmin/vendor/font-awesome/css/font-awesome.css HTTP/1.1" 200 21658
+[28/Apr/2016 18:57:14] "GET /static/xadmin/css/themes/bootstrap-xadmin.css HTTP/1.1" 200 1888
+[28/Apr/2016 18:57:14] "GET /static/xadmin/css/xadmin.plugins.css HTTP/1.1" 200 175
+[28/Apr/2016 18:57:14] "GET /static/xadmin/css/xadmin.main.css HTTP/1.1" 200 8324
+[28/Apr/2016 18:57:14] "GET /static/xadmin/css/xadmin.responsive.css HTTP/1.1" 200 4361
+[28/Apr/2016 18:57:14] "GET /static/xadmin/vendor/bootstrap/css/bootstrap.css HTTP/1.1" 200 126432
+[28/Apr/2016 18:57:14] "GET /static/xadmin/vendor/jquery-ui/jquery.ui.core.js HTTP/1.1" 200 8195
+[28/Apr/2016 18:57:14] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4147
+[28/Apr/2016 18:57:14] "GET /static/xadmin/vendor/jquery-ui/jquery.ui.widget.js HTTP/1.1" 200 15069
+[28/Apr/2016 18:57:15] "GET /static/xadmin/vendor/jquery-ui/jquery.ui.mouse.js HTTP/1.1" 200 4561
+[28/Apr/2016 18:57:15] "GET /static/xadmin/vendor/jquery-ui/jquery.ui.sortable.js HTTP/1.1" 200 42543
+[28/Apr/2016 18:57:15] "GET /static/xadmin/vendor/bootstrap/js/bootstrap.js HTTP/1.1" 200 58327
+[28/Apr/2016 18:57:15] "GET /static/xadmin/js/xadmin.main.js HTTP/1.1" 200 3401
+[28/Apr/2016 18:57:15] "GET /static/xadmin/js/xadmin.responsive.js HTTP/1.1" 200 4165
+[28/Apr/2016 18:57:15] "GET /static/xadmin/vendor/jquery/jquery.js HTTP/1.1" 200 240196
+[28/Apr/2016 18:57:16] "GET /static/xadmin/vendor/font-awesome/fonts/fontawesome-webfont.woff?v=4.0.3 HTTP/1.1" 200 44432
+[28/Apr/2016 18:57:34] "GET /jdy_admin/order_dinner/order/68/detail/ HTTP/1.1" 500 568954
+[28/Apr/2016 18:57:46] "GET /jdy_admin/order_dinner/order/68/detail/ HTTP/1.1" 500 568954
+[28/Apr/2016 18:59:29] "GET /jdy_admin/order_dinner/dish/ HTTP/1.1" 200 23078
+[28/Apr/2016 18:59:29] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 18:59:30] "GET /media/ HTTP/1.1" 404 1622
+[28/Apr/2016 18:59:37] "GET /jdy_admin/order_dinner/dish/13/update/ HTTP/1.1" 200 13681
+[28/Apr/2016 18:59:38] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:00:00] "POST /jdy_admin/order_dinner/dish/13/update/ HTTP/1.1" 302 0
+[28/Apr/2016 19:00:00] "GET /jdy_admin/order_dinner/dish/ HTTP/1.1" 200 23348
+[28/Apr/2016 19:00:00] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:00:01] "GET /media/imgs/2471013947c8978b3667bb41498b01dd.jpg HTTP/1.1" 200 54960
+[28/Apr/2016 19:00:01] "GET /media/ HTTP/1.1" 404 1622
+[28/Apr/2016 19:00:10] "GET /user_serv/get_shop_detail_info?shop_id=6 HTTP/1.1" 200 2375
+[28/Apr/2016 19:00:12] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:00:12] "GET /media/imgs/2471013947c8978b3667bb41498b01dd.jpg HTTP/1.1" 200 54960
+[28/Apr/2016 19:01:07] "GET /user_serv/get_all_side_dishes?dish_id=7 HTTP/1.1" 200 221
+[28/Apr/2016 19:01:09] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:02:06] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:02:06] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 19:02:09] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 19:02:09] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:02:10] "GET /user_serv/get_all_orders?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 2128
+[28/Apr/2016 19:02:13] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:02:13] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 19:02:49] "GET /jdy_admin/ HTTP/1.1" 200 7059
+[28/Apr/2016 19:02:49] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:02:52] "GET /jdy_admin/order_dinner/subdish/ HTTP/1.1" 200 21966
+[28/Apr/2016 19:02:52] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:02:54] "GET /jdy_admin/order_dinner/dish/ HTTP/1.1" 200 23119
+[28/Apr/2016 19:02:54] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:02:55] "GET /media/imgs/2471013947c8978b3667bb41498b01dd.jpg HTTP/1.1" 304 0
+[28/Apr/2016 19:02:55] "GET /media/ HTTP/1.1" 404 1622
+[28/Apr/2016 19:02:57] "GET /jdy_admin/order_dinner/order/ HTTP/1.1" 200 38204
+[28/Apr/2016 19:02:57] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:03:02] "GET /jdy_admin/ HTTP/1.1" 200 7059
+[28/Apr/2016 19:03:02] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:08:03] "GET /jdy_admin/order_dinner/subdish/ HTTP/1.1" 200 21966
+[28/Apr/2016 19:08:03] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:10:22] "GET /jdy_admin/order_dinner/subdish/9/update/ HTTP/1.1" 200 12082
+[28/Apr/2016 19:10:23] "GET /static/xadmin/vendor/select2/select2.css HTTP/1.1" 304 0
+[28/Apr/2016 19:10:23] "GET /static/xadmin/vendor/selectize/selectize.css HTTP/1.1" 304 0
+[28/Apr/2016 19:10:23] "GET /static/xadmin/vendor/selectize/selectize.bootstrap3.css HTTP/1.1" 304 0
+[28/Apr/2016 19:10:23] "GET /static/xadmin/vendor/selectize/selectize.js HTTP/1.1" 304 0
+[28/Apr/2016 19:10:23] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:10:23] "GET /static/xadmin/vendor/select2/select2.js HTTP/1.1" 304 0
+[28/Apr/2016 19:10:23] "GET /static/xadmin/vendor/select2/select2_locale_zh-cn.js HTTP/1.1" 404 1761
+[28/Apr/2016 19:10:23] "GET /static/xadmin/js/xadmin.widget.select.js HTTP/1.1" 304 0
+[28/Apr/2016 19:10:26] "GET /jdy_admin/order_dinner/subdish/ HTTP/1.1" 200 21966
+[28/Apr/2016 19:12:23] "GET /user_serv/get_shop_detail_info?shop_id=6 HTTP/1.1" 200 2375
+[28/Apr/2016 19:12:25] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:12:25] "GET /user_serv/get_all_side_dishes?dish_id=7 HTTP/1.1" 200 221
+[28/Apr/2016 19:12:31] "GET /jdy_admin/order_dinner/dish/ HTTP/1.1" 200 23119
+[28/Apr/2016 19:12:31] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:12:31] "GET /media/imgs/2471013947c8978b3667bb41498b01dd.jpg HTTP/1.1" 304 0
+[28/Apr/2016 19:12:31] "GET /media/ HTTP/1.1" 404 1622
+[28/Apr/2016 19:12:36] "GET /jdy_admin/order_dinner/dish/7/update/ HTTP/1.1" 200 13880
+[28/Apr/2016 19:12:36] "GET /static/xadmin/vendor/bootstrap-image-gallery/css/bootstrap-image-gallery.css HTTP/1.1" 304 0
+[28/Apr/2016 19:12:36] "GET /static/xadmin/js/xadmin.plugin.quick-form.js HTTP/1.1" 304 0
+[28/Apr/2016 19:12:36] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:12:36] "GET /static/xadmin/vendor/load-image/load-image.js HTTP/1.1" 304 0
+[28/Apr/2016 19:12:36] "GET /static/xadmin/vendor/bootstrap-image-gallery/js/bootstrap-image-gallery.js HTTP/1.1" 304 0
+[28/Apr/2016 19:12:43] "POST /jdy_admin/order_dinner/dish/7/update/ HTTP/1.1" 302 0
+[28/Apr/2016 19:12:43] "GET /jdy_admin/order_dinner/dish/ HTTP/1.1" 200 23351
+[28/Apr/2016 19:12:43] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:12:43] "GET /media/ HTTP/1.1" 404 1622
+[28/Apr/2016 19:12:44] "GET /jdy_admin/order_dinner/dish/ HTTP/1.1" 200 4158
+[28/Apr/2016 19:12:44] "GET /static/xadmin/vendor/font-awesome/css/font-awesome.css HTTP/1.1" 200 21658
+[28/Apr/2016 19:12:44] "GET /static/xadmin/css/xadmin.main.css HTTP/1.1" 200 8324
+[28/Apr/2016 19:12:44] "GET /static/xadmin/css/themes/bootstrap-xadmin.css HTTP/1.1" 200 1888
+[28/Apr/2016 19:12:44] "GET /static/xadmin/css/xadmin.plugins.css HTTP/1.1" 200 175
+[28/Apr/2016 19:12:45] "GET /static/xadmin/css/xadmin.responsive.css HTTP/1.1" 200 4361
+[28/Apr/2016 19:12:45] "GET /static/xadmin/vendor/jquery-ui/jquery.ui.core.js HTTP/1.1" 200 8195
+[28/Apr/2016 19:12:45] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4147
+[28/Apr/2016 19:12:45] "GET /static/xadmin/vendor/jquery-ui/jquery.ui.widget.js HTTP/1.1" 200 15069
+[28/Apr/2016 19:12:45] "GET /static/xadmin/vendor/bootstrap/css/bootstrap.css HTTP/1.1" 200 126432
+[28/Apr/2016 19:12:45] "GET /static/xadmin/vendor/jquery-ui/jquery.ui.mouse.js HTTP/1.1" 200 4561
+[28/Apr/2016 19:12:45] "GET /static/xadmin/vendor/jquery-ui/jquery.ui.sortable.js HTTP/1.1" 200 42543
+[28/Apr/2016 19:12:45] "GET /static/xadmin/vendor/bootstrap/js/bootstrap.js HTTP/1.1" 200 58327
+[28/Apr/2016 19:12:45] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:12:46] "GET /static/xadmin/vendor/jquery/jquery.js HTTP/1.1" 200 240196
+[28/Apr/2016 19:12:46] "GET /static/xadmin/js/xadmin.main.js HTTP/1.1" 200 3401
+[28/Apr/2016 19:12:46] "GET /static/xadmin/js/xadmin.responsive.js HTTP/1.1" 200 4165
+[28/Apr/2016 19:12:46] "GET /static/xadmin/vendor/font-awesome/fonts/fontawesome-webfont.woff?v=4.0.3 HTTP/1.1" 200 44432
+[28/Apr/2016 19:12:47] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 19:12:47] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:12:49] "GET /user_serv/get_shop_detail_info?shop_id=6 HTTP/1.1" 200 2375
+[28/Apr/2016 19:12:50] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:12:50] "GET /user_serv/get_all_side_dishes?dish_id=7 HTTP/1.1" 200 221
+[28/Apr/2016 19:12:53] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:12:58] "GET /jdy_admin/order_dinner/dish/7/update/ HTTP/1.1" 200 13880
+[28/Apr/2016 19:12:58] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:13:32] "GET /user_serv/get_global_conf HTTP/1.1" 200 184
+[28/Apr/2016 19:13:32] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 19:13:32] "GET /user_serv/get_all_shop_infos?pagelength=20&pageno=1 HTTP/1.1" 200 2571
+[28/Apr/2016 19:13:32] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 19:13:32] "GET /media/imgs/shop.jpg HTTP/1.1" 304 0
+[28/Apr/2016 19:13:32] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:13:33] "GET /media/imgs/ipad.jpg HTTP/1.1" 304 0
+[28/Apr/2016 19:13:33] "GET /media/imgs/ge.jpg HTTP/1.1" 304 0
+[28/Apr/2016 19:13:33] "GET /media/imgs/123123123.jpg HTTP/1.1" 304 0
+[28/Apr/2016 19:13:35] "GET /user_serv/get_shop_detail_info?shop_id=6 HTTP/1.1" 200 2375
+[28/Apr/2016 19:13:35] "GET /media/imgs/1.jpg HTTP/1.1" 304 0
+[28/Apr/2016 19:13:35] "GET /media/imgs/babe.jpg HTTP/1.1" 304 0
+[28/Apr/2016 19:13:35] "GET /media/imgs/-53922eaf5be6a81c.jpg HTTP/1.1" 304 0
+[28/Apr/2016 19:13:35] "GET /media/imgs/-11362ecccbdee507.jpg HTTP/1.1" 304 0
+[28/Apr/2016 19:13:36] "GET /user_serv/get_all_side_dishes?dish_id=7 HTTP/1.1" 200 221
+[28/Apr/2016 19:13:41] "POST /jdy_admin/order_dinner/dish/7/update/ HTTP/1.1" 302 0
+[28/Apr/2016 19:13:41] "GET /jdy_admin/order_dinner/dish/ HTTP/1.1" 200 23351
+[28/Apr/2016 19:13:41] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:13:41] "GET /media/imgs/2471013947c8978b3667bb41498b01dd.jpg HTTP/1.1" 304 0
+[28/Apr/2016 19:13:41] "GET /media/ HTTP/1.1" 404 1622
+[28/Apr/2016 19:13:48] "GET /user_serv/get_global_conf HTTP/1.1" 200 184
+[28/Apr/2016 19:13:48] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 19:13:48] "GET /user_serv/get_all_shop_infos?pagelength=20&pageno=1 HTTP/1.1" 200 2571
+[28/Apr/2016 19:13:48] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 19:13:48] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:13:51] "GET /user_serv/get_shop_detail_info?shop_id=6 HTTP/1.1" 200 2375
+[28/Apr/2016 19:13:51] "GET /user_serv/get_all_side_dishes?dish_id=7 HTTP/1.1" 200 221
+[28/Apr/2016 19:14:05] "GET /user_serv/get_all_side_dishes?dish_id=7 HTTP/1.1" 200 221
+[28/Apr/2016 19:16:43] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:16:43] "GET /media/imgs/2471013947c8978b3667bb41498b01dd.jpg HTTP/1.1" 304 0
+[28/Apr/2016 19:16:47] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:16:49] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 19:16:49] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:18:47] "GET /user_serv/get_all_orders?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 2128
+[28/Apr/2016 19:18:48] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 19:18:48] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:18:49] "GET /user_serv/get_all_orders?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 2128
+[28/Apr/2016 19:18:52] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 19:18:52] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:18:53] "GET /user_serv/get_shop_detail_info?shop_id=6 HTTP/1.1" 200 2375
+[28/Apr/2016 19:18:54] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:20:49] "GET /user_serv/calculate_tax?total_price=2.50 HTTP/1.1" 200 51
+[28/Apr/2016 19:20:49] "GET /user_serv/get_user_delivery_address?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 211
+[28/Apr/2016 19:20:49] "GET /user_serv/get_paytype?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 170
+[28/Apr/2016 19:20:50] "GET /user_serv/calculate_distance?delivery_address_id=17&shop_id=6 HTTP/1.1" 200 58
+[28/Apr/2016 19:20:50] "GET /user_serv/calculate_freight?distance=0.2&total_price=2.50 HTTP/1.1" 200 61
+[28/Apr/2016 19:20:51] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:20:59] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:20:59] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:21:02] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:21:12] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 19:21:12] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:21:16] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 19:21:16] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:21:16] "GET /user_serv/get_all_orders?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 2128
+[28/Apr/2016 19:21:17] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:21:17] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 19:21:26] "GET /user_serv/search_shop_infos?shop_search_term=%E5%8C%85%E5%AD%90 HTTP/1.1" 200 431
+[28/Apr/2016 19:21:26] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:21:33] "GET /user_serv/search_shop_infos?shop_search_term=%E7%81%AB%E9%94%85 HTTP/1.1" 200 355
+[28/Apr/2016 19:21:33] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:21:40] "GET /user_serv/search_shop_infos?shop_search_term=%E9%BA%BB%E8%BE%A3%E7%83%AB HTTP/1.1" 200 61
+[28/Apr/2016 19:21:41] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:21:41] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 19:22:46] "GET /user_serv/get_all_orders?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 2128
+[28/Apr/2016 19:22:49] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 19:22:50] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:22:51] "GET /user_serv/get_shop_detail_info?shop_id=6 HTTP/1.1" 200 2375
+[28/Apr/2016 19:22:52] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:22:54] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 19:22:54] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:23:42] "GET /user_serv/get_shop_detail_info?shop_id=1 HTTP/1.1" 200 1609
+[28/Apr/2016 19:23:42] "GET /media/imgs/HEISENLIN.jpg HTTP/1.1" 304 0
+[28/Apr/2016 19:23:42] "GET /media/imgs/basi.jpg HTTP/1.1" 304 0
+[28/Apr/2016 19:23:42] "GET /media/imgs/nailao.jpg HTTP/1.1" 304 0
+[28/Apr/2016 19:23:47] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:23:47] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 19:24:58] "GET /user_serv/get_all_orders?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 2128
+[28/Apr/2016 19:24:59] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 19:24:59] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:25:01] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:25:01] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 19:25:15] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:25:15] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 19:25:34] "GET /user_serv/get_all_orders?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 2128
+[28/Apr/2016 19:27:40] "GET /jdy_admin/order_dinner/dish/10/update/ HTTP/1.1" 200 13915
+[28/Apr/2016 19:27:41] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:27:41] "GET /media/imgs/-11362ecccbdee507.jpg HTTP/1.1" 304 0
+er":"2","side_dish_id":"9"}],"dish_type":"1"},{"dish_id":"13","dish_type":"0","order_number":"2"},{"dish_id":"6","dish_type":"0","order_number":"2"},{"dish_id":"9","dish_type":"0","order_number":"4"},{"dish_id":"11","dish_type":"0","order_number":"1"}]
+总价格 81.7
+distance=  0.2
+ 0
+6.5
+0.08 1.6
+{"sendno":"12345","msg_id":"1340089464"}
+戈拿旺巴西烤肉 6
+current user id =  10
+YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX
+16
+https://maps.googleapis.com/maps/api/distancematrix/json?language=en&key=AIzaSyAcqwDjEnYPte9qNnCEH3L12doj8fZRnEY&origins=39.953986%2C-75.157041&destinations=38.895964%2C-77.054545
+distance=  0.2
+https://maps.googleapis.com/maps/api/distancematrix/json?language=en&key=AIzaSyAcqwDjEnYPte9qNnCEH3L12doj8fZRnEY&origins=39.953986%2C-75.157041&destinations=38.895964%2C-77.054545
+distance=  0.2
+YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX 6 17 20 0 1   None 0.2 None [{"dish_id":"6","dish_type":"0","order_number":"2"},{"dish_id":"9","dish_type":"0","order_number":"2"}]
+总价格 33.0
+distance=  0.2
+ 0
+2.6
+0.08 0.7
+{"sendno":"12345","msg_id":"4106106230"}
+戈拿旺巴西烤肉 6
+戈拿旺巴西烤肉 6
+戈拿旺巴西烤肉 6
+戈拿旺巴西烤肉 6
+YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX
+16
+https://maps.googleapis.com/maps/api/distancematrix/json?language=en&key=AIzaSyAcqwDjEnYPte9qNnCEH3L12doj8fZRnEY&origins=39.953986%2C-75.157041&destinations=38.895964%2C-77.054545
+distance=  0.2
+https://maps.googleapis.com/maps/api/distancematrix/json?language=en&key=AIzaSyAcqwDjEnYPte9qNnCEH3L12doj8fZRnEY&origins=39.953986%2C-75.157041&destinations=38.895964%2C-77.054545
+distance=  0.2
+YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX 6 17 20 0 0 0.10  None 0.2 None [{"dish_id":"6","dish_type":"0","order_number":"2"},{"dish_id":"9","dish_type":"0","order_number":"2"},{"dish_id":"11","dish_type":"0","order_number":"2"}]
+总价格 43.4
+distance=  0.2
+0.10 0
+3.5
+0.08 0.9
+{"sendno":"12345","msg_id":"780566134"}
+戈拿旺巴西烤肉 6
+YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX
+16
+YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX
+16
+戈拿旺巴西烤肉 6
+戈拿旺巴西烤肉 6
+戈拿旺巴西烤肉 6
+戈拿旺巴西烤肉 6
+戈拿旺巴西烤肉 6
+戈拿旺巴西烤肉 6
+戈拿旺巴西烤肉 6
+戈拿旺巴西烤肉 6
+YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX
+16
+https://maps.googleapis.com/maps/api/distancematrix/json?language=en&key=AIzaSyAcqwDjEnYPte9qNnCEH3L12doj8fZRnEY&origins=39.953986%2C-75.157041&destinations=42.331427%2C-83.045754
+distance=  0.9
+https://maps.googleapis.com/maps/api/distancematrix/json?language=en&key=AIzaSyAcqwDjEnYPte9qNnCEH3L12doj8fZRnEY&origins=39.953986%2C-75.157041&destinations=42.331427%2C-83.045754
+distance=  0.9
+https://maps.googleapis.com/maps/api/distancematrix/json?language=en&key=AIzaSyAcqwDjEnYPte9qNnCEH3L12doj8fZRnEY&origins=39.953986%2C-75.157041&destinations=42.331427%2C-83.045754
+distance=  0.9
+https://maps.googleapis.com/maps/api/distancematrix/json?language=en&key=AIzaSyAcqwDjEnYPte9qNnCEH3L12doj8fZRnEY&origins=39.953986%2C-75.157041&destinations=38.895964%2C-77.054545
+distance=  0.2
+YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX
+16
+current user id =  10
+current user id =  10
+current user id =  10
+current user id =  10
+current user id =  10
+----------------------------------------
+Exception happened during processing of request from ('73.165.76.117', 51962)
+----------------------------------------
+current user id =  10
+current user id =  10
+YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX
+16
+current user id =  10
+current user id =  10
+current user id =  10
+current user id =  10
+current user id =  10
+current user id =  10
+current user id =  10
+current user id =  10
+YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX
+16
+YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX
+16
+https://maps.googleapis.com/maps/api/distancematrix/json?language=en&key=AIzaSyAcqwDjEnYPte9qNnCEH3L12doj8fZRnEY&origins=39.953986%2C-75.157041&destinations=38.895964%2C-77.054545
+distance=  0.2
+YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX
+16
+YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX
+16
+YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX
+16
+YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX
+16
+cu[28/Apr/2016 19:27:46] "GET /jdy_admin/order_dinner/dish/ HTTP/1.1" 200 23119
+[28/Apr/2016 19:27:46] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:27:47] "GET /media/imgs/2471013947c8978b3667bb41498b01dd.jpg HTTP/1.1" 304 0
+[28/Apr/2016 19:27:47] "GET /media/imgs/-53922eaf5be6a81c.jpg HTTP/1.1" 304 0
+[28/Apr/2016 19:27:47] "GET /media/ HTTP/1.1" 404 1622
+[28/Apr/2016 19:27:47] "GET /media/ HTTP/1.1" 404 1622
+[28/Apr/2016 19:27:48] "GET /jdy_admin/order_dinner/subdish/ HTTP/1.1" 200 21966
+[28/Apr/2016 19:27:48] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:27:51] "GET /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 200 11770
+[28/Apr/2016 19:27:51] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:27:51] "GET /static/xadmin/vendor/select2/select2_locale_zh-cn.js HTTP/1.1" 404 1761
+[28/Apr/2016 19:27:59] "GET /jdy_admin/order_dinner/order/ HTTP/1.1" 200 38204
+[28/Apr/2016 19:27:59] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:28:01] "GET /jdy_admin/order_dinner/subdish/ HTTP/1.1" 200 21966
+[28/Apr/2016 19:28:01] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:28:02] "GET /jdy_admin/order_dinner/dish/ HTTP/1.1" 200 23119
+[28/Apr/2016 19:28:03] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:28:03] "GET /media/ HTTP/1.1" 404 1622
+[28/Apr/2016 19:28:06] "GET /jdy_admin/order_dinner/subdish/ HTTP/1.1" 200 21966
+[28/Apr/2016 19:28:06] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:28:12] "GET /jdy_admin/order_dinner/dish/ HTTP/1.1" 200 23119
+[28/Apr/2016 19:28:12] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:28:12] "GET /media/ HTTP/1.1" 404 1622
+[28/Apr/2016 19:28:14] "GET /jdy_admin/order_dinner/subdish/ HTTP/1.1" 200 21966
+[28/Apr/2016 19:28:14] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:28:18] "GET /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 200 11770
+[28/Apr/2016 19:28:18] "GET /static/xadmin/vendor/select2/select2_locale_zh-cn.js HTTP/1.1" 404 1761
+[28/Apr/2016 19:28:18] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:34:08] "POST /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 302 0
+[28/Apr/2016 19:34:08] "GET /jdy_admin/order_dinner/subdish/ HTTP/1.1" 200 23448
+[28/Apr/2016 19:34:08] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:34:16] "GET /jdy_admin/order_dinner/dish/ HTTP/1.1" 200 23119
+[28/Apr/2016 19:34:16] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:34:16] "GET /media/imgs/2471013947c8978b3667bb41498b01dd.jpg HTTP/1.1" 304 0
+[28/Apr/2016 19:34:16] "GET /media/ HTTP/1.1" 404 1622
+[28/Apr/2016 19:34:19] "GET /jdy_admin/order_dinner/subdish/ HTTP/1.1" 200 23149
+[28/Apr/2016 19:34:19] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:34:22] "GET /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 200 11770
+[28/Apr/2016 19:34:22] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:34:22] "GET /static/xadmin/vendor/select2/select2_locale_zh-cn.js HTTP/1.1" 404 1761
+[28/Apr/2016 19:34:33] "GET /user_serv/get_order_detail_info?order_id=70&token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 911
+[28/Apr/2016 19:34:35] "POST /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 302 0
+[28/Apr/2016 19:34:35] "GET /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 200 12114
+[28/Apr/2016 19:34:35] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:34:35] "GET /static/xadmin/vendor/select2/select2_locale_zh-cn.js HTTP/1.1" 404 1761
+[28/Apr/2016 19:34:39] "GET /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 200 4165
+[28/Apr/2016 19:34:39] "GET /static/xadmin/css/themes/bootstrap-xadmin.css HTTP/1.1" 200 1888
+[28/Apr/2016 19:34:39] "GET /static/xadmin/vendor/font-awesome/css/font-awesome.css HTTP/1.1" 200 21658
+[28/Apr/2016 19:34:39] "GET /static/xadmin/css/xadmin.plugins.css HTTP/1.1" 200 175
+[28/Apr/2016 19:34:39] "GET /static/xadmin/css/xadmin.main.css HTTP/1.1" 200 8324
+[28/Apr/2016 19:34:39] "GET /static/xadmin/css/xadmin.responsive.css HTTP/1.1" 200 4361
+[28/Apr/2016 19:34:40] "GET /static/xadmin/vendor/bootstrap/css/bootstrap.css HTTP/1.1" 200 126432
+[28/Apr/2016 19:34:40] "GET /static/xadmin/vendor/jquery-ui/jquery.ui.core.js HTTP/1.1" 200 8195
+[28/Apr/2016 19:34:40] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4147
+[28/Apr/2016 19:34:40] "GET /static/xadmin/vendor/jquery-ui/jquery.ui.widget.js HTTP/1.1" 200 15069
+[28/Apr/2016 19:34:40] "GET /static/xadmin/vendor/jquery-ui/jquery.ui.mouse.js HTTP/1.1" 200 4561
+[28/Apr/2016 19:34:40] "GET /static/xadmin/vendor/jquery/jquery.js HTTP/1.1" 200 240196
+[28/Apr/2016 19:34:40] "GET /static/xadmin/vendor/jquery-ui/jquery.ui.sortable.js HTTP/1.1" 200 42543
+[28/Apr/2016 19:34:40] "GET /static/xadmin/vendor/bootstrap/js/bootstrap.js HTTP/1.1" 200 58327
+[28/Apr/2016 19:34:41] "GET /static/xadmin/js/xadmin.main.js HTTP/1.1" 200 3401
+[28/Apr/2016 19:34:41] "GET /static/xadmin/js/xadmin.responsive.js HTTP/1.1" 200 4165
+[28/Apr/2016 19:34:41] "GET /static/xadmin/vendor/font-awesome/fonts/fontawesome-webfont.woff?v=4.0.3 HTTP/1.1" 200 44432
+[28/Apr/2016 19:34:54] "POST /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 302 0
+[28/Apr/2016 19:34:54] "GET /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 200 12117
+[28/Apr/2016 19:34:54] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:34:54] "GET /static/xadmin/vendor/select2/select2_locale_zh-cn.js HTTP/1.1" 404 1761
+[28/Apr/2016 19:35:17] "POST /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 302 0
+[28/Apr/2016 19:35:17] "GET /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 200 12117
+[28/Apr/2016 19:35:18] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:35:18] "GET /static/xadmin/vendor/select2/select2_locale_zh-cn.js HTTP/1.1" 404 1761
+[28/Apr/2016 19:35:32] "POST /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 302 0
+[28/Apr/2016 19:35:32] "GET /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 200 12117
+[28/Apr/2016 19:35:33] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:35:33] "GET /static/xadmin/vendor/select2/select2_locale_zh-cn.js HTTP/1.1" 404 1761
+[28/Apr/2016 19:35:47] "POST /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 302 0
+[28/Apr/2016 19:35:47] "GET /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 200 12117
+[28/Apr/2016 19:35:47] "GET /static/xadmin/vendor/select2/select2_locale_zh-cn.js HTTP/1.1" 404 1761
+[28/Apr/2016 19:35:47] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:36:00] "POST /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 302 0
+[28/Apr/2016 19:36:00] "GET /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 200 12117
+[28/Apr/2016 19:36:00] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:36:00] "GET /static/xadmin/vendor/select2/select2_locale_zh-cn.js HTTP/1.1" 404 1761
+[28/Apr/2016 19:36:12] "POST /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 302 0
+[28/Apr/2016 19:36:12] "GET /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 200 12117
+[28/Apr/2016 19:36:12] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:36:12] "GET /static/xadmin/vendor/select2/select2_locale_zh-cn.js HTTP/1.1" 404 1761
+[28/Apr/2016 19:36:22] "POST /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 302 0
+[28/Apr/2016 19:36:22] "GET /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 200 12117
+[28/Apr/2016 19:36:22] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:36:22] "GET /static/xadmin/vendor/select2/select2_locale_zh-cn.js HTTP/1.1" 404 1761
+[28/Apr/2016 19:36:33] "POST /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 302 0
+[28/Apr/2016 19:36:33] "GET /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 200 12117
+[28/Apr/2016 19:36:33] "GET /static/xadmin/vendor/select2/select2_locale_zh-cn.js HTTP/1.1" 404 1761
+[28/Apr/2016 19:36:33] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:36:49] "POST /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 302 0
+[28/Apr/2016 19:36:49] "GET /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 200 12120
+[28/Apr/2016 19:36:49] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:36:49] "GET /static/xadmin/vendor/select2/select2_locale_zh-cn.js HTTP/1.1" 404 1761
+[28/Apr/2016 19:36:53] "GET /jdy_admin/order_dinner/order/ HTTP/1.1" 200 38204
+[28/Apr/2016 19:36:53] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:36:57] "GET /jdy_admin/order_dinner/dish/ HTTP/1.1" 200 23119
+[28/Apr/2016 19:36:58] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:36:59] "GET /jdy_admin/order_dinner/dish/add/ HTTP/1.1" 200 13742
+[28/Apr/2016 19:36:59] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:38:32] "GET /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 200 3829
+[28/Apr/2016 19:38:33] "GET /static/xadmin/vendor/select2/select2_locale_zh-cn.js HTTP/1.1" 404 1761
+[28/Apr/2016 19:38:33] "GET /static/xadmin/vendor/select2/select2_locale_zh-cn.js HTTP/1.1" 404 1761
+[28/Apr/2016 19:38:46] "POST /jdy_admin/order_dinner/dish/add/ HTTP/1.1" 302 0
+[28/Apr/2016 19:38:46] "POST /jdy_admin/order_dinner/dish/add/ HTTP/1.1" 302 0
+[28/Apr/2016 19:38:46] "GET /jdy_admin/order_dinner/dish/ HTTP/1.1" 200 24838
+[28/Apr/2016 19:38:46] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:38:47] "GET /media/imgs/2471013947c8978b3667bb41498b01dd.jpg HTTP/1.1" 304 0
+[28/Apr/2016 19:38:47] "GET /media/ HTTP/1.1" 404 1622
+[28/Apr/2016 19:38:51] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 19:38:52] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:38:54] "GET /user_serv/get_shop_detail_info?shop_id=6 HTTP/1.1" 200 2885
+[28/Apr/2016 19:38:55] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:39:06] "GET /jdy_admin/order_dinner/dish/15/update/ HTTP/1.1" 200 14291
+[28/Apr/2016 19:39:06] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:39:13] "POST /jdy_admin/order_dinner/dish/15/update/ HTTP/1.1" 302 0
+[28/Apr/2016 19:39:13] "GET /jdy_admin/order_dinner/dish/ HTTP/1.1" 200 24765
+[28/Apr/2016 19:39:13] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:39:14] "GET /media/ HTTP/1.1" 404 1622
+[28/Apr/2016 19:39:17] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:39:17] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 19:39:18] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:39:18] "GET /user_serv/get_all_shop_infos?pagelength=20&pageno=1 HTTP/1.1" 200 2571
+[28/Apr/2016 19:39:18] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 19:39:19] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:39:20] "GET /user_serv/get_shop_detail_info?shop_id=6 HTTP/1.1" 200 2885
+[28/Apr/2016 19:39:22] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:39:24] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:39:24] "GET /user_serv/get_all_side_dishes?dish_id=15 HTTP/1.1" 200 1637
+[28/Apr/2016 19:39:24] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:39:37] "GET /jdy_admin/order_dinner/subdish/ HTTP/1.1" 200 35014
+[28/Apr/2016 19:39:37] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:39:39] "GET /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 200 11770
+[28/Apr/2016 19:39:39] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:39:39] "GET /static/xadmin/vendor/select2/select2_locale_zh-cn.js HTTP/1.1" 404 1761
+[28/Apr/2016 19:40:16] "POST /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 302 0
+[28/Apr/2016 19:40:16] "GET /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 200 12120
+[28/Apr/2016 19:40:16] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:40:16] "GET /static/xadmin/vendor/select2/select2_locale_zh-cn.js HTTP/1.1" 404 1761
+[28/Apr/2016 19:40:34] "POST /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 302 0
+[28/Apr/2016 19:40:34] "GET /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 200 12120
+[28/Apr/2016 19:40:34] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:40:34] "GET /static/xadmin/vendor/select2/select2_locale_zh-cn.js HTTP/1.1" 404 1761
+[28/Apr/2016 19:40:44] "POST /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 302 0
+[28/Apr/2016 19:40:45] "GET /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 200 12114
+[28/Apr/2016 19:40:45] "GET /static/xadmin/vendor/select2/select2_locale_zh-cn.js HTTP/1.1" 404 1761
+[28/Apr/2016 19:40:45] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:40:58] "POST /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 302 0
+[28/Apr/2016 19:40:59] "GET /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 200 12117
+[28/Apr/2016 19:40:59] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:40:59] "GET /static/xadmin/vendor/select2/select2_locale_zh-cn.js HTTP/1.1" 404 1761
+[28/Apr/2016 19:41:13] "POST /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 302 0
+[28/Apr/2016 19:41:14] "GET /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 200 12120
+[28/Apr/2016 19:41:14] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:41:14] "GET /static/xadmin/vendor/select2/select2_locale_zh-cn.js HTTP/1.1" 404 1761
+[28/Apr/2016 19:41:27] "POST /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 302 0
+[28/Apr/2016 19:41:27] "GET /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 200 12117
+[28/Apr/2016 19:41:27] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:41:27] "GET /static/xadmin/vendor/select2/select2_locale_zh-cn.js HTTP/1.1" 404 1761
+[28/Apr/2016 19:41:42] "POST /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 302 0
+[28/Apr/2016 19:41:42] "GET /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 200 12120
+[28/Apr/2016 19:41:42] "GET /static/xadmin/vendor/select2/select2_locale_zh-cn.js HTTP/1.1" 404 1761
+[28/Apr/2016 19:41:42] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:41:58] "POST /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 302 0
+[28/Apr/2016 19:41:58] "GET /jdy_admin/order_dinner/subdish/add/ HTTP/1.1" 200 12120
+[28/Apr/2016 19:41:58] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:41:58] "GET /static/xadmin/vendor/select2/select2_locale_zh-cn.js HTTP/1.1" 404 1761
+[28/Apr/2016 19:42:00] "GET /jdy_admin/order_dinner/dish/ HTTP/1.1" 200 24533
+[28/Apr/2016 19:42:01] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:42:01] "GET /media/ HTTP/1.1" 404 1622
+[28/Apr/2016 19:42:05] "GET /jdy_admin/order_dinner/dish/15/update/ HTTP/1.1" 200 14583
+[28/Apr/2016 19:42:05] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:42:25] "POST /jdy_admin/order_dinner/dish/15/update/ HTTP/1.1" 302 0
+[28/Apr/2016 19:42:25] "GET /jdy_admin/order_dinner/dish/ HTTP/1.1" 200 24765
+[28/Apr/2016 19:42:25] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:42:25] "GET /media/ HTTP/1.1" 404 1622
+[28/Apr/2016 19:42:33] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:42:35] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 19:42:35] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:42:37] "GET /user_serv/get_shop_detail_info?shop_id=6 HTTP/1.1" 200 2885
+[28/Apr/2016 19:42:37] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:42:39] "GET /user_serv/get_all_side_dishes?dish_id=15 HTTP/1.1" 200 2795
+[28/Apr/2016 19:42:39] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:42:39] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:42:47] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:43:58] "GET /jdy_admin/order_dinner/dish/15/update/ HTTP/1.1" 200 14743
+[28/Apr/2016 19:43:58] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:46:09] "GET /jdy_admin/order_dinner/dish/ HTTP/1.1" 200 24533
+[28/Apr/2016 19:46:09] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:46:09] "GET /media/imgs/2471013947c8978b3667bb41498b01dd.jpg HTTP/1.1" 304 0
+[28/Apr/2016 19:46:09] "GET /media/ HTTP/1.1" 404 1622
+[28/Apr/2016 19:46:10] "GET /jdy_admin/ HTTP/1.1" 200 7059
+[28/Apr/2016 19:46:10] "GET /jdy_admin/jsi18n/ HTTP/1.1" 200 4536
+[28/Apr/2016 19:46:46] "GET /shop_serv/entry_addr_status?token=aq4R153VtWjC0SG2YWi6rIwZvqLwZGSPfpKDrEnb HTTP/1.1" 200 44
+[28/Apr/2016 19:46:46] "GET /shop_serv/personal_info?token=aq4R153VtWjC0SG2YWi6rIwZvqLwZGSPfpKDrEnb HTTP/1.1" 200 330
+[28/Apr/2016 19:46:46] "GET /shop_serv/modify_business_status?business_status=1&token=aq4R153VtWjC0SG2YWi6rIwZvqLwZGSPfpKDrEnb HTTP/1.1" 200 36
+[28/Apr/2016 19:47:00] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:47:02] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:47:03] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 19:47:08] "GET /shop_serv/get_all_history_orders?pageno=1&pagelength=10&token=aq4R153VtWjC0SG2YWi6rIwZvqLwZGSPfpKDrEnb HTTP/1.1" 200 88
+[28/Apr/2016 19:47:09] "GET /shop_serv/entry_addr_status?token=aq4R153VtWjC0SG2YWi6rIwZvqLwZGSPfpKDrEnb HTTP/1.1" 200 44
+[28/Apr/2016 19:47:09] "GET /shop_serv/personal_info?token=aq4R153VtWjC0SG2YWi6rIwZvqLwZGSPfpKDrEnb HTTP/1.1" 200 330
+[28/Apr/2016 19:52:28] "GET /shop_serv/get_all_history_orders?pageno=1&pagelength=10&token=aq4R153VtWjC0SG2YWi6rIwZvqLwZGSPfpKDrEnb HTTP/1.1" 200 88
+[28/Apr/2016 19:52:30] "GET /shop_serv/get_all_accept_orders?pageno=1&pagelength=10&token=aq4R153VtWjC0SG2YWi6rIwZvqLwZGSPfpKDrEnb HTTP/1.1" 200 5881
+[28/Apr/2016 19:52:31] "GET /shop_serv/get_all_history_orders?pageno=1&pagelength=10&token=aq4R153VtWjC0SG2YWi6rIwZvqLwZGSPfpKDrEnb HTTP/1.1" 200 88
+[28/Apr/2016 19:52:31] "GET /shop_serv/get_all_accept_orders?pageno=1&pagelength=10&token=aq4R153VtWjC0SG2YWi6rIwZvqLwZGSPfpKDrEnb HTTP/1.1" 200 5881
+[28/Apr/2016 19:52:51] "GET /user_serv/get_shop_detail_info?shop_id=1 HTTP/1.1" 200 1609
+[28/Apr/2016 19:52:54] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 19:52:54] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:53:19] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:53:20] "GET /user_serv/get_shop_detail_info?shop_id=6 HTTP/1.1" 200 2885
+[28/Apr/2016 19:53:22] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:53:27] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:53:49] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 19:53:49] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:54:37] "GET /user_serv/get_all_orders?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 2128
+[28/Apr/2016 19:54:51] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:54:51] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 19:55:28] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:55:28] "GET /user_serv/get_all_shop_infos?pagelength=20&pageno=1 HTTP/1.1" 200 2571
+[28/Apr/2016 19:55:28] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 19:55:28] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:56:48] "GET /user_serv/get_all_shop_infos?pagelength=20&pageno=1 HTTP/1.1" 200 2571
+[28/Apr/2016 19:56:48] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 19:56:48] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:56:57] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:56:57] "GET /user_serv/get_shop_detail_info?shop_id=3 HTTP/1.1" 200 422
+[28/Apr/2016 19:56:58] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:56:58] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 19:57:12] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 19:57:13] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 20:50:46] "GET /user_serv/get_shop_detail_info?shop_id=1 HTTP/1.1" 200 1609
+[28/Apr/2016 20:50:46] "GET /media/imgs/HEISENLIN.jpg HTTP/1.1" 304 0
+[28/Apr/2016 20:50:46] "GET /media/imgs/nailao.jpg HTTP/1.1" 304 0
+[28/Apr/2016 20:50:46] "GET /media/imgs/basi.jpg HTTP/1.1" 304 0
+[28/Apr/2016 23:22:04] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 23:22:04] "GET /user_serv/get_global_conf HTTP/1.1" 200 184
+[28/Apr/2016 23:22:05] "GET /user_serv/get_all_shop_infos?pagelength=20&pageno=1 HTTP/1.1" 200 2571
+[28/Apr/2016 23:22:05] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 23:22:05] "GET /media/imgs/shop.jpg HTTP/1.1" 200 45426
+[28/Apr/2016 23:22:05] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 23:22:05] "GET /media/imgs/jindouyun-1.jpg HTTP/1.1" 200 140809
+[28/Apr/2016 23:52:25] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 23:52:25] "GET /user_serv/get_global_conf HTTP/1.1" 200 184
+[28/Apr/2016 23:52:25] "GET /user_serv/get_all_shop_infos?pagelength=20&pageno=1 HTTP/1.1" 200 2571
+[28/Apr/2016 23:52:25] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 23:52:26] "GET /media/imgs/shop.jpg HTTP/1.1" 304 0
+[28/Apr/2016 23:52:26] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 23:52:39] "GET /media/imgs/ipad.jpg HTTP/1.1" 304 0
+[28/Apr/2016 23:52:39] "GET /media/imgs/ge.jpg HTTP/1.1" 304 0
+[28/Apr/2016 23:52:39] "GET /media/imgs/123123123.jpg HTTP/1.1" 304 0
+[28/Apr/2016 23:52:49] "GET /user_serv/get_shop_detail_info?shop_id=1 HTTP/1.1" 200 1609
+[28/Apr/2016 23:52:49] "GET /media/imgs/nailao.jpg HTTP/1.1" 304 0
+[28/Apr/2016 23:52:49] "GET /media/imgs/HEISENLIN.jpg HTTP/1.1" 304 0
+[28/Apr/2016 23:52:49] "GET /media/imgs/basi.jpg HTTP/1.1" 304 0
+[28/Apr/2016 23:52:51] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 23:52:51] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 23:53:51] "GET /user_serv/get_shop_detail_info?shop_id=1 HTTP/1.1" 200 1609
+[28/Apr/2016 23:56:35] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 23:56:35] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 23:56:38] "GET /user_serv/get_shop_detail_info?shop_id=1 HTTP/1.1" 200 1609
+[28/Apr/2016 23:56:39] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 23:56:39] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 23:56:52] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 23:56:52] "GET /user_serv/get_shop_detail_info?shop_id=2 HTTP/1.1" 200 348
+[28/Apr/2016 23:56:54] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 23:56:54] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 23:56:57] "GET /user_serv/get_shop_detail_info?shop_id=6 HTTP/1.1" 200 2885
+[28/Apr/2016 23:56:57] "GET /media/imgs/1.jpg HTTP/1.1" 304 0
+[28/Apr/2016 23:56:57] "GET /media/imgs/babe.jpg HTTP/1.1" 304 0
+[28/Apr/2016 23:56:57] "GET /media/imgs/-53922eaf5be6a81c.jpg HTTP/1.1" 304 0
+[28/Apr/2016 23:56:57] "GET /media/imgs/-11362ecccbdee507.jpg HTTP/1.1" 304 0
+[28/Apr/2016 23:56:58] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 23:58:54] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 23:58:54] "GET /media/ HTTP/1.1" 404 1619
+[28/Apr/2016 23:59:24] "GET /user_serv/get_shop_detail_info?shop_id=1 HTTP/1.1" 200 1609
+[28/Apr/2016 23:59:25] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[28/Apr/2016 23:59:25] "GET /media/ HTTP/1.1" 404 1619
+[29/Apr/2016 00:12:44] "GET /media/ HTTP/1.1" 404 1619
+[29/Apr/2016 00:12:44] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[29/Apr/2016 00:12:47] "GET /user_serv/get_all_orders?token=YbJnTPBwTIdlA1giIxFRwHUdSJjnBZSeU6gsMKGX HTTP/1.1" 200 2128
+[29/Apr/2016 00:12:48] "GET /media/ HTTP/1.1" 404 1619
+[29/Apr/2016 00:12:48] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[29/Apr/2016 00:12:52] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[29/Apr/2016 00:12:52] "GET /media/ HTTP/1.1" 404 1619
+[29/Apr/2016 00:12:59] "GET /media/ HTTP/1.1" 404 1619
+[29/Apr/2016 00:12:59] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[29/Apr/2016 00:57:36] "GET /shop_serv/login?username=genawang&registration_id=13065ffa4e0bdaf1ee5&password=dsh5561225 HTTP/1.1" 200 92
+[29/Apr/2016 00:57:37] "GET /shop_serv/get_all_new_orders?pageno=1&token=wuMiTKVkK8If30fK34VMyvlJFDA099eWFws262w7&pagelength=10 HTTP/1.1" 200 88
+[29/Apr/2016 00:57:43] "GET /shop_serv/get_all_accept_orders?pageno=1&token=wuMiTKVkK8If30fK34VMyvlJFDA099eWFws262w7&pagelength=10 HTTP/1.1" 200 5881
+[29/Apr/2016 00:57:51] "GET /shop_serv/get_all_finish_orders?pageno=1&token=wuMiTKVkK8If30fK34VMyvlJFDA099eWFws262w7&pagelength=10 HTTP/1.1" 200 2471
+[29/Apr/2016 01:02:24] "GET /media/ HTTP/1.1" 404 1619
+[29/Apr/2016 01:02:24] "GET /user_serv/get_shop_detail_info?shop_id=3 HTTP/1.1" 200 422
+[29/Apr/2016 01:12:25] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[29/Apr/2016 01:12:25] "GET /user_serv/get_global_conf HTTP/1.1" 200 184
+[29/Apr/2016 01:12:25] "GET /user_serv/get_all_shop_infos?pagelength=20&pageno=1 HTTP/1.1" 200 2571
+[29/Apr/2016 01:12:25] "GET /user_serv/get_banner_list HTTP/1.1" 200 786
+[29/Apr/2016 01:12:26] "GET /media/ HTTP/1.1" 404 1619
+[29/Apr/2016 01:12:26] "GET /media/imgs/shop.jpg HTTP/1.1" 200 45426
+[29/Apr/2016 01:12:26] "GET /media/imgs/jindouyun-1.jpg HTTP/1.1" 200 140809
+[29/Apr/2016 01:12:33] "GET /media/imgs/jindouyun-4_buoSv5q.jpg HTTP/1.1" 200 85052
+[29/Apr/2016 01:12:33] "GET /media/ HTTP/1.1" 404 1619
+[29/Apr/2016 01:12:33] "GET /media/imgs/ipad.jpg HTTP/1.1" 200 14942
+[29/Apr/2016 01:12:34] "GET /media/imgs/ge.jpg HTTP/1.1" 200 10371
+[29/Apr/2016 01:12:34] "GET /media/imgs/123123123.jpg HTTP/1.1" 200 32023
+[29/Apr/2016 01:12:34] "GET /media/imgs/jindouyun-3.jpg HTTP/1.1" 200 151552
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 128, in finish_response
+    self.write(data)
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 217, in write
+    self._write(data)
+  File "/usr/lib/python2.7/socket.py", line 324, in write
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[29/Apr/2016 01:12:34] "GET /media/imgs/jindouyun-3.jpg HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 129, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 710, in finish
+    self.wfile.close()
+  File "/usr/lib/python2.7/socket.py", line 279, in close
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[29/Apr/2016 01:12:38] "GET /media/imgs/jindouyun-5.jpg HTTP/1.1" 200 65536
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 128, in finish_response
+    self.write(data)
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 217, in write
+    self._write(data)
+  File "/usr/lib/python2.7/socket.py", line 324, in write
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[29/Apr/2016 01:12:38] "GET /media/imgs/jindouyun-5.jpg HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 129, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 710, in finish
+    self.wfile.close()
+  File "/usr/lib/python2.7/socket.py", line 279, in close
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[29/Apr/2016 01:12:40] "GET /user_serv/get_shop_detail_info?shop_id=6 HTTP/1.1" 200 2885
+[29/Apr/2016 01:12:41] "GET /media/imgs/1.jpg HTTP/1.1" 200 20049
+[29/Apr/2016 01:12:41] "GET /media/imgs/babe.jpg HTTP/1.1" 200 6440
+[29/Apr/2016 01:12:41] "GET /media/imgs/-53922eaf5be6a81c.jpg HTTP/1.1" 200 2810
+[29/Apr/2016 01:12:44] "GET /media/imgs/-11362ecccbdee507.jpg HTTP/1.1" 200 4096
+[29/Apr/2016 01:12:45] "GET /media/imgs/2471013947c8978b3667bb41498b01dd.jpg HTTP/1.1" 200 54960
+[29/Apr/2016 01:12:45] "GET /media/ HTTP/1.1" 404 1619
+[29/Apr/2016 01:12:49] "GET /media/ HTTP/1.1" 404 1619
+[29/Apr/2016 01:12:52] "GET /media/ HTTP/1.1" 404 1619
+[29/Apr/2016 01:12:55] "GET /user_serv/get_all_side_dishes?dish_id=7 HTTP/1.1" 200 221
+[29/Apr/2016 01:12:58] "GET /media/ HTTP/1.1" 404 1619
+[29/Apr/2016 01:13:03] "GET /media/ HTTP/1.1" 404 1619
+[29/Apr/2016 01:14:09] "GET /shop_serv/get_all_new_orders?pageno=1&token=wuMiTKVkK8If30fK34VMyvlJFDA099eWFws262w7&pagelength=10 HTTP/1.1" 200 59
+[29/Apr/2016 01:14:09] "GET /shop_serv/get_all_new_orders?pageno=1&token=wuMiTKVkK8If30fK34VMyvlJFDA099eWFws262w7&pagelength=10 HTTP/1.1" 200 59
+[29/Apr/2016 01:14:09] "GET /shop_serv/get_all_finish_orders?pageno=1&token=wuMiTKVkK8If30fK34VMyvlJFDA099eWFws262w7&pagelength=10 HTTP/1.1" 200 59
+[29/Apr/2016 01:14:09] "GET /shop_serv/get_all_new_orders?pageno=1&token=wuMiTKVkK8If30fK34VMyvlJFDA099eWFws262w7&pagelength=10 HTTP/1.1" 200 59
+[29/Apr/2016 01:14:10] "GET /shop_serv/login?username=genawang&registration_id=13065ffa4e0bdaf1ee5&password=dsh5561225 HTTP/1.1" 200 92
+[29/Apr/2016 01:14:10] "GET /shop_serv/login?username=genawang&registration_id=13065ffa4e0bdaf1ee5&password=dsh5561225 HTTP/1.1" 200 92
+[29/Apr/2016 01:14:10] "GET /shop_serv/login?username=genawang&registration_id=13065ffa4e0bdaf1ee5&password=dsh5561225 HTTP/1.1" 200 92
+[29/Apr/2016 01:14:10] "GET /shop_serv/login?username=genawang&registration_id=13065ffa4e0bdaf1ee5&password=dsh5561225 HTTP/1.1" 200 92
+[29/Apr/2016 01:14:11] "GET /shop_serv/get_all_finish_orders?pageno=1&token=iAyZs84y1vH0nQxdiqzcGUfvAujNvtpR8CDOxAA5&pagelength=10 HTTP/1.1" 200 59
+[29/Apr/2016 01:14:11] "GET /shop_serv/get_all_new_orders?pageno=1&token=ANMUgNHuRLRN0WiVxYZDHzV863HVIDkJa77GqVDP&pagelength=10 HTTP/1.1" 200 59
+[29/Apr/2016 01:14:11] "GET /shop_serv/get_all_finish_orders?pageno=1&token=FUd5ZfAlYQdBAmekrA8zS7dkfwgeKUVFcfRRZRRL&pagelength=10 HTTP/1.1" 200 59
+[29/Apr/2016 01:14:11] "GET /shop_serv/get_all_finish_orders?pageno=1&token=ADaN6bjDdCmIdVmaPGeUA9gG7XfjA9z2Jdt4PLAw&pagelength=10 HTTP/1.1" 200 2471
+[29/Apr/2016 01:14:11] "GET /shop_serv/login?username=genawang&registration_id=13065ffa4e0bdaf1ee5&password=dsh5561225 HTTP/1.1" 200 92
+[29/Apr/2016 01:14:12] "GET /shop_serv/login?username=genawang&registration_id=13065ffa4e0bdaf1ee5&password=dsh5561225 HTTP/1.1" 200 92
+[29/Apr/2016 01:14:12] "GET /shop_serv/login?username=genawang&registration_id=13065ffa4e0bdaf1ee5&password=dsh5561225 HTTP/1.1" 200 92
+[29/Apr/2016 01:14:12] "GET /shop_serv/get_all_new_orders?pageno=1&token=sa3cJOZnQmIV4b9y1Jz1KhyZZrc6z0rR0X1JKZRq&pagelength=10 HTTP/1.1" 200 88
+[29/Apr/2016 01:14:12] "GET /shop_serv/get_all_finish_orders?pageno=1&token=1VdSKttb7n7YOK67afljndItQuQHwPidshmacDsL&pagelength=10 HTTP/1.1" 200 2471
+[29/Apr/2016 01:14:12] "GET /shop_serv/entry_addr_status?token=1VdSKttb7n7YOK67afljndItQuQHwPidshmacDsL HTTP/1.1" 200 44
+[29/Apr/2016 01:14:12] "GET /shop_serv/get_all_finish_orders?pageno=1&token=EFOJR0Duue1MxLiYeFq0LcUGTBRKiaK9aOZcdeyG&pagelength=10 HTTP/1.1" 200 2471
+[29/Apr/2016 01:14:13] "GET /shop_serv/personal_info?token=EFOJR0Duue1MxLiYeFq0LcUGTBRKiaK9aOZcdeyG HTTP/1.1" 200 330
+[29/Apr/2016 01:14:13] "GET /shop_serv/modify_business_status?token=EFOJR0Duue1MxLiYeFq0LcUGTBRKiaK9aOZcdeyG&business_status=1 HTTP/1.1" 200 36
+[29/Apr/2016 01:14:15] "GET /shop_serv/get_all_new_orders?pageno=1&token=EFOJR0Duue1MxLiYeFq0LcUGTBRKiaK9aOZcdeyG&pagelength=10 HTTP/1.1" 200 88
+[29/Apr/2016 01:14:21] "GET /media/ HTTP/1.1" 404 1619
+[29/Apr/2016 01:14:26] "GET /user_serv/calculate_tax?total_price=28.50 HTTP/1.1" 200 51
+[29/Apr/2016 01:14:27] "GET /user_serv/get_user_delivery_address?token=nQwdV8zj3lTNuz5UVla0UZZFmMOxeH2rhtLROkpf HTTP/1.1" 200 92
+[29/Apr/2016 01:15:15] "GET /user_serv/login?password=dsh5561225&phoneno=6462435186 HTTP/1.1" 200 92
+[29/Apr/2016 01:15:16] "GET /media/ HTTP/1.1" 404 1619
+[29/Apr/2016 01:15:16] "GET /user_serv/personal_info?token=miCFNLWBI09G0h14qHI0CcYAA07VCGV78UIPOkzF HTTP/1.1" 200 64
+[29/Apr/2016 01:15:18] "GET /media/imgs/babe.jpg HTTP/1.1" 200 6440
+[29/Apr/2016 01:15:20] "GET /user_serv/calculate_tax?total_price=28.50 HTTP/1.1" 200 51
+[29/Apr/2016 01:15:21] "GET /user_serv/get_user_delivery_address?token=miCFNLWBI09G0h14qHI0CcYAA07VCGV78UIPOkzF HTTP/1.1" 200 191
+[29/Apr/2016 01:15:22] "GET /user_serv/get_paytype?token=miCFNLWBI09G0h14qHI0CcYAA07VCGV78UIPOkzF HTTP/1.1" 200 173
+[29/Apr/2016 01:15:23] "GET /user_serv/calculate_distance?delivery_address_id=16&shop_id=6 HTTP/1.1" 200 58
+[29/Apr/2016 01:15:24] "GET /user_serv/calculate_freight?distance=0.2&total_price=28.50 HTTP/1.1" 200 61
+/usr/local/lib/python2.7/dist-packages/reversion/admin.py:383: RemovedInDjango18Warning: commit_on_success is deprecated in favor of atomic.
+  def recover_view(self, request, version_id, extra_context=None):
+
+/usr/local/lib/python2.7/dist-packages/reversion/admin.py:395: RemovedInDjango18Warning: commit_on_success is deprecated in favor of atomic.
+  def revision_view(self, request, object_id, version_id, extra_context=None):
+
+/usr/local/lib/python2.7/dist-packages/django/forms/widgets.py:143: RemovedInDjango18Warning: `VersionMetaAdmin.queryset` method should be renamed `get_queryset`.
+  .__new__(mcs, name, bases, attrs))
+
+/usr/local/lib/python2.7/dist-packages/reversion/admin.py:383: RemovedInDjango18Warning: commit_on_success is deprecated in favor of atomic.
+  def recover_view(self, request, version_id, extra_context=None):
+
+/usr/local/lib/python2.7/dist-packages/reversion/admin.py:395: RemovedInDjango18Warning: commit_on_success is deprecated in favor of atomic.
+  def revision_view(self, request, object_id, version_id, extra_context=None):
+
+/usr/local/lib/python2.7/dist-packages/django/forms/widgets.py:143: RemovedInDjango18Warning: `VersionMetaAdmin.queryset` method should be renamed `get_queryset`.
+  .__new__(mcs, name, bases, attrs))
+
+Performing system checks...
+
+System check identified no issues (0 silenced).
+April 29, 2016 - 03:55:18
+Django version 1.7.11, using settings 'mifan.settings'
+Starting development server at http://0.0.0.0:8001/
+Quit the server with CONTROL-C.
