@@ -1265,6 +1265,8 @@ def upload_order(request):
 	print '总价格',total_dish_price
 
 	# 如果菜品总价格低于配送费用
+	print total_dish_price
+	print shop_obj.min_distribution_cost
 	if total_dish_price > shop_obj.min_distribution_cost:
 		print "订单总价小于%.1f元，请重新选取菜品" % shop_obj.min_distribution_cost
 		temp_msg = "订单总价小于%.1f元，请重新选取菜品" % shop_obj.min_distribution_cost
