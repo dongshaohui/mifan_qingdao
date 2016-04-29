@@ -1204,6 +1204,8 @@ def upload_order(request):
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))	
 	shop_obj = shop_objs[0]
 
+
+
 	# 查看地址是否有效
 	if len(DeliveryAddress.objects.filter(id=delivery_address_id)) == 0:
 		response = {'code':-3,'msg':'delivery_address_id无效','msg_en':'delivery address invalid'}
@@ -1261,6 +1263,14 @@ def upload_order(request):
 		new_order.order_dishes.add(order_dish_obj) # 订单添加菜品
 		new_order.save()
 	print '总价格',total_dish_price
+
+	# 如果菜品总价格低于配送费用
+	if total_dish_price > shop_obj.min_distribution_cost:
+		print "订单总价小于%.1f元，请重新选取菜品" % shop_obj.min_distribution_cost
+		temp_msg = "订单总价小于%.1f元，请重新选取菜品" % shop_obj.min_distribution_cost
+		temp_msg_en = "Total order price is less than %.1f yuan, please re select dishes" % shop_obj.min_distribution_cost
+		response = {'code':-5,'msg':temp_msg,'msg_en':temp_msg_en}
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))		
 
 	# 额外费用
 	# 运费
