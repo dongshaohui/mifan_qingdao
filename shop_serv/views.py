@@ -309,7 +309,7 @@ def get_all_finish_orders(request):
 		pay_type_obj = UserPayType.objects.get(id=order.pay_type_id)
 		temp_order_obj['paytype'] = pay_type_obj.pay_type
 		creditcard_info = {}
-		if int(pay_type_obj.pay_type) == 1:
+		if int(pay_type_obj.pay_type) == 0:
 			creditcard_info['cardno'] = pay_type_obj.credit_card
 			creditcard_info['pin'] = pay_type_obj.security_code
 			creditcard_info['validate_year'] = pay_type_obj.expire_year
@@ -402,7 +402,7 @@ def get_all_history_orders(request):
 		pay_type_obj = UserPayType.objects.get(id=order.pay_type_id)
 		temp_order_obj['paytype'] = pay_type_obj.pay_type
 		creditcard_info = {}
-		if int(pay_type_obj.pay_type) == 1:
+		if int(pay_type_obj.pay_type) == 0:
 			creditcard_info['cardno'] = pay_type_obj.credit_card
 			creditcard_info['pin'] = pay_type_obj.security_code
 			creditcard_info['validate_year'] = pay_type_obj.expire_year
@@ -497,7 +497,7 @@ def get_all_accept_orders(request):
 		pay_type_obj = UserPayType.objects.get(id=order.pay_type_id)
 		temp_order_obj['paytype'] = pay_type_obj.pay_type
 		creditcard_info = {}
-		if int(pay_type_obj.pay_type) == 1:
+		if int(pay_type_obj.pay_type) == 0:
 			creditcard_info['cardno'] = pay_type_obj.credit_card
 			creditcard_info['pin'] = pay_type_obj.security_code
 			creditcard_info['validate_year'] = pay_type_obj.expire_year
@@ -590,7 +590,7 @@ def get_all_new_orders(request):
 		pay_type_obj = UserPayType.objects.get(id=order.pay_type_id)
 		temp_order_obj['paytype'] = pay_type_obj.pay_type
 		creditcard_info = {}
-		if int(pay_type_obj.pay_type) == 1:
+		if int(pay_type_obj.pay_type) == 0:
 			creditcard_info['cardno'] = pay_type_obj.credit_card
 			creditcard_info['pin'] = pay_type_obj.security_code
 			creditcard_info['validate_year'] = pay_type_obj.expire_year
@@ -702,7 +702,7 @@ def search_orders(request):
 		pay_type_obj = UserPayType.objects.get(id=order.pay_type_id)
 		temp_order_obj['paytype'] = pay_type_obj.pay_type
 		creditcard_info = {}
-		if int(pay_type_obj.pay_type) == 1:
+		if int(pay_type_obj.pay_type) == 0:
 			creditcard_info['cardno'] = pay_type_obj.credit_card
 			creditcard_info['pin'] = pay_type_obj.security_code
 			creditcard_info['validate_year'] = pay_type_obj.expire_year
