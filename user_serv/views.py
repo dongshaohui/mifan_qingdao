@@ -1414,7 +1414,7 @@ def get_order_detail_info(request):
 	response['customer_phone'] = order.customer.mobile
 	response['customer_name'] = order.customer.name
 	delivery_address_obj = DeliveryAddress.objects.get(id=int(order.delivery_address.id))
-	response['customer_addr'] = delivery_address_obj.searched_address + " " + searched_address.detail_address
+	response['customer_addr'] = delivery_address_obj.searched_address + " " + delivery_address_obj.detail_address
 	response['tip_type'] = order.tip_type
 	response['tip'] = order.tip
 	response['remark'] = order.remark
