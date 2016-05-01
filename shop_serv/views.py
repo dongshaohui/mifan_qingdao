@@ -736,17 +736,23 @@ def search_orders(request):
 			temp_dish_obj['dish_number'] = order_dish.dish_order_number
 			temp_dish_obj['dish_name'] = order_dish.dish.name
 			temp_dish_obj['dish_type'] = order_dish.dish.dish_type
-			temp_dish_obj['dish_price'] = order_dish.dish.price
+			dish_price = order_dish.dish.price
 			sub_dish_list = []
 			if int(order_dish.dish.dish_type) == 1:
-				for subdish in order_dish.dish.subdishes.all():
+				dish_price = 0
+				for subdish_order in order_dish.ordered_subdishes.all():
 					temp_subdish_obj = {}
-					temp_subdish_obj['name'] = subdish.name
-					temp_subdish_obj['price'] = subdish.price
+					temp_subdish_obj['name'] = subdish_order.subdish.name
+					temp_subdish_obj['price'] = subdish_order.subdish.price
+					temp_subdish_obj['times'] = subdish_order.subdish_order_number
+					dish_price += float(temp_subdish_obj['price']) * float(temp_subdish_obj['times'])
 					sub_dish_list.append(temp_subdish_obj)
+
 			temp_dish_obj['sub_dish_list'] = sub_dish_list
+			temp_dish_obj['dish_price'] = dish_price
 			dishinfos.append(temp_dish_obj)
 		temp_order_obj['dishinfos'] = dishinfos
+
 
 		# 订单价格详情
 		price_detail = {}
