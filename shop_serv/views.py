@@ -350,6 +350,8 @@ def get_all_finish_orders(request):
 		price_detail['tax_price'] = order.tax
 		price_detail['freight_price'] = order.freight
 		price_detail['tip_price'] = order.tip
+		price_detail['discount_price'] = order.discount_price
+		price_detail['origin_price'] = order.origin_price
 		temp_order_obj['price_detail'] = price_detail
 		order_list.append(temp_order_obj)
 	response['orders']['list'] = order_list
@@ -451,6 +453,8 @@ def get_all_history_orders(request):
 		price_detail['tax_price'] = order.tax
 		price_detail['freight_price'] = order.freight
 		price_detail['tip_price'] = order.tip
+		price_detail['discount_price'] = order.discount_price
+		price_detail['origin_price'] = order.origin_price		
 		temp_order_obj['price_detail'] = price_detail
 		order_list.append(temp_order_obj)
 	response['orders']['list'] = order_list
@@ -554,6 +558,8 @@ def get_all_accept_orders(request):
 		price_detail['tax_price'] = order.tax
 		price_detail['freight_price'] = order.freight
 		price_detail['tip_price'] = order.tip
+		price_detail['discount_price'] = order.discount_price
+		price_detail['origin_price'] = order.origin_price		
 		temp_order_obj['price_detail'] = price_detail
 		order_list.append(temp_order_obj)
 	response['orders']['list'] = order_list
@@ -655,6 +661,8 @@ def get_all_new_orders(request):
 		price_detail['tax_price'] = order.tax
 		price_detail['freight_price'] = order.freight
 		price_detail['tip_price'] = order.tip
+		price_detail['discount_price'] = order.discount_price
+		price_detail['origin_price'] = order.origin_price		
 		temp_order_obj['price_detail'] = price_detail
 		order_list.append(temp_order_obj)
 	response['orders']['list'] = order_list
@@ -776,6 +784,8 @@ def search_orders(request):
 		price_detail['tax_price'] = order.tax
 		price_detail['freight_price'] = order.freight
 		price_detail['tip_price'] = order.tip
+		price_detail['discount_price'] = order.discount_price
+		price_detail['origin_price'] = order.origin_price		
 		temp_order_obj['price_detail'] = price_detail
 		order_list.append(temp_order_obj)
 	response['orders']['list'] = order_list
