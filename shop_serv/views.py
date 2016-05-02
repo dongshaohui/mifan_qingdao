@@ -296,7 +296,11 @@ def get_all_finish_orders(request):
 		userinfo = {}
 
 		customer = Customer.objects.get(id=order.customer_id) # 获取订单对应用户
-		userinfo['name'] = customer.name
+
+		if order.delivery_address == None:
+			userinfo['name'] = ""
+		else:
+			userinfo['name'] = order.delivery_address.receiver_name
 		userinfo['phoneno'] = customer.mobile
 		temp_order_obj['userinfo'] = userinfo
 
@@ -394,7 +398,10 @@ def get_all_history_orders(request):
 		userinfo = {}
 
 		customer = Customer.objects.get(id=order.customer_id) # 获取订单对应用户
-		userinfo['name'] = customer.name
+		if order.delivery_address == None:
+			userinfo['name'] = ""
+		else:
+			userinfo['name'] = order.delivery_address.receiver_name
 		userinfo['phoneno'] = customer.mobile
 		temp_order_obj['userinfo'] = userinfo
 
@@ -494,7 +501,10 @@ def get_all_accept_orders(request):
 		userinfo = {}
 
 		customer = Customer.objects.get(id=order.customer_id) # 获取订单对应用户
-		userinfo['name'] = customer.name
+		if order.delivery_address == None:
+			userinfo['name'] = ""
+		else:
+			userinfo['name'] = order.delivery_address.receiver_name
 		userinfo['phoneno'] = customer.mobile
 		temp_order_obj['userinfo'] = userinfo
 
@@ -592,7 +602,10 @@ def get_all_new_orders(request):
 		userinfo = {}
 
 		customer = Customer.objects.get(id=order.customer_id) # 获取订单对应用户
-		userinfo['name'] = customer.name
+		if order.delivery_address == None:
+			userinfo['name'] = ""
+		else:
+			userinfo['name'] = order.delivery_address.receiver_name
 		userinfo['phoneno'] = customer.mobile
 		temp_order_obj['userinfo'] = userinfo
 
@@ -709,7 +722,10 @@ def search_orders(request):
 		userinfo = {}
 
 		customer = Customer.objects.get(id=order.customer_id) # 获取订单对应用户
-		userinfo['name'] = customer.name
+		if order.delivery_address == None:
+			userinfo['name'] = ""
+		else:
+			userinfo['name'] = order.delivery_address.receiver_name
 		userinfo['phoneno'] = customer.mobile
 		temp_order_obj['userinfo'] = userinfo
 
