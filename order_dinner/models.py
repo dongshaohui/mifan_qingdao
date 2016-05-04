@@ -16,6 +16,7 @@ class GlobalSetting(models.Model):
 	customer_service = models.CharField(verbose_name=u'客服电话',max_length=255,default="")
 	policy_link = models.CharField(verbose_name=u'协议链接地址',max_length=255,default="")
 	working_hours = models.CharField(verbose_name=u'工作时间设置',max_length=255,default="")
+	short_message_mobile = models.CharField(verbose_name=u'接受新单短信电话',max_length=255,default="")
 
 	class Meta:
 		verbose_name = '全局设置'
@@ -80,7 +81,7 @@ class Shop(models.Model):
 
 # 商铺管理员
 class ShopManager(User):
-	shop = models.OneToOneField(Shop) # 对应店铺
+	shop = models.OneToOneField(Shop,blank=True,null=True) # 对应店铺
 
 # 客户
 class Customer(models.Model):
