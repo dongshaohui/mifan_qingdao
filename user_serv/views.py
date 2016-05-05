@@ -1423,6 +1423,20 @@ def get_order_detail_info(request):
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 	order = orders[0]
 	response = {'code':0,'msg':'success'}
+	response['order_status_desc_cn'] = ""
+	response['order_status_desc_en'] = ""
+	if order.status == "PROGRESS":
+		response['order_status_desc_cn'] = "进行中"
+		response['order_status_desc_en'] = "PROGRESS"				
+	elif order.status == "ACCEPTED":
+		response['order_status_desc_cn'] = "已接单"
+		response['order_status_desc_en'] = "ACCEPTED"
+	elif order.status == "SUCCESS":
+		response['order_status_desc_cn'] = "已送出"
+		response['order_status_desc_en'] = "SUCCESS"
+	elif order.status == "CLOSE":
+		response['order_status_desc_cn'] = "已拒绝"
+		response['order_status_desc_en'] = "CLOSE"	
 	response['delivery_address_id'] = order.delivery_address.id
 	response['paytype_id'] = order.pay_type.id
 	response['pay_type'] = order.pay_type.pay_type
