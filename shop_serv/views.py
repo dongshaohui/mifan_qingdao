@@ -292,6 +292,7 @@ def get_all_finish_orders(request):
 		temp_order_obj = {}
 		temp_order_obj['orderid'] = order.id
 		temp_order_obj['order_status'] = 3
+		temp_order_obj['remark'] = order.remark
 		temp_order_obj['ordertime'] = datetime.datetime.strftime(order.create_time,'%Y-%m-%d %H:%M:%S')
 		userinfo = {}
 
@@ -396,6 +397,7 @@ def get_all_history_orders(request):
 		temp_order_obj = {}
 		temp_order_obj['orderid'] = order.id
 		temp_order_obj['order_status'] = 3
+		temp_order_obj['remark'] = order.remark
 		temp_order_obj['ordertime'] = datetime.datetime.strftime(order.create_time,'%Y-%m-%d %H:%M:%S')
 		userinfo = {}
 
@@ -501,6 +503,7 @@ def get_all_accept_orders(request):
 		temp_order_obj = {}
 		temp_order_obj['orderid'] = order.id
 		temp_order_obj['order_status'] = 2
+		temp_order_obj['remark'] = order.remark
 		temp_order_obj['ordertime'] = datetime.datetime.strftime(order.create_time,'%Y-%m-%d %H:%M:%S')
 		userinfo = {}
 
@@ -604,6 +607,7 @@ def get_all_new_orders(request):
 		temp_order_obj = {}
 		temp_order_obj['orderid'] = order.id
 		temp_order_obj['order_status'] = 1
+		temp_order_obj['remark'] = order.remark
 		temp_order_obj['ordertime'] = datetime.datetime.strftime(order.create_time,'%Y-%m-%d %H:%M:%S')
 		userinfo = {}
 
@@ -718,6 +722,7 @@ def search_orders(request):
 	for order in orders:
 		temp_order_obj = {}
 		temp_order_obj['orderid'] = order.id
+		temp_order_obj['remark'] = order.remark
 		if order.status == "PROGRESS":
 			temp_order_obj['order_status'] = 1
 		elif order.status == "ACCEPTED":
