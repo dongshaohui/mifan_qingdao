@@ -1271,8 +1271,8 @@ def upload_order(request):
 	print consume_type
 
 	if total_dish_price < shop_obj.min_distribution_cost and int(consume_type) == 0:
-		print "订单总价小于%.1f元，请重新选取菜品" % shop_obj.min_distribution_cost
-		temp_msg = "订单总价小于%.1f元，请重新选取菜品" % shop_obj.min_distribution_cost
+		print "菜金总价小于%.1f元，请重新选取菜品" % shop_obj.min_distribution_cost
+		temp_msg = "菜金总价小于%.1f元，请重新选取菜品" % shop_obj.min_distribution_cost
 		temp_msg_en = "Total order price is less than %.1f yuan, please re select dishes" % shop_obj.min_distribution_cost
 		response = {'code':-5,'msg':temp_msg,'msg_en':temp_msg_en}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))		
@@ -1356,6 +1356,20 @@ def get_all_orders(request):
 		temp_order_obj = {}
 		temp_order_obj['order_id'] = order.id
 		temp_order_obj['order_status'] = order.status
+		temp_order_obj['order_status_desc_cn'] = ""
+		temp_order_obj['order_status_desc_en'] = ""
+		if order.status == "PROGRESS":
+			temp_order_obj['order_status_desc_cn'] = "进行中"
+			temp_order_obj['order_status_desc_en'] = "PROGRESS"				
+		elif order.status == "ACCEPTED":
+			temp_order_obj['order_status_desc_cn'] = "已接单"
+			temp_order_obj['order_status_desc_en'] = "ACCEPTED"
+		elif order.status == "SUCCESS":
+			temp_order_obj['order_status_desc_cn'] = "已送出"
+			temp_order_obj['order_status_desc_en'] = "SUCCESS"
+		elif order.status == "CLOSE":
+			temp_order_obj['order_status_desc_cn'] = "已拒绝"
+			temp_order_obj['order_status_desc_en'] = "CLOSE"			
 		temp_order_obj['shop_cn_name'] = order.shop.name
 		temp_order_obj['shop_en_name'] = order.shop.name_en
 		temp_order_obj['shop_img'] = "http://resource.jindouyunonline.com:8001/media/" + order.shop.shop_img.name
