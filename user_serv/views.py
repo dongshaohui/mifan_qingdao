@@ -1287,7 +1287,7 @@ def upload_order(request):
 	commission = float("%.1f" %(float(total_dish_price) * float(shop_obj.commission)))
 	# 小费
 	tip = 0
-	if tip_type == 0:
+	if int(tip_type) == 0:
 		tip = float("%.1f" %(float(tip_ratio) * float(total_dish_price)))
 	print tip_ratio,tip
 	# 税
