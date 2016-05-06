@@ -17,7 +17,7 @@ class GlobalSetting(models.Model):
 	policy_link = models.CharField(verbose_name=u'协议链接地址',max_length=255,default="")
 	working_hours = models.CharField(verbose_name=u'工作时间设置',max_length=255,default="")
 	short_message_mobile = models.CharField(verbose_name=u'接受新单短信电话',max_length=255,default="")
-
+	short_message_username = models.CharField(verbose_name=u'接受新单短信用户名',max_length=255,default="")
 	class Meta:
 		verbose_name = '全局设置'
 		verbose_name_plural  = '全局设置'

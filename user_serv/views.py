@@ -1440,11 +1440,11 @@ def get_order_detail_info(request):
 	response['delivery_address_id'] = order.delivery_address.id
 	response['paytype_id'] = order.pay_type.id
 	response['pay_type'] = order.pay_type.pay_type
-	response['credit_card'] = ""
-	response['security_code'] = ""
-	response['expire_year'] = ""
-	response['expire_month'] = ""
-	if response['pay_type'] == 1:
+	response['credit_card'] = order.pay_type.credit_card
+	response['security_code'] = order.pay_type.security_code
+	response['expire_year'] = order.pay_type.expire_year
+	response['expire_month'] = order.pay_type.expire_month
+	if int(response['pay_type']) == 1:
 		response['credit_card'] = order.pay_type.credit_card
 		response['security_code'] = order.pay_type.security_code
 		response['expire_year'] = order.pay_type.expire_year
