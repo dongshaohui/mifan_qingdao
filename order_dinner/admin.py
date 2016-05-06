@@ -181,7 +181,7 @@ class ShopAdmin(object):
 
 class UserPayTypeAdmin(object):
 	fields = ("customer","pay_type","credit_card","security_code","expire_year","expire_month")
-	list_display = ("id","customer","pay_type","credit_card","security_code","expire_year","expire_month")
+	list_display = ("id","customer","pay_type","credit_card")
 
 xadmin.site.register(views.CommAdminView, GlobalViewSetting)
 xadmin.site.register(Customer,CustomAdmin)
