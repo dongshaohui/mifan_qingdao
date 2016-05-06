@@ -1103,6 +1103,7 @@ def upload_order(request):
 	distance = None
 	tax = None
 	dish_order_list = None # list参数
+	current_datetime = None
 	code = 0 # 返回代码，默认为0
 
 	# 获取token
@@ -1185,6 +1186,11 @@ def upload_order(request):
 		dish_order_list = request.GET['dish_order_list']					
 	else:
 		code = -100	
+
+	if 'current_datetime' in request.POST:
+		current_datetime = request.POST['current_datetime']
+	elif 'current_datetime' in request.GET:
+		current_datetime = request.GET['current_datetime']
 
 	print token,shop_id,delivery_address_id,paytype_id,consume_type,tip_type,tip_ratio,remark,freight,distance,tax,dish_order_list
 
@@ -1306,6 +1312,16 @@ def upload_order(request):
 	new_order.discount_price = discount_price
 	new_order.total_price = payable_price
 	new_order.save()
+
+	new_order_datetime = None
+	try:
+		new_order_datetime = datetime.datetime.strptime(current_datetime,"%Y-%m-%d %H:%I:%S")
+	except:
+		new_order_datetime = None
+		print "new_order_datetime error!"
+	if new_order_datetime != None:
+		new_order.create_time = new_order_datetime
+		new_order.save()
 
 	# 极光推送消息
 	APP_KEY="d574d8f5f6fc8933599e4683"
