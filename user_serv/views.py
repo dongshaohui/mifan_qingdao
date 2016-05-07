@@ -1211,6 +1211,10 @@ def upload_order(request):
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))	
 	shop_obj = shop_objs[0]
 
+	# 查看本店是否打烊
+	if int(shop_obj.status) == 0:
+		response = {'code':-6,'msg':'本店今天已经打烊','msg_en':'The shop has closed today'}
+		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))			
 
 
 	# 查看地址是否有效
