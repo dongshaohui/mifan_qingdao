@@ -138,7 +138,7 @@ class OrderAdmin(object):
 	order_state_view.short_description = "订单状态"	
 	# fields = ('name','mobile','valid')
 	list_display = ('customer','shop','order_dishes','delivery_address','status','tip','freight','tax','total_price')
-	list_filter = ('create_time','status')
+	list_filter = ('create_time','status','shop')
 # 定制商铺管理员信息
 class ShopManagerAdmin(object):
 	def save_models(self):
