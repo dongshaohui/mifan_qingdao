@@ -8,6 +8,7 @@ from random import Random
 from django.contrib import auth
 import sms_sender
 import jpush
+import math
 # from bs4 import BeautifulSoup
 
 ########################### 
@@ -1292,7 +1293,7 @@ def upload_order(request):
 	print "distance= ",distance
 	freight_price = 0
 	if float(total_dish_price) < global_set.freight_thres:
-		freight_price = float("%.1f" % (float(distance) / (float)(1.6)))
+		freight_price = float("%.1f" % math.ceil((float(distance) / (float)(1.6))))
 	# 佣金
 	commission = float("%.1f" %(float(total_dish_price) * float(shop_obj.commission)))
 	# 小费
