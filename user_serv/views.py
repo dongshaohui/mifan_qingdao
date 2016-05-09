@@ -1196,6 +1196,8 @@ def upload_order(request):
 
 	print token,shop_id,delivery_address_id,paytype_id,consume_type,tip_type,tip_ratio,remark,freight,distance,tax,dish_order_list
 
+	current_datetime = current_datetime.replace(" ","")
+	current_datetime = current_datetime[0:10] + " " + current_datetime[10:]
 	if code == -100:
 		response = {'code':-100,'msg':'请求参数不完整，或格式不正确！','msg_en':'Request parameter incomplete or incorrectly formatted!'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))		
@@ -1323,6 +1325,7 @@ def upload_order(request):
 	print "current_datetime = ",current_datetime
 	try:
 		new_order_datetime = datetime.datetime.strptime(current_datetime,"%Y-%m-%d %H:%I:%S")
+		print new_order_datetime
 	except:
 		new_order_datetime = None
 		print "new_order_datetime error!"
