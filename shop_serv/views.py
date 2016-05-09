@@ -271,7 +271,7 @@ def get_all_finish_orders(request):
 	shop_obj = Shop.objects.get(id=shop_id)
 	print shop_obj.name,shop_obj.id
 	# 获取已经完成的订单
-	orders = Order.objects.filter(shop_id=shop_id,status="SUCCESS")
+	orders = Order.objects.filter(shop_id=shop_id,status="SUCCESS").filter(create_time__gte=datetime.date.today())
 	totol_order_number = len(orders)
 	pageno = 1
 	pagelength = len(orders)
