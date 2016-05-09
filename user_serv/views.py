@@ -1320,6 +1320,7 @@ def upload_order(request):
 	new_order.save()
 
 	new_order_datetime = None
+	print "current_datetime = ",current_datetime
 	try:
 		new_order_datetime = datetime.datetime.strptime(current_datetime,"%Y-%m-%d %H:%I:%S")
 	except:
