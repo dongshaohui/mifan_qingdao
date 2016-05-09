@@ -1425,7 +1425,7 @@ def get_all_orders(request):
 			temp_order_obj['order_status_desc_en'] = "SUCCESS"
 		elif order.status == "CLOSE":
 			temp_order_obj['order_status_desc_cn'] = "已拒绝"
-			temp_order_obj['order_status_desc_en'] = "CLOSE"			
+			temp_order_obj['order_status_desc_en'] = "REFUSED"			
 		temp_order_obj['shop_cn_name'] = order.shop.name
 		temp_order_obj['shop_en_name'] = order.shop.name_en
 		temp_order_obj['shop_img'] = "http://resource.jindouyunonline.com:8001/media/" + order.shop.shop_img.name
@@ -1492,7 +1492,7 @@ def get_order_detail_info(request):
 		response['order_status_desc_en'] = "SUCCESS"
 	elif order.status == "CLOSE":
 		response['order_status_desc_cn'] = "已拒绝"
-		response['order_status_desc_en'] = "CLOSE"	
+		response['order_status_desc_en'] = "REFUSED"	
 	response['delivery_address_id'] = order.delivery_address.id
 	response['paytype_id'] = order.pay_type.id
 	response['pay_type'] = order.pay_type.pay_type
