@@ -1509,10 +1509,12 @@ def get_order_detail_info(request):
 		response['expire_year'] = order.pay_type.expire_year
 		response['expire_month'] = order.pay_type.expire_month	
 	response['consume_type'] = order.consume_type
-	response['customer_phone'] = order.customer.mobile
-	response['customer_name'] = order.customer.name
+	
+	
 	delivery_address_obj = DeliveryAddress.objects.get(id=int(order.delivery_address.id))
+	response['customer_phone'] = delivery_address_obj.receiver_phone
 	response['customer_addr'] = delivery_address_obj.searched_address + " " + delivery_address_obj.detail_address
+	response['customer_name'] = delivery_address_obj.receiver_name
 	response['tip_type'] = order.tip_type
 	response['tip'] = order.tip
 	response['remark'] = order.remark
