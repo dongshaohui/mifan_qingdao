@@ -1299,7 +1299,7 @@ def upload_order(request):
 		freight_price = float("%.1f" % math.ceil((float(distance) / (float)(1.6))))
 	if paytype_obj.pay_type == 1:
 		freight_price == 0
-		
+
 	# 佣金
 	commission = float("%.1f" %(float(total_dish_price) * float(shop_obj.commission)))
 	# 小费
@@ -1327,7 +1327,7 @@ def upload_order(request):
 	new_order_datetime = None
 	print "current_datetime = ",current_datetime
 	try:
-		new_order_datetime = datetime.datetime.strptime(current_datetime,"%Y-%m-%d %H:%I:%S")
+		new_order_datetime = datetime.datetime.strptime(current_datetime,"%Y-%m-%d %H:%M:%S")
 		print new_order_datetime
 	except:
 		new_order_datetime = None
