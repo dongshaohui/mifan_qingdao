@@ -1503,6 +1503,7 @@ def get_order_detail_info(request):
 	response['security_code'] = "***"
 	response['expire_year'] = "***"
 	response['expire_month'] = "***"
+	response['reject_reason'] = order.reject_reason
 	if int(response['pay_type']) == 1:
 		response['credit_card'] = order.pay_type.credit_card
 		response['security_code'] = order.pay_type.security_code
