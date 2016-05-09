@@ -1638,6 +1638,7 @@ def calculate_freight(request):
 	freight_price = 0
 	if float(total_price) < global_set.freight_thres:
 		freight_price = float("%.1f" % (float(distance) / (float)(1.6)))
+	freight_price = float("%.1f" % math.ceil(freight_price))
 	response = {'code':0,'msg':'success','freight_price':freight_price}	
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
