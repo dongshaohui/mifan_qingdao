@@ -9,6 +9,7 @@ from django.contrib import auth
 import sms_sender
 import jpush
 import math
+from pypinyin import pinyin, lazy_pinyin
 # from bs4 import BeautifulSoup
 
 ########################### 
@@ -1340,6 +1341,39 @@ def upload_order(request):
 	push.platform = jpush.all_
 	push.send()
 	# 极光推送消息结束
+
+	# 推送短信
+	message_shop_name = new_order.shop.name_en
+	message_user_name = new_order.delivery_address.receiver_name
+	try:
+		message_user_name = " ".join(lazy_pinyin(unicode(s.decode(message_user_name))))
+	except:
+		message_user_name = ""
+	message_phone = new_order.delivery_address.receiver_phone
+	message_deliveryaddr = new_order.delivery_address.searched_address + " " + new_order.delivery_address.detail_address
+	message_foodprice = total_dish_price
+	message_tip = tip
+	message_deliveryfee = freight_price
+	message_totalfee = payable_price
+	message_pay_method = ""
+	if new_order.pay_type.pay_type == 0:
+		message_pay_method = "credit card"
+	elif new_order.pay_type.pay_type == 1:
+		message_pay_method = "cash on delivery"
+	# tpl_value = []
+	tpl_value = {'#shopname#':message_shop_name,'#username#':message_user_name,'#phone#':message_phone,
+	'#deliveryaddr#':message_deliveryaddr,'#foodprice#':message_foodprice,'#tip#':message_tip,'#deliveryfee#':message_deliveryfee,
+	'#totalfee#':message_totalfee,'#paymethod#':message_pay_method}
+	print "tpl_value"
+	print tpl_value
+	global_set = GlobalSetting.objects.all()[0]
+	message_mobile = global_set.short_message_mobile
+	apikey = "eeddfb69fdec492bf95e3c2fb90512b8"
+	tpl_id = 1357793
+	sms_response = sms_sender.tpl_send_sms(apikey, tpl_id, tpl_value, message_mobile)
+	print sms_response
+	# 推送短信结束
+
 	response = {'code':0,'msg':'success'}
 	return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
