@@ -145,6 +145,7 @@ def reject_new_order(request):
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
 	# 更新订单状态
+	print "reject reason ",reason
 	order_obj.status = "CLOSE"
 	order_obj.reject_reason = reason
 	order_obj.save()
