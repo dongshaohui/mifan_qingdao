@@ -122,7 +122,7 @@ class OrderAdmin(object):
 			return u"已接受"
 		elif self.status == "SUCCESS":
 			return u"已完成"
-		elif self.status == "CLOSE":
+		elif self.status == "REFUSED":
 			return u"已取消"
 	# 客户查询过滤
 	def get_list_queryset(self):
