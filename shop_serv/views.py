@@ -141,6 +141,7 @@ def reject_new_order(request):
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 	order_obj = orders[0]
 	if str(order_obj.status) != "PROGRESS":
+		print "order id ", order_obj.id
 		response = {'code':-3,'msg':'订单id不是新订单id'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
@@ -182,7 +183,8 @@ def accept_new_order(request):
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 	order_obj = orders[0]
 	if str(order_obj.status) != "PROGRESS":
-		response = {'code':-3,'msg':'订单id不是新订单id'}
+		print "order id ", order_obj.id
+ 		response = {'code':-3,'msg':'订单id不是新订单id'}
 		return HttpResponse(json.dumps(response,ensure_ascii=False,indent=2))
 
 	# 更新订单状态
