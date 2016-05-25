@@ -1341,12 +1341,16 @@ def upload_order(request):
 	MASTER_SECRET="804fe51a04d44ae35610a25b"
 	_jpush = jpush.JPush(APP_KEY, MASTER_SECRET)	
 	push = _jpush.create_push()
-	push.audience = jpush.audience(jpush.registration_id(shop_obj.registration_id))
-	alert_msg = "您有新订单!手机号: %s下单" % customer.mobile
-	push.notification = jpush.notification(alert=alert_msg)
-	push.options = {"time_to_live":86400, "sendno":12345,"apns_production":True}
-	push.platform = jpush.all_
-	push.send()
+	try:
+		push.audience = jpush.audience(jpush.registration_id(shop_obj.registration_id))
+		alert_msg = "您有新订单!手机号: %s下单" % customer.mobile
+		push.notification = jpush.notification(alert=alert_msg)
+		push.options = {"time_to_live":86400, "sendno":12345,"apns_production":True}
+		push.platform = jpush.all_
+		push.send()
+	except:
+		print "推送失败! ",shop_obj.registration_id
+	
 	# 极光推送消息结束
 
 	# 推送短信
