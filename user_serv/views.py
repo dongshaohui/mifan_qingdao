@@ -840,6 +840,8 @@ def get_shop_detail_info(request):
 	shop_id = None
 
 	code = None
+
+
 	if 'shop_id' in request.GET:
 		shop_id = request.GET['shop_id']
 	else:
@@ -868,6 +870,16 @@ def get_shop_detail_info(request):
 	response['shop_detail_info']['phone'] = shop.mobile
 	response['shop_detail_info']['delivery_time'] = shop.business_hour
 	dishes = Dish.objects.filter(shop=shop)
+
+	pageno = 1
+	pagelength = len(dishes)
+	if "pageno" in request.GET:
+		if int(request.GET['pageno']) > 0:
+			pageno = int(request.GET['pageno'])
+	if "pagelength" in request.GET:
+		pagelength = int(request.GET['pagelength'])
+	dishes = dishes[:pagelength]
+
 	now = datetime.datetime.now()
 	month = now.month
 	year = now.year	
