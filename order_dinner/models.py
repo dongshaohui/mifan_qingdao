@@ -184,6 +184,19 @@ class Subdish(models.Model):
 
 	def __unicode__(self):
 		return self.name
+
+# 菜品类型
+class DishCategory(models.Model):
+	shop = models.ForeignKey(Shop,verbose_name="选取店铺")
+	name = models.CharField(default='',verbose_name=u'类别名称',max_length=255) # 类别名称
+
+	class Meta:
+		verbose_name = '菜品类型'
+		verbose_name_plural  = '菜品类型'
+
+	def __unicode__(self):
+		return self.name
+
 # 菜品
 class Dish(models.Model):
 	shop = models.ForeignKey(Shop,related_name='shop_dish',verbose_name="选取店铺") # 菜品隶属的商铺
