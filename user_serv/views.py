@@ -878,7 +878,7 @@ def get_shop_detail_info(request):
 			pageno = int(request.GET['pageno'])
 	if "pagelength" in request.GET:
 		pagelength = int(request.GET['pagelength'])
-	dishes = dishes[:pagelength]
+	dishes = dishes[(pageno-1)*pagelength:pageno*pagelength]
 
 	now = datetime.datetime.now()
 	month = now.month
