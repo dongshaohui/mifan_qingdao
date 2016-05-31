@@ -1,6 +1,6 @@
 #coding=utf-8
 from django.contrib import admin
-from .models import Customer,Subdish,Dish,Order,Shop,ShopManager,BannerImg,GlobalSetting,UserPayType
+from .models import *
 import xadmin
 from xadmin import views
 from xadmin.layout import Main, TabHolder, Tab, Fieldset, Row, Col, AppendedText, Side
@@ -27,6 +27,7 @@ class GlobalViewSetting(object):
             	'title': '内容管理', 'perm': self.get_model_perm(Dish, 'change'), 'menus':(
                 
                 {'title':'配菜管理','url': self.get_model_url(Subdish, 'changelist')},
+                {'title':'菜品类别管理','url': self.get_model_url(DishCategory, 'changelist')},
                 {'title':'菜品管理','url': self.get_model_url(Dish, 'changelist')},
                 {'title':'订单管理','url': self.get_model_url(Order, 'changelist')},
                 
@@ -70,6 +71,11 @@ class SubdishAdmin(object):
 		else:
 			return super(SubdishAdmin,self).get_list_queryset()
 			
+
+# 定制菜品类别管理端信息
+class DishCategoryAdmin(object):
+	fields = ('shop','name')
+	list_display = ('shop','name')
 
 # 定制菜品管理端信息
 class DishAdmin(object):
@@ -187,6 +193,7 @@ xadmin.site.register(views.CommAdminView, GlobalViewSetting)
 xadmin.site.register(Customer,CustomAdmin)
 xadmin.site.register(Subdish,SubdishAdmin)
 xadmin.site.register(Dish,DishAdmin)
+xadmin.site.register(DishCategory,DishCategoryAdmin)
 xadmin.site.register(Shop,ShopAdmin)
 xadmin.site.register(Order,OrderAdmin)
 xadmin.site.register(ShopManager,ShopManagerAdmin)
