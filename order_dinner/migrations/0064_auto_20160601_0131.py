@@ -24,10 +24,10 @@ class Migration(migrations.Migration):
             },
             bases=(models.Model,),
         ),
-        migrations.AddField(
-            model_name='globalsetting',
-            name='short_message_username',
-            field=models.CharField(default=b'', max_length=255, verbose_name='\u63a5\u53d7\u65b0\u5355\u77ed\u4fe1\u7528\u6237\u540d'),
-            preserve_default=True,
-        ),
+        # migrations.AddField(
+        #     model_name='globalsetting',
+        #     name='short_message_username',
+        #     field=models.CharField(default=b'', max_length=255, verbose_name='\u63a5\u53d7\u65b0\u5355\u77ed\u4fe1\u7528\u6237\u540d'),
+        #     preserve_default=True,
+        # ),
     ]
