@@ -181,8 +181,8 @@ class GlobalSettingAdmin(object):
 
 # 商铺管理
 class ShopAdmin(object):
-	fields = ("name","name_en","postcode",'mobile','business_hour','remark','remark_en','shop_img','shop_feature','shop_feature_en','commission','min_distribution_cost')
-	list_display = ("name","name_en","postcode",'mobile','business_hour','remark','remark_en','shop_img','shop_feature','shop_feature_en','commission','registration_id','min_distribution_cost')
+	fields = ("name","name_en","postcode",'mobile','business_hour','remark','remark_en','shop_img','shop_feature','shop_feature_en','commission','min_distribution_cost','status')
+	list_display = ("name","name_en","postcode",'mobile','business_hour','remark','remark_en','shop_img','shop_feature','shop_feature_en','commission','registration_id','min_distribution_cost','status')
 
 
 class UserPayTypeAdmin(object):
